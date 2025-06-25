@@ -12,6 +12,7 @@ namespace ex_TableDataDashboard.Models
 
         [Required]
         public string Password { get; set; }
+
     }
 
 }
