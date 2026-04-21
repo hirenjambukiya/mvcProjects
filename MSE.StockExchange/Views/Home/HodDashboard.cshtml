@@ -1,0 +1,20 @@
+@{
+    ViewData["Title"] = "HOD Secure Dashboard";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card border-warning mb-3">
+                <div class="card-header bg-warning text-dark fw-bold">
+                    <i class="fa-solid fa-lock text-danger"></i> High Security Clearance Area
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Welcome Head of Department</h5>
+                    <p class="card-text">Only users with the HOD role can view this page. This demonstrates role-based `[Authorize(Roles="HOD")]` authorization.</p>
+                    <a href="/" class="btn btn-primary">Back to General Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

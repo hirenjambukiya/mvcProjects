@@ -1,0 +1,19 @@
+@{
+    ViewData["Title"] = "General Dashboard";
+}
+
+<div class="text-center mt-5">
+    <h1 class="display-4">Welcome, @User.Identity?.Name!</h1>
+    <p>You are logged into the MSE Central System.</p>
+    
+    <div class="mt-4">
+        <h4>Your Role: <span class="badge bg-primary">@User.Claims.FirstOrDefault(c => c.Type == System.Security.Claims.ClaimTypes.Role)?.Value</span></h4>
+    </div>
+
+    <div class="mt-5">
+        <a asp-controller="Home" asp-action="HodDashboard" class="btn btn-outline-warning">Access Form-HOD Area</a>
+        <form asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
+            <button type="submit" class="btn btn-outline-danger">Logout</button>
+        </form>
+    </div>
+</div>
