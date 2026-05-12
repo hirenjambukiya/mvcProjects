@@ -19,18 +19,42 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
-<body class="login-bg">
-
-    <div class="container h-100 d-flex justify-content-center align-items-center">
-        <div class="col-md-5 col-lg-4">
-            <div class="login-card p-5">
-                <div class="text-center mb-4 text-white">
-                    <div class="mse-logo d-inline-flex mb-3">
-                        <span class="m">M</span><span class="s">S</span><span class="e">E</span><div class="arrow"></div>
-                    </div>
-                    <h5 class="fw-bold tracking-wide mt-2">METROPOLITAN</h5>
-                    <div class="text-accent small tracking-widest">STOCK EXCHANGE</div>
+<body>
+    <div class="split-layout">
+        <!-- Left Pane: Branding -->
+        <div class="split-left">
+            <div class="split-left-content">
+                <div class="mse-logo-box">
+                    <img src="~/images/mse-logo.png" alt="MSE Logo" />
                 </div>
+                <div>
+                    <span class="mse-badge"><i class="fa-solid fa-circle text-success me-2" style="font-size: 8px;"></i>SEBI REGULATED EXCHANGE</span>
+                    <h1>India's National<br />Stock Exchange<br />Platform</h1>
+                    <p class="lead mt-4">Secure access to live markets, listed securities, derivatives and real-time trading infrastructure.</p>
+                </div>
+            </div>
+            
+            <div class="stats-container mt-auto">
+                <div class="stat-item">
+                    <h3>2,400+</h3>
+                    <p>LISTED SECURITIES</p>
+                </div>
+                <div class="stat-item">
+                    <h3>46,074</h3>
+                    <p>SX40 INDEX</p>
+                </div>
+                <div class="stat-item">
+                    <h3>99.99%</h3>
+                    <p>UPTIME</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Pane: Form -->
+        <div class="split-right">
+            <div class="form-container">
+                <h2>Sign in to your account</h2>
+                <p class="subtitle">Enter your credentials to access the trading portal.</p>
 
                 <form id="loginForm" asp-controller="Account" asp-action="Login" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
                     @Html.AntiForgeryToken()
@@ -38,7 +62,7 @@
                     
                     @if (TempData["SuccessMessage"] != null)
                     {
-                        <div class="alert alert-success mt-2 small text-center p-2 border-0" style="background: rgba(25, 135, 84, 0.2); color: #84ffb8;">
+                        <div class="alert alert-success mt-2 small text-center p-2 border-0">
                             <i class="fa-solid fa-circle-check me-2"></i> @TempData["SuccessMessage"]
                         </div>
                     }
@@ -46,41 +70,42 @@
                     <div asp-validation-summary="ModelOnly" class="text-danger mb-3 small fw-bold text-center"></div>
 
                     <div class="form-floating mb-3">
-                        <input asp-for="Username" class="form-control glass-input" placeholder="User ID" autocomplete="username" />
-                        <label asp-for="Username" class="text-white-50"><i class="fa-solid fa-user me-2"></i>User ID</label>
+                        <input asp-for="Username" class="form-control" placeholder="Email address" autocomplete="username" />
+                        <label asp-for="Username"><i class="fa-regular fa-envelope me-2"></i>Email address</label>
                         <span asp-validation-for="Username" class="text-danger small mt-1 d-block"></span>
                     </div>
 
-                    <div class="form-floating mb-4">
-                        <input asp-for="Password" type="password" id="rawPassword" class="form-control glass-input" placeholder="Password" autocomplete="current-password" />
-                        <label asp-for="Password" class="text-white-50"><i class="fa-solid fa-lock me-2"></i>Password</label>
+                    <div class="form-floating mb-3">
+                        <input asp-for="Password" type="password" id="rawPassword" class="form-control" placeholder="Password" autocomplete="current-password" />
+                        <label asp-for="Password"><i class="fa-solid fa-lock me-2"></i>Password</label>
                         <span asp-validation-for="Password" class="text-danger small mt-1 d-block"></span>
                     </div>
 
-                    <div class="d-flex justify-content-between mb-4 small">
-                        <div class="form-check text-white-50">
-                            <input type="checkbox" class="form-check-input custom-checkbox" id="rememberMe">
-                            <label class="form-check-label" for="rememberMe">Remember Me</label>
+                    <div class="d-flex justify-content-between align-items-center mb-4 small">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="rememberMe">
+                            <label class="form-check-label text-muted" for="rememberMe">Keep me signed in on this device</label>
                         </div>
-                        <a href="#" class="text-accent text-decoration-none hover-underline">Forgot Password?</a>
+                        <a asp-action="ForgotPassword" class="text-primary text-decoration-none hover-underline fw-semibold" style="color: #004d80 !important;">Forgot password?</a>
                     </div>
 
                     <button type="submit" class="btn btn-primary w-100 btn-login fw-bold py-2 mb-3">
-                        SECURE LOGIN <i class="fa-solid fa-arrow-right-to-bracket ms-2"></i>
+                        Sign In Securely
                     </button>
                     
-                    <div class="text-center mt-3 text-white-50 small">
-                        <i class="fa-solid fa-shield-halved text-accent me-1"></i> End-to-End Client Encryption Active
+                    <div class="security-alert">
+                        <i class="fa-solid fa-shield-halved text-success me-2"></i> Protected by 256-bit TLS encryption and 2FA verification.
                     </div>
                     
-                    <div class="text-center mt-3 text-white-50 small">
-                        <a asp-action="Register" class="text-accent text-decoration-none hover-underline">Don't have an account? Register here.</a>
+                    <div class="text-center mt-4 text-muted small">
+                        New to MSE? <a asp-action="Register" class="text-primary text-decoration-none hover-underline fw-semibold" style="color: #004d80 !important;">Create an account</a>
                     </div>
                 </form>
-            </div>
-            
-            <div class="text-center mt-4 text-white-50 small">
-                 &copy; @DateTime.Now.Year - Metropolitan Stock Exchange. All rights reserved.
+
+                <div class="text-center mt-5 text-muted" style="font-size: 0.7rem;">
+                    &copy; @DateTime.Now.Year Metropolitan Stock Exchange of India Ltd.<br/>
+                    Regulated by SEBI - Member of WFE
+                </div>
             </div>
         </div>
     </div>
@@ -92,13 +117,8 @@
             var encryptedPassInput = document.getElementById('ClientEncryptedPassword');
             
             if (rawPassInput.value) {
-                // Client side SHA-256 Hashing before sending to server
-                // This protects the plaintext password entering the wire
                 var hash = CryptoJS.SHA256(rawPassInput.value).toString();
                 encryptedPassInput.value = hash;
-                
-                // Clear the raw password field so it isn't sent in POST body explicitly
-                // Note: to prevent validation errors if it's required, we set a dummy value or the hash itself
                 rawPassInput.value = hash.substring(0,8); 
             }
         });

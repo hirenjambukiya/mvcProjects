@@ -1,0 +1,149 @@
+@model IEnumerable<DynamicExcel.Core.Entities.DatabaseConnection>
+
+@{
+    ViewData["Title"] = "Database Connections";
+}
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Database Connections</h1>
+    <div class="btn-toolbar mb-2 mb-md-0">
+        <a href="~/Connections/AddOrEdit" class="btn btn-sm btn-primary">
+            <i data-feather="plus"></i> Add New Connection
+        </a>
+    </div>
+</div>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["SuccessMessage"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<div class="card">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-hover" id="connectionsTable">
+                <thead>
+                    <tr>
+                        <th>Connection Name</th>
+                        <th>Server</th>
+                        <th>Database</th>
+                        <th>Auth Type</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                <strong>@item.ConnectionName</strong>
+                                @if (item.IsDefault)
+                                {
+                                    <span class="badge bg-success ms-1">Default</span>
+                                }
+                            </td>
+                            <td>@item.ServerName</td>
+                            <td>@item.DatabaseName</td>
+                            <td>@item.AuthenticationType</td>
+                            <td>
+                                <button class="btn btn-sm btn-outline-info btn-test" data-id="@item.Id" 
+                                    data-server="@item.ServerName" data-db="@item.DatabaseName" 
+                                    data-auth="@item.AuthenticationType" data-user="@item.Username" data-pass="@item.Password">
+                                    Test
+                                </button>
+                            </td>
+                            <td>
+                                <div class="btn-group">
+                                    <a href="~/Connections/AddOrEdit/@item.Id" class="btn btn-sm btn-outline-secondary">Edit</a>
+                                    @if (!item.IsDefault)
+                                    {
+                                        <button class="btn btn-sm btn-outline-primary btn-default" data-id="@item.Id">Set Default</button>
+                                    }
+                                    <button class="btn btn-sm btn-outline-danger btn-delete" data-id="@item.Id">Delete</button>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            $('#connectionsTable').DataTable();
+
+            $('.btn-test').click(function() {
+                var btn = $(this);
+                btn.html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>').prop('disabled', true);
+                
+                var data = {
+                    ServerName: btn.data('server'),
+                    DatabaseName: btn.data('db'),
+                    AuthenticationType: btn.data('auth'),
+                    Username: btn.data('user'),
+                    Password: btn.data('pass')
+                };
+
+                $.ajax({
+                    url: '@Url.Action("TestConnection", "Connections")',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(data),
+                    success: function(res) {
+                        btn.html('Test').prop('disabled', false);
+                        if (res.success) {
+                            Swal.fire('Success', res.message, 'success');
+                        } else {
+                            Swal.fire('Error', res.message, 'error');
+                        }
+                    },
+                    error: function() {
+                        btn.html('Test').prop('disabled', false);
+                        Swal.fire('Error', 'An error occurred while testing the connection.', 'error');
+                    }
+                });
+            });
+
+            $('.btn-delete').click(function() {
+                var id = $(this).data('id');
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.post('@Url.Action("Delete", "Connections")', { id: id }, function(res) {
+                            if(res.success) {
+                                location.reload();
+                            }
+                        }).fail(function() {
+                            Swal.fire('Error', 'Failed to delete connection.', 'error');
+                        });
+                    }
+                });
+            });
+
+            $('.btn-default').click(function() {
+                var id = $(this).data('id');
+                $.post('@Url.Action("SetDefault", "Connections")', { id: id }, function(res) {
+                    if(res.success) {
+                        location.reload();
+                    }
+                }).fail(function() {
+                    Swal.fire('Error', 'Failed to set default connection.', 'error');
+                });
+            });
+        });
+    </script>
+}

@@ -82,4 +82,29 @@ public class UserRepository : IUserRepository
 
         await connection.ExecuteAsync(insertUserRoleQuery, new { UserId = newUserId, RoleId = roleId.Value });
     }
+
+    public async Task<User?> GetUserByUsernameOrEmailAsync(string identifier)
+    {
+        using var connection = _connectionFactory.CreateConnection();
+        var query = @"
+            SELECT u.*, r.RoleName
+            FROM Users u
+            LEFT JOIN UserRoles ur ON u.Id = ur.UserId
+            LEFT JOIN Roles r ON ur.RoleId = r.Id
+            WHERE u.Username = @Identifier OR u.Email = @Identifier";
+
+        var result = await connection.QueryAsync<User>(query, new { Identifier = identifier });
+        return result.FirstOrDefault();
+    }
+
+    public async Task UpdatePasswordAsync(int userId, string newPasswordHash)
+    {
+        using var connection = _connectionFactory.CreateConnection();
+        var query = @"
+            UPDATE Users 
+            SET PasswordHash = @PasswordHash
+            WHERE Id = @UserId";
+
+        await connection.ExecuteAsync(query, new { UserId = userId, PasswordHash = newPasswordHash });
+    }
 }

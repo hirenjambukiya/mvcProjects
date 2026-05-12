@@ -1,0 +1,24 @@
+[
+  {
+    "Id": 1,
+    "ConnectionName": "DESKTOP",
+    "ServerName": "192.168.2.24",
+    "DatabaseName": "ExcelToDb",
+    "AuthenticationType": "SQL",
+    "Username": "sa",
+    "Password": "admin",
+    "IsDefault": false,
+    "CreatedDate": "2026-05-07T11:36:20.924541+05:30"
+  },
+  {
+    "Id": 2,
+    "ConnectionName": "DESKTOP",
+    "ServerName": "DESKTOP-C569SAV\\SQLEXPRESS",
+    "DatabaseName": "ExcelToDb",
+    "AuthenticationType": "Windows",
+    "Username": "sa",
+    "Password": "admin",
+    "IsDefault": true,
+    "CreatedDate": "2026-05-07T11:38:54.8670672+05:30"
+  }
+]

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Dynamic Data Hub</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- DataTables CSS -->
+    <link href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    
+    <!-- Icons (Feather) -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    
+    <!-- SweetAlert2 -->
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="navbar navbar-expand-md navbar-light sticky-top flex-md-nowrap p-0">
+        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="~/">
+            <i data-feather="database" class="me-2 text-primary"></i>
+            Dynamic Data Hub
+        </a>
+        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse">
+                <div class="position-sticky pt-3">
+                    @if (ViewContext.RouteData.Values["Controller"]?.ToString() == "Query")
+                    {
+                        <div class="px-3 mb-2 d-flex justify-content-between align-items-center">
+                            <h6 class="text-muted text-uppercase mb-0" style="font-size: .75rem; font-weight: 600;">Table Explorer</h6>
+                            <a href="~/" class="text-muted" title="Back to Main Menu"><i data-feather="arrow-left" style="width: 16px;"></i></a>
+                        </div>
+                        <ul class="nav flex-column" id="tableExplorerList">
+                            <li class="nav-item px-3 text-muted text-center mt-4">
+                                <small>Select a connection to load tables</small>
+                            </li>
+                        </ul>
+                    }
+                    else
+                    {
+                        <ul class="nav flex-column" id="mainMenuList">
+                            <li class="nav-item">
+                                <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Home" ? "active" : "")" href="~/">
+                                    <i data-feather="home"></i>
+                                    Dashboard
+                                </a>
+                            </li>
+                            <li class="nav-item mt-3 mb-1 px-3 text-muted text-uppercase" style="font-size: .75rem; font-weight: 600;">
+                                Data Management
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Connections" ? "active" : "")" href="~/Connections">
+                                    <i data-feather="server"></i>
+                                    Database Connections
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Import" ? "active" : "")" href="~/Import">
+                                    <i data-feather="upload-cloud"></i>
+                                    Excel Import
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "History" ? "active" : "")" href="~/History">
+                                    <i data-feather="list"></i>
+                                    Import History
+                                </a>
+                            </li>
+                            <li class="nav-item mt-3 mb-1 px-3 text-muted text-uppercase" style="font-size: .75rem; font-weight: 600;">
+                                Analysis
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Query" ? "active" : "")" href="~/Query">
+                                    <i data-feather="terminal"></i>
+                                    Query Execution
+                                </a>
+                            </li>
+                        </ul>
+                    }
+                </div>
+            </nav>
+
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+
+    <!-- Core JS Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+    
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        // Initialize Feather icons
+        feather.replace();
+    </script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

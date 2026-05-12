@@ -9,4 +9,6 @@ public interface IUserRepository
     Task UpdateFailedAttemptAsync(int userId, int count, bool isLockedOut, System.DateTime? lockoutEnd);
     Task ResetFailedAttemptAsync(int userId);
     Task CreateUserAsync(User user, string roleName);
+    Task<User?> GetUserByUsernameOrEmailAsync(string identifier);
+    Task UpdatePasswordAsync(int userId, string newPasswordHash);
 }

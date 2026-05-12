@@ -1,0 +1,93 @@
+@model MSE.StockExchange.Models.ViewModels.VerifyLoginOtpViewModel
+
+@{
+    ViewData["Title"] = "Verify Login OTP";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Metropolitan Stock Exchange</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="split-layout">
+        <!-- Left Pane: Branding -->
+        <div class="split-left">
+            <div class="split-left-content">
+                <div class="mse-logo-box">
+                    <img src="~/images/mse-logo.png" alt="MSE Logo" />
+                </div>
+                <div>
+                    <span class="mse-badge"><i class="fa-solid fa-circle text-success me-2" style="font-size: 8px;"></i>SEBI REGULATED EXCHANGE</span>
+                    <h1>India's National<br />Stock Exchange<br />Platform</h1>
+                    <p class="lead mt-4">Secure access to live markets, listed securities, derivatives and real-time trading infrastructure.</p>
+                </div>
+            </div>
+            
+            <div class="stats-container mt-auto">
+                <div class="stat-item">
+                    <h3>2,400+</h3>
+                    <p>LISTED SECURITIES</p>
+                </div>
+                <div class="stat-item">
+                    <h3>46,074</h3>
+                    <p>SX40 INDEX</p>
+                </div>
+                <div class="stat-item">
+                    <h3>99.99%</h3>
+                    <p>UPTIME</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Pane: Form -->
+        <div class="split-right">
+            <div class="form-container">
+                <h2>Two-Factor Authentication</h2>
+                <p class="subtitle">We have sent a 6-digit OTP to your registered email address.</p>
+
+                <form asp-controller="Account" asp-action="VerifyLoginOtp" method="post">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" asp-for="Username" />
+                    <input type="hidden" asp-for="ReturnUrl" />
+                    
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3 small fw-bold text-center"></div>
+
+                    <div class="form-floating mb-4">
+                        <input asp-for="Otp" class="form-control text-center fw-bold fs-4 tracking-widest" placeholder="123456" autocomplete="one-time-code" maxlength="6" style="letter-spacing: 0.5em;" />
+                        <label asp-for="Otp" class="text-muted text-center w-100">Enter OTP</label>
+                        <span asp-validation-for="Otp" class="text-danger small mt-1 d-block"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100 btn-login fw-bold py-2 mb-3">
+                        Verify OTP
+                    </button>
+                    
+                    <div class="security-alert">
+                        <i class="fa-solid fa-shield-halved text-success me-2"></i> Protected by 256-bit TLS encryption and 2FA verification.
+                    </div>
+                    
+                    <div class="text-center mt-4 text-muted small">
+                        <a asp-action="Login" class="text-primary text-decoration-none hover-underline fw-semibold" style="color: #004d80 !important;"><i class="fa-solid fa-arrow-left me-1"></i> Back to Login</a>
+                    </div>
+                </form>
+
+                <div class="text-center mt-5 text-muted" style="font-size: 0.7rem;">
+                    &copy; @DateTime.Now.Year Metropolitan Stock Exchange of India Ltd.<br/>
+                    Regulated by SEBI - Member of WFE
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

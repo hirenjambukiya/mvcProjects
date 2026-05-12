@@ -1,0 +1,966 @@
+﻿
+
+w14:paraId="45E84AD1" w14:textId="6F7B4B04" w:rsidR="006154AE" w:rsidRPr="007930E9" w:rsidRDefault="006154AE" w:rsidP="00C92477">
+w14:paraId="72CFC56A" w14:textId="77777777" w:rsidR="004857AA" w:rsidRPr="007930E9" w:rsidRDefault="00311258" w:rsidP="00311258">
+w14:paraId="27D573A3" w14:textId="45799D84" w:rsidR="0079181A" w:rsidRPr="007930E9" w:rsidRDefault="002B0C58" w:rsidP="001009B9">Software Requirement Note
+w14:paraId="27631AA0" w14:textId="77777777" w:rsidR="00D223C5" w:rsidRPr="007930E9" w:rsidRDefault="00D223C5" w:rsidP="00366FF1">Requirement:
+w14:paraId="200131BC" w14:textId="0C529D09" w:rsidR="00D223C5" w:rsidRPr="007930E9" w:rsidRDefault="008130D7" w:rsidP="00366FF1">Development for processing the listing application
+w14:paraId="68DDC951" w14:textId="77777777" w:rsidR="00D223C5" w:rsidRPr="007930E9" w:rsidRDefault="00D223C5" w:rsidP="00366FF1">SRN. No
+w14:paraId="1F812855" w14:textId="13F33B32" w:rsidR="00D223C5" w:rsidRPr="007930E9" w:rsidRDefault="00D223C5" w:rsidP="00366FF1">
+w14:paraId="2941A8B9" w14:textId="77777777" w:rsidR="00D223C5" w:rsidRPr="007930E9" w:rsidRDefault="00D223C5" w:rsidP="00366FF1">Raised By:
+w14:paraId="56F28DEF" w14:textId="21688799" w:rsidR="00D223C5" w:rsidRPr="007930E9" w:rsidRDefault="008130D7" w:rsidP="00366FF1">Listing department
+w14:paraId="323BE3AA" w14:textId="77777777" w:rsidR="00D223C5" w:rsidRPr="007930E9" w:rsidRDefault="00D223C5" w:rsidP="00366FF1">Type
+w14:paraId="3E99C26E" w14:textId="7C0E8D36" w:rsidR="00D223C5" w:rsidRPr="007930E9" w:rsidRDefault="008130D7" w:rsidP="00366FF1">New requirement
+w14:paraId="38537DEC" w14:textId="77777777" w:rsidR="00D223C5" w:rsidRPr="007930E9" w:rsidRDefault="00D223C5" w:rsidP="00366FF1">Module / Programs
+w14:paraId="7612927C" w14:textId="0ED524F5" w:rsidR="00D223C5" w:rsidRPr="007930E9" w:rsidRDefault="00D223C5" w:rsidP="00366FF1">
+w14:paraId="418A9163" w14:textId="77777777" w:rsidR="00D223C5" w:rsidRPr="007930E9" w:rsidRDefault="00905512" w:rsidP="00366FF1">Priority Importance
+w14:paraId="7BF863FE" w14:textId="60D20496" w:rsidR="00D223C5" w:rsidRPr="007930E9" w:rsidRDefault="008130D7" w:rsidP="00366FF1">Urgent
+w14:paraId="26733645" w14:textId="77777777" w:rsidR="00C940F5" w:rsidRPr="007930E9" w:rsidRDefault="00C940F5" w:rsidP="00AC4328">
+w14:paraId="4B620DB2" w14:textId="00132BA9" w:rsidR="007930E9" w:rsidRPr="00E83B49" w:rsidRDefault="007930E9" w:rsidP="007930E9">Introduction - 
+w14:paraId="0EF100E3" w14:textId="77777777" w:rsidR="007930E9" w:rsidRDefault="007930E9" w:rsidP="007930E9">
+w14:paraId="00DCB33A" w14:textId="7C4E3C28" w:rsidR="00742047" w:rsidRDefault="00742047" w:rsidP="007930E9">The Approvals related to corporate action, Further issue, secondary listing and delisting applications such as In-Principle approval, listing and trading approval for various applications namely preferential issue, Bonus Issue, ESOP, Rights Issue, Scheme of Arrangement, Secondary Listing, QIP etc., are currently processed manually. Our Competitor Exchanges have automated application portals for submission of such applications, also our companies which are commonly listed on NSE and BSE are always enquiring about availability of automated application portals on MSE.
+w14:paraId="4FBFAB0F" w14:textId="77777777" w:rsidR="00742047" w:rsidRDefault="00742047" w:rsidP="007930E9">
+w14:paraId="649E172B" w14:textId="685AEA9C" w:rsidR="00742047" w:rsidRDefault="00742047" w:rsidP="007930E9">Applications and documentation are received through emails, and all related observations, clarifications and correspondence are also exchanged via email. This results in generation of large volumes of emails, leading to challenges in document storage, retrieval, tracking and data maintenance.
+w14:paraId="479F2C99" w14:textId="77777777" w:rsidR="00742047" w:rsidRDefault="00742047" w:rsidP="007930E9">
+w14:paraId="5BA2C651" w14:textId="436E050F" w:rsidR="00742047" w:rsidRDefault="00742047" w:rsidP="007930E9">Such manual processes create operational inefficiencies and pose difficulties during the processing of the applications for the department and further in SEBI inspection, as data collation and audit trails are not system driven. To ensure ease of doing business, improve compliance readiness, and maintain systematic records, there is a requirement to develop a web-based automated system for processing these applications. 
+w14:paraId="74B7BB6C" w14:textId="77777777" w:rsidR="00B13CC7" w:rsidRDefault="00B13CC7" w:rsidP="007930E9">
+w14:paraId="1880FABF" w14:textId="3D83A707" w:rsidR="00B13CC7" w:rsidRDefault="0042403D" w:rsidP="007930E9">The proposed system will also provide companies with dashboard visibility and MIS Reports, enabling clear tracking of application status. 
+w14:paraId="522AFA38" w14:textId="77777777" w:rsidR="00742047" w:rsidRDefault="00742047" w:rsidP="007930E9">
+w14:paraId="4EBBC128" w14:textId="77777777" w:rsidR="007930E9" w:rsidRPr="00E83B49" w:rsidRDefault="007930E9" w:rsidP="007930E9">Existing Functionality – 
+w14:paraId="13EDFA52" w14:textId="77777777" w:rsidR="007930E9" w:rsidRDefault="007930E9" w:rsidP="007930E9">
+w14:paraId="1984052F" w14:textId="6EC4F42D" w:rsidR="005F6F20" w:rsidRPr="005F6F20" w:rsidRDefault="005F6F20" w:rsidP="0042403D">Currently, there is no automated system in place for processing such applications. All applications and documentation are submitted via email. Observation, clarifications and correspondence are also exchanged manually through email. Also, there is no centralized repository for documents. All reports and MIS are manually prepared and there is non-availability of audit trails. 
+w14:paraId="1DCB0E36" w14:textId="77777777" w:rsidR="007930E9" w:rsidRPr="004C6919" w:rsidRDefault="007930E9" w:rsidP="007930E9">
+w14:paraId="27D0DD0F" w14:textId="26FA8016" w:rsidR="00C631DD" w:rsidRPr="00E83B49" w:rsidRDefault="00C631DD" w:rsidP="00C631DD">New Requirement – 
+w14:paraId="7EEDE515" w14:textId="77777777" w:rsidR="002454FD" w:rsidRDefault="002454FD" w:rsidP="002454FD">
+w14:paraId="4D2672B8" w14:textId="77777777" w:rsidR="001652DC" w:rsidRDefault="002454FD" w:rsidP="001652DC">Introduction
+w14:paraId="341CF060" w14:textId="5F185E07" w:rsidR="00871B6D" w:rsidRDefault="00871B6D" w:rsidP="006F5F1D">A system is required that allow companies to submit online applications for preferential shares in three stages: In-Principle Approval (IPA), Listing and Trading. These applications follow a strict hierarchy—first, a company must obtain In-Principle Approval. Only after this is approved by exchange, the company can submit one or more Listing applications under IPA. Similarly, a Trading application can only be submitted under a listing application once that Listing application has been approved by exchange.
+w14:paraId="5B99379A" w14:textId="77777777" w:rsidR="006F5F1D" w:rsidRPr="00871B6D" w:rsidRDefault="006F5F1D" w:rsidP="006F5F1D">
+w14:paraId="553E71F5" w14:textId="281792FF" w:rsidR="00871B6D" w:rsidRPr="00F04263" w:rsidRDefault="00871B6D" w:rsidP="006F5F1D">Each application follows a multi-level approval workflow within the exchange. Once a company submits an application, it is automatically assigned to a Maker. The Maker upon review of application can either approve it or send it back to the company for compliance of observation. If approved, it moves to a Checker, also assigned via round robin method. The Checker can approve or return it to the Maker (and eventually back to the company if needed). After Checker approval, the application is sent to the Team Leader for final review. The Team Leader approves or sends it back through the same chain for corrections.
+w14:paraId="624C8AA6" w14:textId="77777777" w:rsidR="006F5F1D" w:rsidRPr="00871B6D" w:rsidRDefault="006F5F1D" w:rsidP="006F5F1D">
+w14:paraId="57A6B119" w14:textId="11283FA0" w:rsidR="00871B6D" w:rsidRPr="00871B6D" w:rsidRDefault="00871B6D" w:rsidP="006F5F1D">Once the Team Leader approves the application, the Maker Checker, and Team Leader should be able to upload a scanned approval letter to the system. The system must then notify the company about the approval and provide access to the uploaded document.
+w14:paraId="101CF31D" w14:textId="30E4F7E8" w:rsidR="00871B6D" w:rsidRPr="00871B6D" w:rsidRDefault="00871B6D" w:rsidP="00871B6D"/>
+w14:paraId="7B39A735" w14:textId="4B3BB89E" w:rsidR="002454FD" w:rsidRDefault="002454FD" w:rsidP="001621C9">Purpose
+w14:paraId="7095E4A7" w14:textId="77777777" w:rsidR="001652DC" w:rsidRPr="001652DC" w:rsidRDefault="001652DC" w:rsidP="00313757"/>
+w14:paraId="6DD088BF" w14:textId="77777777" w:rsidR="002454FD" w:rsidRPr="00AF42C4" w:rsidRDefault="002454FD" w:rsidP="00313757">To implement a centralized online system for managing:
+w14:paraId="741B0830" w14:textId="77777777" w:rsidR="002454FD" w:rsidRPr="00AF42C4" w:rsidRDefault="002454FD" w:rsidP="00B05B59">In-Principle Approval (IPA)
+w14:paraId="4C15FC91" w14:textId="77777777" w:rsidR="002454FD" w:rsidRPr="00AF42C4" w:rsidRDefault="002454FD" w:rsidP="00B05B59">Listing Approval
+w14:paraId="21ED1F10" w14:textId="7E328EC6" w:rsidR="002454FD" w:rsidRPr="00AF42C4" w:rsidRDefault="002454FD" w:rsidP="00B05B59">Trading Approval
+w14:paraId="16C324F0" w14:textId="77777777" w:rsidR="002454FD" w:rsidRPr="00AF42C4" w:rsidRDefault="002454FD" w:rsidP="00313757">with controlled workflows, compliance validations, and auditability.
+w14:paraId="576CB706" w14:textId="54B5D3BD" w:rsidR="002454FD" w:rsidRPr="002454FD" w:rsidRDefault="002454FD" w:rsidP="00313757">Business Objectives
+w14:paraId="00B635A1" w14:textId="77777777" w:rsidR="002454FD" w:rsidRPr="00AF42C4" w:rsidRDefault="002454FD" w:rsidP="00B05B59">Ensure regulatory compliance
+w14:paraId="24C16E58" w14:textId="1FC27416" w:rsidR="00BE0F25" w:rsidRDefault="002454FD" w:rsidP="00B05B59">Enable structured approval lifecycle
+w14:paraId="2B80C790" w14:textId="5C2F7C53" w:rsidR="002454FD" w:rsidRDefault="002454FD" w:rsidP="00B05B59">Provide transparency and monitoring
+w14:paraId="7AA31BD4" w14:textId="0674BA6E" w:rsidR="002454FD" w:rsidRPr="00BE0F25" w:rsidRDefault="002454FD" w:rsidP="00B05B59">Improve processing timelines
+w14:paraId="72E68775" w14:textId="77777777" w:rsidR="00D971C8" w:rsidRDefault="00D971C8" w:rsidP="00D971C8">
+w14:paraId="7866C16F" w14:textId="6CF44F03" w:rsidR="00D971C8" w:rsidRPr="00BE0F25" w:rsidRDefault="00D971C8" w:rsidP="00BE0F25">Stake Holders and Role
+w14:paraId="42C5D81F" w14:textId="77777777" w:rsidR="00D971C8" w:rsidRDefault="00D971C8" w:rsidP="00D971C8">
+w14:paraId="6218D647" w14:textId="77777777" w:rsidR="00D971C8" w:rsidRPr="00D971C8" w:rsidRDefault="00D971C8" w:rsidP="00D971C8">Sr. No.
+w14:paraId="6DE14020" w14:textId="77777777" w:rsidR="00D971C8" w:rsidRPr="00D971C8" w:rsidRDefault="00D971C8" w:rsidP="00D971C8">Role
+w14:paraId="7565FFC3" w14:textId="77777777" w:rsidR="00D971C8" w:rsidRPr="00D971C8" w:rsidRDefault="00D971C8" w:rsidP="00D971C8">Description
+w14:paraId="769881BE" w14:textId="77777777" w:rsidR="00D971C8" w:rsidRPr="00D971C8" w:rsidRDefault="00D971C8" w:rsidP="00FF68E5">1
+w14:paraId="53B659BF" w14:textId="77777777" w:rsidR="00D971C8" w:rsidRPr="00D971C8" w:rsidRDefault="00D971C8" w:rsidP="00D971C8">Company
+w14:paraId="159DDAD1" w14:textId="77777777" w:rsidR="00D971C8" w:rsidRPr="00D971C8" w:rsidRDefault="00D971C8" w:rsidP="00D971C8">Applicant entity
+w14:paraId="2D77C80C" w14:textId="77777777" w:rsidR="00D971C8" w:rsidRPr="00D971C8" w:rsidRDefault="00D971C8" w:rsidP="00FF68E5">2
+w14:paraId="674234CC" w14:textId="77777777" w:rsidR="00D971C8" w:rsidRPr="00D971C8" w:rsidRDefault="00D971C8" w:rsidP="00D971C8">Maker
+w14:paraId="71F0580A" w14:textId="77777777" w:rsidR="00D971C8" w:rsidRPr="00D971C8" w:rsidRDefault="00D971C8" w:rsidP="00D971C8">Primary reviewer
+w14:paraId="218B6603" w14:textId="77777777" w:rsidR="00D971C8" w:rsidRPr="00D971C8" w:rsidRDefault="00D971C8" w:rsidP="00FF68E5">3
+w14:paraId="7BD538FC" w14:textId="77777777" w:rsidR="00D971C8" w:rsidRPr="00D971C8" w:rsidRDefault="00D971C8" w:rsidP="00D971C8">Checker
+w14:paraId="3DF808B8" w14:textId="77777777" w:rsidR="00D971C8" w:rsidRPr="00D971C8" w:rsidRDefault="00D971C8" w:rsidP="00D971C8">Secondary reviewer
+w14:paraId="3484E644" w14:textId="77777777" w:rsidR="00D971C8" w:rsidRPr="00D971C8" w:rsidRDefault="00D971C8" w:rsidP="00FF68E5">4
+w14:paraId="69829CBC" w14:textId="0CCDD87D" w:rsidR="00D971C8" w:rsidRPr="00D971C8" w:rsidRDefault="00487885" w:rsidP="00D971C8">Team Leader
+w14:paraId="52C3D6ED" w14:textId="21979814" w:rsidR="00D971C8" w:rsidRPr="00D971C8" w:rsidRDefault="00AB2F1F" w:rsidP="00D971C8">Final authority and Administrator
+w14:paraId="582E943D" w14:textId="5E4CDCF0" w:rsidR="00487885" w:rsidRPr="00D971C8" w:rsidRDefault="00487885" w:rsidP="00FF68E5">5
+w14:paraId="0DF9D123" w14:textId="03CA50EB" w:rsidR="00487885" w:rsidRPr="00D971C8" w:rsidRDefault="00487885" w:rsidP="00487885">HOD
+w14:paraId="43D8F18C" w14:textId="3A3DC59C" w:rsidR="00487885" w:rsidRPr="00D971C8" w:rsidRDefault="00487885" w:rsidP="00487885">Final authority
+w14:paraId="7D91ECCB" w14:textId="5528D6A9" w:rsidR="00DF217B" w:rsidRPr="00DF217B" w:rsidRDefault="00BE0F25" w:rsidP="00DF217B">System Scope
+w14:paraId="7AA707E7" w14:textId="77777777" w:rsidR="001652DC" w:rsidRPr="00AF42C4" w:rsidRDefault="001652DC" w:rsidP="001652DC"/>
+w14:paraId="56E18C65" w14:textId="77777777" w:rsidR="00BE0F25" w:rsidRPr="00AF42C4" w:rsidRDefault="00BE0F25" w:rsidP="00B05B59">Online application management
+w14:paraId="25D3DB3B" w14:textId="198CBAF3" w:rsidR="00BE0F25" w:rsidRPr="00AF42C4" w:rsidRDefault="00BE0F25" w:rsidP="00B05B59">Document upload, download and verification
+w14:paraId="4B8E266C" w14:textId="77777777" w:rsidR="00BE0F25" w:rsidRPr="00AF42C4" w:rsidRDefault="00BE0F25" w:rsidP="00B05B59">Workflow routing
+w14:paraId="2764DBB9" w14:textId="77777777" w:rsidR="00BE0F25" w:rsidRPr="00AF42C4" w:rsidRDefault="00BE0F25" w:rsidP="00B05B59">Status tracking
+w14:paraId="42051703" w14:textId="77777777" w:rsidR="00BE0F25" w:rsidRPr="00AF42C4" w:rsidRDefault="00BE0F25" w:rsidP="00B05B59">SLA monitoring
+w14:paraId="5850B38B" w14:textId="77777777" w:rsidR="00BE0F25" w:rsidRDefault="00BE0F25" w:rsidP="00B05B59">MIS reporting
+w14:paraId="4E995B03" w14:textId="57BB9118" w:rsidR="00313757" w:rsidRDefault="00313757" w:rsidP="00B05B59">Mails triggering
+w14:paraId="4AC9C5D3" w14:textId="77777777" w:rsidR="001A1329" w:rsidRDefault="001A1329" w:rsidP="001A1329">
+w14:paraId="4E316D29" w14:textId="00B60C1B" w:rsidR="003D6C4F" w:rsidRDefault="00F218C9" w:rsidP="00101608">Flow Diagram
+w14:paraId="53E5AD20" w14:textId="77777777" w:rsidR="008E692D" w:rsidRDefault="008E692D" w:rsidP="008E692D"/>
+w14:paraId="14E4EC72" w14:textId="44EE5A18" w:rsidR="008E692D" w:rsidRDefault="008E692D" w:rsidP="008E692D">
+w14:paraId="5A71E155" w14:textId="77777777" w:rsidR="001A1329" w:rsidRPr="00AF42C4" w:rsidRDefault="001A1329" w:rsidP="001A1329">Functional Requirements
+w14:paraId="5DDE5E82" w14:textId="51A084CF" w:rsidR="001A1329" w:rsidRDefault="001A1329" w:rsidP="0075017F">Company Module
+w14:paraId="7BB34F8A" w14:textId="77777777" w:rsidR="00F53621" w:rsidRPr="00F53621" w:rsidRDefault="00F53621" w:rsidP="00F53621">Feature
+w14:paraId="28FF48E9" w14:textId="77777777" w:rsidR="00F53621" w:rsidRPr="00F53621" w:rsidRDefault="00F53621" w:rsidP="00F53621">Description
+w14:paraId="644EEDB6" w14:textId="579DB59A" w:rsidR="00FB10C7" w:rsidRDefault="00FB10C7" w:rsidP="00F53621">Company Information
+w14:paraId="430257AD" w14:textId="622F5A7E" w:rsidR="00FB10C7" w:rsidRDefault="00F04263" w:rsidP="00F53621">Company Contact details
+w14:paraId="16A11EE7" w14:textId="4F4821EE" w:rsidR="00511392" w:rsidRPr="00F53621" w:rsidRDefault="00511392" w:rsidP="00F53621">Application Type
+w14:paraId="3E2B3C31" w14:textId="4B417E62" w:rsidR="00511392" w:rsidRPr="00F53621" w:rsidRDefault="00313757" w:rsidP="00F53621">Preferential (drop down box)
+w14:paraId="70B67EE9" w14:textId="34A0BEBF" w:rsidR="00F53621" w:rsidRPr="00F53621" w:rsidRDefault="00915EA1" w:rsidP="00F53621">Approval Type
+w14:paraId="242F9A12" w14:textId="490945BF" w:rsidR="00F53621" w:rsidRPr="00F53621" w:rsidRDefault="00F53621" w:rsidP="00F53621">IPA / Listing / Trading (drop down box)
+w14:paraId="4C895CBB" w14:textId="49D4DF46" w:rsidR="00915EA1" w:rsidRPr="00F53621" w:rsidRDefault="00915EA1" w:rsidP="00F53621">Securities Type
+w14:paraId="4CB73FB5" w14:textId="6542C4B8" w:rsidR="00915EA1" w:rsidRPr="00F53621" w:rsidRDefault="00915EA1" w:rsidP="00F53621">Equity / Warrants / Both
+w14:paraId="7F62453F" w14:textId="56678B06" w:rsidR="00915EA1" w:rsidRPr="00F53621" w:rsidRDefault="00915EA1" w:rsidP="00F53621">In Put Fields
+w14:paraId="78076C0F" w14:textId="637695EF" w:rsidR="00915EA1" w:rsidRPr="00F53621" w:rsidRDefault="00915EA1" w:rsidP="00F53621">Various input fields with validations
+w14:paraId="207321DF" w14:textId="218EC54C" w:rsidR="00915EA1" w:rsidRPr="00F53621" w:rsidRDefault="00915EA1" w:rsidP="00915EA1">Document Upload
+w14:paraId="7BE729DF" w14:textId="7D33B3B2" w:rsidR="00915EA1" w:rsidRPr="00F53621" w:rsidRDefault="00915EA1" w:rsidP="00915EA1">PDF/JPEG/XLS
+w14:paraId="1B069671" w14:textId="4CECECE0" w:rsidR="003D1471" w:rsidRPr="00F53621" w:rsidRDefault="003D1471" w:rsidP="00915EA1">Document Download
+w14:paraId="66C63009" w14:textId="7D23B684" w:rsidR="003D1471" w:rsidRPr="00F53621" w:rsidRDefault="003D1471" w:rsidP="00915EA1">PDF/JPEG/XLS
+w14:paraId="49907CC8" w14:textId="771D7988" w:rsidR="003D1471" w:rsidRPr="00F53621" w:rsidRDefault="003D1471" w:rsidP="00915EA1">Document Preview
+w14:paraId="470FE1CB" w14:textId="19338742" w:rsidR="003D1471" w:rsidRPr="00F53621" w:rsidRDefault="003D1471" w:rsidP="00915EA1">PDF/JPEG/XLS
+w14:paraId="120066DD" w14:textId="3FBCDCBA" w:rsidR="00915EA1" w:rsidRPr="00F53621" w:rsidRDefault="00915EA1" w:rsidP="00915EA1">Draft Save
+w14:paraId="3476F784" w14:textId="4B6CB1B2" w:rsidR="00915EA1" w:rsidRPr="00F53621" w:rsidRDefault="00915EA1" w:rsidP="00915EA1">Save incomplete forms
+w14:paraId="5D1ADFF6" w14:textId="44AC98D5" w:rsidR="00915EA1" w:rsidRPr="00F53621" w:rsidRDefault="00915EA1" w:rsidP="00915EA1">Submit
+w14:paraId="6B0ED973" w14:textId="0871A9F8" w:rsidR="00915EA1" w:rsidRPr="00F53621" w:rsidRDefault="00915EA1" w:rsidP="00915EA1">Submit application to Exchange
+w14:paraId="0C6FDF49" w14:textId="77777777" w:rsidR="00915EA1" w:rsidRPr="00F53621" w:rsidRDefault="00915EA1" w:rsidP="00915EA1">Remarks
+w14:paraId="3AD59BE8" w14:textId="77777777" w:rsidR="00915EA1" w:rsidRPr="00F53621" w:rsidRDefault="00915EA1" w:rsidP="00915EA1">Reply to observations
+w14:paraId="20FE24EE" w14:textId="77777777" w:rsidR="00915EA1" w:rsidRPr="00F53621" w:rsidRDefault="00915EA1" w:rsidP="00915EA1">Dashboard
+w14:paraId="50DB704A" w14:textId="77777777" w:rsidR="00915EA1" w:rsidRPr="00F53621" w:rsidRDefault="00915EA1" w:rsidP="00915EA1">Track progress
+w14:paraId="0D4218B8" w14:textId="4167F632" w:rsidR="00915EA1" w:rsidRPr="00F53621" w:rsidRDefault="00915EA1" w:rsidP="00915EA1">Letter Upload &amp; Download
+w14:paraId="3BBB10D4" w14:textId="77777777" w:rsidR="00915EA1" w:rsidRPr="00F53621" w:rsidRDefault="00915EA1" w:rsidP="00915EA1">Approved letters
+w14:paraId="1A19F6D9" w14:textId="06BCFC00" w:rsidR="00BB3029" w:rsidRDefault="00BB3029" w:rsidP="0075017F">Company Information
+w14:paraId="5A9930B8" w14:textId="28191846" w:rsidR="00BB3029" w:rsidRPr="00AD170D" w:rsidRDefault="00BB3029" w:rsidP="00B05B59">Details like Company name, symbol, ISIN, Co old name (if any), Co’s Address i.e. Registered &amp; Corporate, Contact Person, Telephone Nos, Mobile No, Email ID, PAN, GST Nos, Company Secretary Name and his Contact Details, Co listing status (commonly or Exclusively Listed).
+w14:paraId="30FBCE6E" w14:textId="4EC8D6B6" w:rsidR="005A2DD5" w:rsidRPr="005A2DD5" w:rsidRDefault="00A004F9" w:rsidP="00B05B59">One-time updation must be done by the Company for the first time, thereafter any changes to be updated by selection YES in the pop-up question.
+w14:paraId="682B3C1D" w14:textId="38E4937D" w:rsidR="00BB3029" w:rsidRPr="00066A16" w:rsidRDefault="00BB3029" w:rsidP="00B05B59">Upon login, it should land on this page to update the details. Wherein a pop-up should display a question with a company detail displayed in the background. Is there any change in Company information with YES or NO. If selected YES, Company should be allowed to update the information and submit. If selected NO, Company should be directed to application creation i.e. 5.3.
+w14:paraId="773B13AE" w14:textId="5C1BADFB" w:rsidR="00066A16" w:rsidRPr="00BB3029" w:rsidRDefault="00066A16" w:rsidP="00B05B59">This question should Pop-up after the period of 7 days have passed post last login is done.
+w14:paraId="10079BCB" w14:textId="3E9FF8D6" w:rsidR="0075017F" w:rsidRDefault="0075017F" w:rsidP="0075017F">Application Creation
+w14:paraId="434686C9" w14:textId="667086B0" w:rsidR="0075017F" w:rsidRDefault="0075017F" w:rsidP="0075017F">Application Type Selection
+w14:paraId="16E61AC2" w14:textId="77777777" w:rsidR="0075017F" w:rsidRPr="0075017F" w:rsidRDefault="0075017F" w:rsidP="0075017F">Company shall:
+w14:paraId="149D3555" w14:textId="562677C4" w:rsidR="0075017F" w:rsidRPr="0075017F" w:rsidRDefault="0075017F" w:rsidP="00B05B59">Select Type of Application → Dropdown:
+w14:paraId="6E13C1D6" w14:textId="77777777" w:rsidR="0075017F" w:rsidRPr="0075017F" w:rsidRDefault="0075017F" w:rsidP="00B05B59">Preferential Share
+w14:paraId="07002548" w14:textId="2C0EB394" w:rsidR="0075017F" w:rsidRPr="0075017F" w:rsidRDefault="0075017F" w:rsidP="00B05B59">Select Type of Approval Required → Dropdown:
+w14:paraId="2BA2FC6C" w14:textId="27389797" w:rsidR="0075017F" w:rsidRPr="0075017F" w:rsidRDefault="0075017F" w:rsidP="00B05B59">In Principle Approval (IPA)
+w14:paraId="26BA76BB" w14:textId="77777777" w:rsidR="0075017F" w:rsidRPr="0075017F" w:rsidRDefault="0075017F" w:rsidP="00B05B59">Listing Approval
+w14:paraId="5A699FF3" w14:textId="77777777" w:rsidR="0075017F" w:rsidRPr="0075017F" w:rsidRDefault="0075017F" w:rsidP="00B05B59">Trading Approval
+w14:paraId="212A1A13" w14:textId="4659618B" w:rsidR="0075017F" w:rsidRPr="0075017F" w:rsidRDefault="0075017F" w:rsidP="00B05B59">Select Type of Securities→ Dropdown:
+w14:paraId="67371AD9" w14:textId="77777777" w:rsidR="0075017F" w:rsidRPr="0075017F" w:rsidRDefault="0075017F" w:rsidP="00B05B59">Equity
+w14:paraId="480DEFC4" w14:textId="67DB6C3A" w:rsidR="0075017F" w:rsidRDefault="00962D72" w:rsidP="00B05B59">Convertible Securities
+w14:paraId="0D2DBCD7" w14:textId="6E4C4347" w:rsidR="0075017F" w:rsidRDefault="0075017F" w:rsidP="00B05B59">Both
+w14:paraId="526CD814" w14:textId="52E9CD41" w:rsidR="001A2729" w:rsidRDefault="001A2729" w:rsidP="00B05B59">Others
+w14:paraId="59B4127C" w14:textId="09F6A194" w:rsidR="0075017F" w:rsidRPr="0075017F" w:rsidRDefault="0075017F" w:rsidP="00B05B59">If Convertible Securities and/or Others selected, then:
+w14:paraId="6C36088B" w14:textId="5E08BDA4" w:rsidR="0075017F" w:rsidRDefault="0075017F" w:rsidP="00B05B59">A Remark Field shall be enabled upto 50 characters for entering comments.
+w14:paraId="61C6FE98" w14:textId="680C27F8" w:rsidR="00F37FB6" w:rsidRDefault="00F37FB6" w:rsidP="00F37FB6">IPA Application 
+w14:paraId="598E2DD6" w14:textId="2D6DC5CB" w:rsidR="00CE147F" w:rsidRDefault="00F37FB6" w:rsidP="00B05B59">Fields for IPA application
+w14:paraId="51029969" w14:textId="03DAC52C" w:rsidR="00D607F2" w:rsidRDefault="00D607F2" w:rsidP="00D607F2">
+w14:paraId="20E158FF" w14:textId="01B3FB15" w:rsidR="003D6C4F" w:rsidRDefault="00F37FB6" w:rsidP="00D971C8">
+w14:paraId="65BBBB78" w14:textId="3FB75D72" w:rsidR="003D6C4F" w:rsidRDefault="00D607F2" w:rsidP="00D971C8">
+w14:paraId="08410C6E" w14:textId="18D2FE5F" w:rsidR="003D6C4F" w:rsidRDefault="00D607F2" w:rsidP="00D971C8">
+w14:paraId="3C4A3442" w14:textId="2BF4BF9A" w:rsidR="003D6C4F" w:rsidRDefault="00D607F2" w:rsidP="00D971C8">
+w14:paraId="575E9937" w14:textId="77777777" w:rsidR="00D971C8" w:rsidRDefault="00D971C8" w:rsidP="00D971C8">
+w14:paraId="2FBED4D5" w14:textId="21D2529F" w:rsidR="00D607F2" w:rsidRDefault="00D607F2" w:rsidP="00B05B59">Users should be able to save the draft application at any point
+w14:paraId="7A589CBD" w14:textId="1E4C1CA5" w:rsidR="00D607F2" w:rsidRPr="00DB6C02" w:rsidRDefault="00D607F2" w:rsidP="00B05B59">Draft would be deleted automatically after n number of days as defined in system
+w14:paraId="441A99CC" w14:textId="3BEAA177" w:rsidR="00D607F2" w:rsidRPr="00DB6C02" w:rsidRDefault="00D607F2" w:rsidP="00B05B59">There should be Admin tab / parameter in system to define n number.
+w14:paraId="7BB852A8" w14:textId="557DAD5F" w:rsidR="00FA32C8" w:rsidRPr="00DB6C02" w:rsidRDefault="00FA32C8" w:rsidP="00B05B59">The n number shall be 30 working days by default.
+w14:paraId="2C002701" w14:textId="274075A0" w:rsidR="00CE6C93" w:rsidRPr="00DB6C02" w:rsidRDefault="00B85A60" w:rsidP="00B05B59">These parameter modification rights should be given to Team Leader only
+w14:paraId="1C8BF6D6" w14:textId="77777777" w:rsidR="00B85A60" w:rsidRDefault="00B85A60" w:rsidP="00B85A60">
+w14:paraId="61EB6BAA" w14:textId="4517C7AE" w:rsidR="00D607F2" w:rsidRDefault="00D607F2" w:rsidP="00B05B59">Once User submits application
+w14:paraId="72865637" w14:textId="5293BA58" w:rsidR="00D607F2" w:rsidRDefault="00D607F2" w:rsidP="00B05B59">System should validate compulsory fields and values
+w14:paraId="5884ECEA" w14:textId="7DE92D50" w:rsidR="00D607F2" w:rsidRDefault="00D607F2" w:rsidP="00B05B59">If it gets validated, then it should submit to Maker, else should give appropriate error message.
+w14:paraId="3D70C72D" w14:textId="77777777" w:rsidR="00B85A60" w:rsidRDefault="00B85A60" w:rsidP="00B85A60">
+w14:paraId="17044AE0" w14:textId="46A9E313" w:rsidR="009D18DD" w:rsidRPr="009D18DD" w:rsidRDefault="009D18DD" w:rsidP="00B05B59">On submission by Company, system should assign case nos. for each application irrespective of type of application.
+w14:paraId="7AF4C7D3" w14:textId="2F991B20" w:rsidR="00FB6487" w:rsidRPr="00DC2CEA" w:rsidRDefault="009D18DD" w:rsidP="00B05B59">The case nos assigned should be unique, numerical and in sequential manner irrespective of application.
+w14:paraId="1A509A96" w14:textId="6AE69CBC" w:rsidR="008063D6" w:rsidRDefault="008063D6" w:rsidP="00B05B59">The format of case number should be YYYY0001. YYYY denotes year and balance digits should be numeric starting with 0001 up to 9999. 
+w14:paraId="2DAA8171" w14:textId="7BD8CB07" w:rsidR="008063D6" w:rsidRPr="00DC2CEA" w:rsidRDefault="00DC2CEA" w:rsidP="00B05B59">Every year YYYY should change, and the numeric digit balance should start with 0001 from the start of the new year.
+w14:paraId="3F598FFB" w14:textId="75BF602D" w:rsidR="00D607F2" w:rsidRDefault="00D607F2" w:rsidP="00B05B59">Multiple IPA applications should be allowed.
+w14:paraId="2C6B577E" w14:textId="4EF2AEDE" w:rsidR="005610DA" w:rsidRDefault="005610DA" w:rsidP="00B05B59">Based on the selection of 5.3.1 of application type, respective documents upload list should get auto populated for company’s action.
+w14:paraId="22C97AB4" w14:textId="4A23E58B" w:rsidR="00E374FE" w:rsidRDefault="00E374FE" w:rsidP="00B05B59">The system shall assign the application for processing/verification to Maker /Checker based on round robin to maintain the parity with provision for Manual Override at any stage.
+w14:paraId="2CE4A7AD" w14:textId="558295F6" w:rsidR="00CE6C93" w:rsidRPr="00DB6C02" w:rsidRDefault="000D208A" w:rsidP="00B05B59">There should be a provision to add/delete/upload the documents upload list. This provision should be given in admin tab and its rights should be given only to Team Leader.
+w14:paraId="639F7DCE" w14:textId="3AAD7EC2" w:rsidR="000D208A" w:rsidRDefault="000D208A" w:rsidP="00B05B59">The changed or modified document upload list shall be applicable for new applications received after modification whereas for existing applications, the old document upload list shall continue.
+w14:paraId="49AB1574" w14:textId="39305D68" w:rsidR="00087660" w:rsidRDefault="00087660" w:rsidP="00B05B59">Status of each application should be available to company as per status matrix.
+w14:paraId="3B141C7A" w14:textId="62B31027" w:rsidR="00F60F49" w:rsidRDefault="00F60F49" w:rsidP="00B05B59">Unless and until all the documents upload list is filled by way of upload and update, submission of application should not be allowed.
+w14:paraId="5924CF10" w14:textId="1FA8B16A" w:rsidR="0059316B" w:rsidRDefault="0059316B" w:rsidP="00B05B59">Once application is submitted or approved, it should get freeze/un-editable and no modification should be allowed.
+w14:paraId="2757AD73" w14:textId="485A9760" w:rsidR="0059316B" w:rsidRDefault="0059316B" w:rsidP="00B05B59">Modification should be allowed only when it is sent back to Company from Maker and additional remarks filed should be available whereby Company can put remarks regarding observation/corrections against each data point for which correction is asked by Maker and should be allowed to add attachments.
+w14:paraId="498E5FD0" w14:textId="0E8BF663" w:rsidR="00973454" w:rsidRDefault="00973454" w:rsidP="00B05B59">Comments and attachments uploaded while making application by the Company should continue to be displayed (and un-editable form) along with the revised comments made for observation /corrections for respective data point.
+w14:paraId="1E9AFBF0" w14:textId="4FD16002" w:rsidR="00BE66A1" w:rsidRDefault="000A7B5D" w:rsidP="00B05B59">Similarly, it can go from Team Leader to Checker to Maker to Company and vice versa. Accordingly, comments for observation/corrections against each data point for which correction is sought should be allowed to add attachments.
+w14:paraId="4CA78C16" w14:textId="4DFE1BB1" w:rsidR="00087660" w:rsidRDefault="00087660" w:rsidP="00B05B59">Audit trail should be maintained for all Observation remarks by Company.
+w14:paraId="00E59700" w14:textId="0BBB933F" w:rsidR="000A7B5D" w:rsidRDefault="000A7B5D" w:rsidP="00B05B59">Upon approval by Maker, Checker and Team leader, there should be a field to attach the approval note signed by the HOD. Attachment of approval notes is mandatory but can be uploaded immediately or after issuance of approval letter. In case, approval note is not attached, reminder should pop-up to the Maker as well as Team Leader.
+w14:paraId="6528961F" w14:textId="628A9E67" w:rsidR="00087660" w:rsidRDefault="00087660" w:rsidP="00B05B59">Company should be able to download Exchange approval letter for each stage of application.
+w14:paraId="2FB8D4F4" w14:textId="2AFD4063" w:rsidR="0059316B" w:rsidRDefault="0059316B" w:rsidP="0059316B">Listing Application 
+w14:paraId="727F9C30" w14:textId="77777777" w:rsidR="007424BE" w:rsidRDefault="007424BE" w:rsidP="00B05B59">Users should be able to save the draft application at any point
+w14:paraId="2497DB65" w14:textId="77777777" w:rsidR="007424BE" w:rsidRDefault="007424BE" w:rsidP="00B05B59">Draft would be deleted after n number of days as defined in system
+w14:paraId="70C87234" w14:textId="3A786012" w:rsidR="007424BE" w:rsidRPr="00FF20BF" w:rsidRDefault="007424BE" w:rsidP="00B05B59">There should be Admin tab / parameter in system to define n number.
+w14:paraId="54D21DCA" w14:textId="77777777" w:rsidR="007424BE" w:rsidRPr="00FF20BF" w:rsidRDefault="007424BE" w:rsidP="00B05B59">The n number shall be 30 working days by default.
+w14:paraId="1BCDB39D" w14:textId="478AD4AF" w:rsidR="007424BE" w:rsidRPr="00FF20BF" w:rsidRDefault="00B86401" w:rsidP="00B05B59">These parameter modification rights should be given to Team Leader only
+w14:paraId="740941EB" w14:textId="77777777" w:rsidR="00F877C1" w:rsidRDefault="00F877C1" w:rsidP="00F877C1">
+w14:paraId="3D7050B9" w14:textId="77777777" w:rsidR="007424BE" w:rsidRDefault="007424BE" w:rsidP="00B05B59">Once User submits application
+w14:paraId="18D59603" w14:textId="77777777" w:rsidR="007424BE" w:rsidRDefault="007424BE" w:rsidP="00B05B59">System should validate compulsory fields and values
+w14:paraId="54E8AB88" w14:textId="02534379" w:rsidR="007424BE" w:rsidRDefault="007424BE" w:rsidP="00B05B59">If it gets validated, then it should be submitted to Maker, else should give appropriate error message
+w14:paraId="110C746E" w14:textId="77777777" w:rsidR="00F877C1" w:rsidRDefault="00F877C1" w:rsidP="00F877C1">
+w14:paraId="4B48C94C" w14:textId="360C9926" w:rsidR="009D18DD" w:rsidRPr="009D18DD" w:rsidRDefault="009D18DD" w:rsidP="00B05B59">On submission by Company, system should assign case nos. for each application irrespective of type of application.
+w14:paraId="3887E4A9" w14:textId="422C409A" w:rsidR="005F2648" w:rsidRPr="00DC2CEA" w:rsidRDefault="005F2648" w:rsidP="00B05B59">The case nos assigned should be unique, numerical and in sequential manner irrespective of applications.
+w14:paraId="505C07D4" w14:textId="77777777" w:rsidR="005F2648" w:rsidRDefault="005F2648" w:rsidP="00B05B59">The format of case number should be YYYY0001. YYYY denotes year and balance digits should be numeric starting with 0001 up to 9999. 
+w14:paraId="787D1AF2" w14:textId="537C5342" w:rsidR="007424BE" w:rsidRPr="005F2648" w:rsidRDefault="005F2648" w:rsidP="00B05B59">Every year YYYY should change, and the numeric digit balance should start with 0001 from the start of the new year.
+w14:paraId="60CE6C3B" w14:textId="32C086D3" w:rsidR="0059316B" w:rsidRDefault="007424BE" w:rsidP="00B05B59">Multiple Listing Application should be allowed to be created under approved IPA application only. 
+w14:paraId="2019341B" w14:textId="1690BDC7" w:rsidR="00716729" w:rsidRDefault="00716729" w:rsidP="00B05B59">Approved IPA dropdown should be available which will have IPA case nos. which is approved.
+w14:paraId="130D2E27" w14:textId="504E153D" w:rsidR="0059316B" w:rsidRDefault="0059316B" w:rsidP="00B05B59">Before creating listing application, users should be allowed to select from approved IPA by IPA case nos.
+w14:paraId="35B12865" w14:textId="7E25A0A0" w:rsidR="00897365" w:rsidRDefault="00897365" w:rsidP="00B05B59">Multiple Listing applications should be allowed only from the approved IPA case nos.
+w14:paraId="65E39DEE" w14:textId="7D075CE2" w:rsidR="00464662" w:rsidRDefault="00464662" w:rsidP="00B05B59">If there are no approved listing applications, then system should not allow them to create trading applications.
+w14:paraId="5C438628" w14:textId="1DEBDB9C" w:rsidR="001E306D" w:rsidRDefault="001E306D" w:rsidP="00B05B59">Based on the selection of 5.3.1 of application type, respective documents upload list of Listing should get auto populated for company’s action.
+w14:paraId="16872276" w14:textId="071567B8" w:rsidR="00002077" w:rsidRDefault="00002077" w:rsidP="00B05B59">The system shall assign the application for processing /verification to Maker /Checker based on round robin to maintain the parity with provision for Manual Override at any stage.
+w14:paraId="3E8DC13D" w14:textId="7EE0330B" w:rsidR="00995BE8" w:rsidRDefault="00995BE8" w:rsidP="00B05B59">There should be a provision to add/delete/upload the documents upload list. This provision should be given in Admin tab, and its rights should be given only to Team Leader.
+w14:paraId="5F3B1B86" w14:textId="77777777" w:rsidR="00995BE8" w:rsidRDefault="00995BE8" w:rsidP="00B05B59">The changed or modified document upload list shall be applicable for new applications received after modification whereas for existing applications, the old document upload list shall continue.
+w14:paraId="6E5BEA48" w14:textId="77777777" w:rsidR="002E07F9" w:rsidRDefault="002E07F9" w:rsidP="00B05B59">Status of each application should be available to company as per status matrix.
+w14:paraId="5737BA4D" w14:textId="77777777" w:rsidR="002E07F9" w:rsidRDefault="002E07F9" w:rsidP="00B05B59">Unless and until all the documents upload list is filled by way of upload and update, submission of application should not be allowed.
+w14:paraId="0FF2F66A" w14:textId="77777777" w:rsidR="002E07F9" w:rsidRDefault="002E07F9" w:rsidP="00B05B59">Once application is submitted or approved, it should get freeze/un-editable and no modification should be allowed.
+w14:paraId="76E3FD32" w14:textId="77777777" w:rsidR="002E07F9" w:rsidRDefault="002E07F9" w:rsidP="00B05B59">Modification should be allowed only when it is sent back to Company from Maker and additional remarks filed should be available whereby Company can put remarks regarding observation/corrections against each data point for which correction is asked by Maker and should be allowed to add attachments.
+w14:paraId="23756C50" w14:textId="77777777" w:rsidR="002E07F9" w:rsidRDefault="002E07F9" w:rsidP="00B05B59">Comments and attachments uploaded while making application by the Company should continue to be displayed (and un-editable form) along with the revised comments made for observation /corrections for respective data point.
+w14:paraId="6AC90A5B" w14:textId="77777777" w:rsidR="002E07F9" w:rsidRDefault="002E07F9" w:rsidP="00B05B59">Similarly, it can go from Team Leader to Checker to Maker to Company and vice versa. Accordingly, comments for observation/corrections against each data point for which correction is sought should be allowed to add attachments.
+w14:paraId="3D9F4855" w14:textId="77777777" w:rsidR="002E07F9" w:rsidRDefault="002E07F9" w:rsidP="00B05B59">Audit trail should be maintained for all Observation remarks by Company.
+w14:paraId="22A6C7B6" w14:textId="38796248" w:rsidR="002E07F9" w:rsidRDefault="002E07F9" w:rsidP="00B05B59">Upon approval by Maker, Checker and Team leader, there should be a field to attach the approval note signed by the HOD. Attachment of approval notes is mandatory but can be uploaded immediately or after issuance of approval letter. In case approval note not attached, reminder should pop-up to the Maker as well as Team Leader.
+w14:paraId="446EEBE1" w14:textId="73485AFE" w:rsidR="002E07F9" w:rsidRDefault="002E07F9" w:rsidP="00B05B59">Company should be able to download Exchange approval letter for each application.
+w14:paraId="113359DE" w14:textId="77777777" w:rsidR="001E306D" w:rsidRDefault="001E306D" w:rsidP="00995BE8">
+w14:paraId="2B2FCBD3" w14:textId="57C0232F" w:rsidR="008C75D2" w:rsidRDefault="008C75D2" w:rsidP="00B05B59">Fields and documents for Listing Application
+w14:paraId="365B25E4" w14:textId="62A5B76C" w:rsidR="008C75D2" w:rsidRDefault="008C75D2" w:rsidP="008C75D2">
+w14:paraId="78235F07" w14:textId="4D6EF93E" w:rsidR="00716729" w:rsidRDefault="008C75D2" w:rsidP="008C75D2">
+w14:paraId="2288D1A0" w14:textId="77777777" w:rsidR="00D607F2" w:rsidRDefault="00D607F2" w:rsidP="00D971C8">
+w14:paraId="27FEB1BB" w14:textId="22A76A67" w:rsidR="0059316B" w:rsidRDefault="008C75D2" w:rsidP="00D971C8">
+w14:paraId="5542D4A2" w14:textId="77777777" w:rsidR="0059316B" w:rsidRDefault="0059316B" w:rsidP="00D971C8">
+w14:paraId="4C53288C" w14:textId="26136EEC" w:rsidR="0059316B" w:rsidRDefault="00E72836" w:rsidP="00D971C8">
+w14:paraId="569556CC" w14:textId="662054FA" w:rsidR="00E72836" w:rsidRDefault="00E72836" w:rsidP="00D971C8">
+w14:paraId="18AEEE9A" w14:textId="77777777" w:rsidR="0059316B" w:rsidRDefault="0059316B" w:rsidP="00D971C8">
+w14:paraId="6BAA4271" w14:textId="77777777" w:rsidR="0059316B" w:rsidRDefault="0059316B" w:rsidP="00D971C8">
+w14:paraId="21D85407" w14:textId="025E4813" w:rsidR="00017C9D" w:rsidRDefault="00017C9D" w:rsidP="00B05B59">Additional Fields for Listing Application
+w14:paraId="0B21E9CF" w14:textId="77777777" w:rsidR="003A72B0" w:rsidRPr="00D250D9" w:rsidRDefault="003A72B0" w:rsidP="00B05B59">Board Approval Date
+w14:paraId="2F135AFB" w14:textId="5376F686" w:rsidR="003A72B0" w:rsidRPr="00D250D9" w:rsidRDefault="003A72B0" w:rsidP="00B05B59">Relevant Date (This date should be 30 days prior to Shareholding AGM /EOGM/Postal Ballot).
+w14:paraId="14960C2E" w14:textId="4A21CD13" w:rsidR="003A72B0" w:rsidRPr="00D250D9" w:rsidRDefault="003A72B0" w:rsidP="00B05B59">Lock-In Start:
+w14:paraId="5B5DEEA4" w14:textId="5F0C76A0" w:rsidR="003A72B0" w:rsidRPr="00D250D9" w:rsidRDefault="003A72B0" w:rsidP="00B05B59">Lock-in End:
+w14:paraId="3D98F0AE" w14:textId="77777777" w:rsidR="003A72B0" w:rsidRPr="00D250D9" w:rsidRDefault="003A72B0" w:rsidP="00B05B59">Nos of Promoters 
+w14:paraId="2F561AA7" w14:textId="77777777" w:rsidR="003A72B0" w:rsidRPr="00D250D9" w:rsidRDefault="003A72B0" w:rsidP="00B05B59">Nos of Shares allotted to Promoters 
+w14:paraId="15495189" w14:textId="50FE3209" w:rsidR="003A72B0" w:rsidRPr="00D250D9" w:rsidRDefault="003A72B0" w:rsidP="00B05B59">Nos of non-promoters 
+w14:paraId="38C9B895" w14:textId="1A36D943" w:rsidR="003A72B0" w:rsidRPr="00D250D9" w:rsidRDefault="003A72B0" w:rsidP="00B05B59">Nos of Shares allotted to non-promoters 
+w14:paraId="2DBAEE5E" w14:textId="77777777" w:rsidR="003A72B0" w:rsidRPr="00D250D9" w:rsidRDefault="003A72B0" w:rsidP="00B05B59">Offer price
+w14:paraId="77575580" w14:textId="2AE75E4B" w:rsidR="003A72B0" w:rsidRPr="00D250D9" w:rsidRDefault="003A72B0" w:rsidP="00B05B59">Minimum issue price
+w14:paraId="6C780908" w14:textId="77777777" w:rsidR="003A72B0" w:rsidRPr="00D250D9" w:rsidRDefault="003A72B0" w:rsidP="00B05B59">Face value
+w14:paraId="68993F55" w14:textId="692965C8" w:rsidR="00CF2325" w:rsidRPr="00D250D9" w:rsidRDefault="00CF2325" w:rsidP="00B05B59">Date of Application field needs to be added. This date should be auto captured, and this date should be the date of submitting the online application to the Exchange.
+w14:paraId="5A1F82EF" w14:textId="6C7770E7" w:rsidR="00CF2325" w:rsidRPr="00D250D9" w:rsidRDefault="00CF2325" w:rsidP="00B05B59">Calculate the nos of days from the date of allotment of shares and Date of Application mentioned in point 1. As per the regulation, application for listing should be made within 20 calendar days from the date of allotment of shares. 
+w14:paraId="2B6F5193" w14:textId="26B7D323" w:rsidR="00CF2325" w:rsidRPr="00D250D9" w:rsidRDefault="00CF2325" w:rsidP="00B05B59">Field required to capture the nos of days. In case there is a delay of more than 20 days, additional field required to capture the remark. This calculation should be automated, and pop-up should be displayed informing the delay and penalty applicable.
+w14:paraId="0D8C98C3" w14:textId="03172EE9" w:rsidR="00CC586B" w:rsidRPr="00D250D9" w:rsidRDefault="00CC586B" w:rsidP="00B05B59">No of Securities issued (mentioned in above table Details of outstanding convertible Securities) should be auto fetched from IPA tab.
+w14:paraId="2BB1C557" w14:textId="240C9C29" w:rsidR="00FA6BEB" w:rsidRPr="00D250D9" w:rsidRDefault="00FA6BEB" w:rsidP="00B05B59">No of Securities already converted (mentioned in above table Details of outstanding convertible Securities). These details are pertaining to listing application already submitted earlier whether approved or not for the respective IPA. This data should be auto fetched, which is total qty of listing application already submitted earlier irrespective of its status.
+w14:paraId="658454AF" w14:textId="05BCDDF1" w:rsidR="00E74F93" w:rsidRPr="00D250D9" w:rsidRDefault="00E74F93" w:rsidP="00B05B59">No of Securities outstanding as on date (mentioned in above table Details of outstanding convertible Securities). This figure should be derived after deducting point no.8 from point no.7.
+w14:paraId="36FF9050" w14:textId="43EBAB41" w:rsidR="00FA6BEB" w:rsidRPr="00D250D9" w:rsidRDefault="00FA6BEB" w:rsidP="00B05B59">No of Securities to be converted present application (mentioned in above table Details of outstanding convertible Securities). This details has to be manually entered into the system.
+w14:paraId="63AFCFA1" w14:textId="1881A55A" w:rsidR="00E74F93" w:rsidRPr="00D250D9" w:rsidRDefault="00E74F93" w:rsidP="00B05B59">System should not allow to input qty greater than qty outstanding qty as on date
+w14:paraId="31F8DF19" w14:textId="49DCC31D" w:rsidR="00FA6BEB" w:rsidRPr="00D250D9" w:rsidRDefault="00FA6BEB" w:rsidP="00B05B59">Data points mentioned in the Details of new shares issued, issued &amp; paid-up capital needs to be manually updated.
+w14:paraId="37E75637" w14:textId="206F6E4B" w:rsidR="001776F4" w:rsidRDefault="001776F4" w:rsidP="001776F4">Trading Application 
+w14:paraId="40E34E7A" w14:textId="249ACCB7" w:rsidR="001776F4" w:rsidRDefault="001776F4" w:rsidP="00B05B59">Trading Application should be allowed to be created under approved Listing application only. 
+w14:paraId="6B4677A2" w14:textId="20656949" w:rsidR="001776F4" w:rsidRDefault="001776F4" w:rsidP="00B05B59">Approved listing application dropdown should be available which will have listing application no. which is approved.
+w14:paraId="09686F7A" w14:textId="7F0BD340" w:rsidR="001776F4" w:rsidRDefault="001776F4" w:rsidP="00B05B59">Before creating trading applications, users should be allowed to select approved listing application numbers.
+w14:paraId="087D7331" w14:textId="394EB17F" w:rsidR="00464662" w:rsidRDefault="00464662" w:rsidP="00B05B59">If there are no approved listing applications, then system should not allow to create trading applications
+w14:paraId="0D4E732E" w14:textId="7F16DA5D" w:rsidR="007045FE" w:rsidRDefault="007045FE" w:rsidP="00B05B59">Fields for Trading Application
+w14:paraId="62BDB5D9" w14:textId="3846FE6E" w:rsidR="007045FE" w:rsidRPr="006A641C" w:rsidRDefault="007045FE" w:rsidP="002B0C3E">
+w14:paraId="448C944D" w14:textId="77777777" w:rsidR="0059316B" w:rsidRPr="006A641C" w:rsidRDefault="0059316B" w:rsidP="00D971C8">
+w14:paraId="5B41A2C4" w14:textId="77777777" w:rsidR="002B0C3E" w:rsidRPr="006A641C" w:rsidRDefault="002B0C3E" w:rsidP="00B05B59">Users should be able to save the draft application at any point
+w14:paraId="000E149F" w14:textId="77777777" w:rsidR="002B0C3E" w:rsidRPr="006A641C" w:rsidRDefault="002B0C3E" w:rsidP="00B05B59">Draft would be deleted after n number of days as defined in system
+w14:paraId="3739BBF4" w14:textId="51504050" w:rsidR="002B0C3E" w:rsidRPr="006A641C" w:rsidRDefault="002B0C3E" w:rsidP="00B05B59">There should be Admin tab / parameter in system to define n number.
+w14:paraId="3CEC4F37" w14:textId="77777777" w:rsidR="002B0C3E" w:rsidRPr="006A641C" w:rsidRDefault="002B0C3E" w:rsidP="00B05B59">The n number shall be 30 working days by default.
+w14:paraId="50A7D4B6" w14:textId="77777777" w:rsidR="002B0C3E" w:rsidRPr="006A641C" w:rsidRDefault="002B0C3E" w:rsidP="00B05B59">This parameter modification rights should be given to Team Leader only
+w14:paraId="51981AE4" w14:textId="77777777" w:rsidR="002B0C3E" w:rsidRPr="006A641C" w:rsidRDefault="002B0C3E" w:rsidP="00B05B59">Once User submits application
+w14:paraId="534C6F53" w14:textId="77777777" w:rsidR="002B0C3E" w:rsidRPr="006A641C" w:rsidRDefault="002B0C3E" w:rsidP="00B05B59">System should validate compulsory fields and values
+w14:paraId="36579C78" w14:textId="77777777" w:rsidR="002B0C3E" w:rsidRPr="006A641C" w:rsidRDefault="002B0C3E" w:rsidP="00B05B59">If it gets validated, then should submit to Maker, else should give appropriate error message
+w14:paraId="2A7E23B7" w14:textId="3AA1EC96" w:rsidR="009D18DD" w:rsidRPr="009D18DD" w:rsidRDefault="009D18DD" w:rsidP="00B05B59">On submission by Company, system should assign case nos. for each application irrespective of type of application.
+w14:paraId="2971A303" w14:textId="2F4ECD04" w:rsidR="00F6786E" w:rsidRPr="00DC2CEA" w:rsidRDefault="00F6786E" w:rsidP="00B05B59">The case nos assigned should be unique, numerical and in sequential manner irrespective of applications.
+w14:paraId="07877F70" w14:textId="77777777" w:rsidR="00F6786E" w:rsidRDefault="00F6786E" w:rsidP="00B05B59">The format of case number should be YYYY0001. YYYY denotes year and balance digits should be numeric starting with 0001 up to 9999. 
+w14:paraId="44547C0B" w14:textId="7847EEB3" w:rsidR="002B0C3E" w:rsidRPr="00F6786E" w:rsidRDefault="00F6786E" w:rsidP="00B05B59">Every year YYYY should change, and the numeric digit balance should start with 0001 from the start of the new year.
+w14:paraId="782795A6" w14:textId="10733126" w:rsidR="002B0C3E" w:rsidRPr="006A641C" w:rsidRDefault="006A641C" w:rsidP="00B05B59">Single Trading application could be created under and each approved Listing application.
+w14:paraId="21A4F179" w14:textId="77777777" w:rsidR="002B0C3E" w:rsidRDefault="002B0C3E" w:rsidP="00B05B59">Based on the selection of 5.3.1 of application type, respective documents upload list should get auto populated for company’s action.
+w14:paraId="5A2897DA" w14:textId="77C4D5A7" w:rsidR="00002077" w:rsidRPr="006A641C" w:rsidRDefault="00002077" w:rsidP="00B05B59">The system shall assign the application for processing/verification to Maker /Checker based on round robin to maintain the parity with provision for Manual Override at any stage.
+w14:paraId="4FD085A6" w14:textId="3A24766C" w:rsidR="002B0C3E" w:rsidRPr="006A641C" w:rsidRDefault="002B0C3E" w:rsidP="00B05B59">There should be a provision to add/delete/upload the documents upload list. This provision should be given in Admin tab and its rights should be given only to Team Leader.
+w14:paraId="0DA41137" w14:textId="77777777" w:rsidR="002B0C3E" w:rsidRPr="006A641C" w:rsidRDefault="002B0C3E" w:rsidP="00B05B59">The changed or modified document upload list shall be applicable for new applications received after modification whereas for existing applications, the old document upload list shall continue.
+w14:paraId="6A3531A3" w14:textId="77777777" w:rsidR="002B0C3E" w:rsidRPr="006A641C" w:rsidRDefault="002B0C3E" w:rsidP="00B05B59">Status of each application should be available to company as per status matrix.
+w14:paraId="15BE1F12" w14:textId="77777777" w:rsidR="002B0C3E" w:rsidRPr="006A641C" w:rsidRDefault="002B0C3E" w:rsidP="00B05B59">Unless and until all the documents upload list is filled by way of upload and update, submission of application should not be allowed.
+w14:paraId="39BABBBF" w14:textId="77777777" w:rsidR="002B0C3E" w:rsidRPr="006A641C" w:rsidRDefault="002B0C3E" w:rsidP="00B05B59">Once application is submitted or approved, it should get freeze/un-editable and no modification should be allowed.
+w14:paraId="4BC16FCB" w14:textId="77777777" w:rsidR="002B0C3E" w:rsidRPr="006A641C" w:rsidRDefault="002B0C3E" w:rsidP="00B05B59">Modification should be allowed only when it is sent back to Company from Maker and additional remarks filed should be available whereby Company can put remarks regarding observation/corrections against each data point for which correction is asked by Maker and should be allowed to add attachments.
+w14:paraId="55EC0E77" w14:textId="77777777" w:rsidR="006A641C" w:rsidRPr="006A641C" w:rsidRDefault="006A641C" w:rsidP="00B05B59">Audit trail should be maintained for all Observation remarks by Company
+w14:paraId="56EA9DAE" w14:textId="77777777" w:rsidR="002B0C3E" w:rsidRPr="006A641C" w:rsidRDefault="002B0C3E" w:rsidP="00B05B59">Comments and attachments uploaded while making application by the Company should continue to be displayed (and un-editable form) along with the revised comments made for observation /corrections for respective data point.
+w14:paraId="01AFFB60" w14:textId="77777777" w:rsidR="002B0C3E" w:rsidRPr="006A641C" w:rsidRDefault="002B0C3E" w:rsidP="00B05B59">Similarly, it can go from Team Leader to Checker to Maker to Company and vice versa. Accordingly, comments for observation/corrections against each data point for which correction is sought should be allowed to add attachments.
+w14:paraId="7BDEB451" w14:textId="5A7E0450" w:rsidR="002B0C3E" w:rsidRPr="00F527BD" w:rsidRDefault="002B0C3E" w:rsidP="00B05B59">Upon approval by Maker, Checker and Team leader, there should be a field to attach the approval note signed by the HOD. Attachment of approval notes is mandatory but can be uploaded immediately or after issuance of approval letter. In case, approval note is not attached, reminder should pop-up to the Maker as well as Team Leader.
+w14:paraId="29B88741" w14:textId="77777777" w:rsidR="002B0C3E" w:rsidRPr="00F527BD" w:rsidRDefault="002B0C3E" w:rsidP="00B05B59">Company should be able to download Exchange approval letter for each application.
+w14:paraId="7F195E13" w14:textId="38D9BB8F" w:rsidR="003034AA" w:rsidRDefault="003034AA" w:rsidP="003034AA">Maker/Checker concept
+w14:paraId="5A8F4164" w14:textId="48173FF8" w:rsidR="003034AA" w:rsidRDefault="003034AA" w:rsidP="00B05B59">System should allow Team Leader to create modify and delete Maker/Checker.
+w14:paraId="7B9F1D55" w14:textId="77777777" w:rsidR="00BE25EB" w:rsidRPr="00BE25EB" w:rsidRDefault="003034AA" w:rsidP="00B05B59">Same person can have role of Maker and Checker, however for a particular application if a person is Maker, then he cannot be Checker for that particular application. 
+w14:paraId="6AC91E0D" w14:textId="432C2799" w:rsidR="003034AA" w:rsidRDefault="00BE25EB" w:rsidP="00B05B59">The system shall implement a combined allocation logic wherein tasks are assigned based on round robin to maintain the parity with provision for Manual Override at any stage.
+w14:paraId="3E541563" w14:textId="68199BB1" w:rsidR="002415E1" w:rsidRDefault="002415E1" w:rsidP="002415E1">Maker Module
+w14:paraId="484A7806" w14:textId="77777777" w:rsidR="002415E1" w:rsidRPr="002415E1" w:rsidRDefault="002415E1" w:rsidP="002415E1">Feature
+w14:paraId="6BEB4B34" w14:textId="77777777" w:rsidR="002415E1" w:rsidRPr="002415E1" w:rsidRDefault="002415E1" w:rsidP="002415E1">Description
+w14:paraId="6D4A9E92" w14:textId="77777777" w:rsidR="002415E1" w:rsidRPr="002415E1" w:rsidRDefault="002415E1" w:rsidP="002415E1">Load-Based Assignment
+w14:paraId="62B228E5" w14:textId="537E3AFC" w:rsidR="002415E1" w:rsidRPr="002415E1" w:rsidRDefault="002415E1" w:rsidP="002415E1">Auto on basis of no. of application pending with Maker
+w14:paraId="5A497C93" w14:textId="77777777" w:rsidR="002415E1" w:rsidRPr="002415E1" w:rsidRDefault="002415E1" w:rsidP="002415E1">Verification
+w14:paraId="503D0179" w14:textId="77777777" w:rsidR="002415E1" w:rsidRPr="002415E1" w:rsidRDefault="002415E1" w:rsidP="002415E1">Document &amp; data
+w14:paraId="56574708" w14:textId="77777777" w:rsidR="002415E1" w:rsidRPr="002415E1" w:rsidRDefault="002415E1" w:rsidP="002415E1">Remarks
+w14:paraId="6D4CE48E" w14:textId="59D01BA8" w:rsidR="002415E1" w:rsidRPr="002415E1" w:rsidRDefault="002415E1" w:rsidP="002415E1">Field-wise 
+w14:paraId="3DFBB038" w14:textId="77777777" w:rsidR="002415E1" w:rsidRPr="002415E1" w:rsidRDefault="002415E1" w:rsidP="002415E1">Forwarding
+w14:paraId="7BA41CDF" w14:textId="77777777" w:rsidR="002415E1" w:rsidRPr="002415E1" w:rsidRDefault="002415E1" w:rsidP="002415E1">To Checker/Company
+w14:paraId="7E5CF61B" w14:textId="77777777" w:rsidR="002415E1" w:rsidRPr="002415E1" w:rsidRDefault="002415E1" w:rsidP="002415E1">Letter Upload
+w14:paraId="4F5A5B8D" w14:textId="77777777" w:rsidR="002415E1" w:rsidRPr="002415E1" w:rsidRDefault="002415E1" w:rsidP="002415E1">Post-HOD
+w14:paraId="20DEEE70" w14:textId="77777777" w:rsidR="002415E1" w:rsidRDefault="002415E1" w:rsidP="002415E1"/>
+w14:paraId="0C80DB21" w14:textId="195A5FA3" w:rsidR="00A5175D" w:rsidRDefault="00A5175D" w:rsidP="00B05B59">For every check point, upon verification the Maker selects: OK or OBSERVATION from the dropdown.
+w14:paraId="672AD0D3" w14:textId="57FEB369" w:rsidR="00A5175D" w:rsidRPr="00A5175D" w:rsidRDefault="00A5175D" w:rsidP="00B05B59">If observation is selected the other fields should be enabled to write the observation/maker’s comment.
+w14:paraId="25BC0CA4" w14:textId="2F7858B1" w:rsidR="00A5175D" w:rsidRDefault="00A5175D" w:rsidP="00B05B59">In case, there is OBSERVATION for any of the check points, then upon submission application should be sent to Company for correction, else to Checker for further verification
+w14:paraId="7B40F97F" w14:textId="0C688ECD" w:rsidR="0014246D" w:rsidRDefault="0014246D" w:rsidP="00B05B59">Audit trail should be maintained for all Observation remarks by HOD/ Team Leader.
+w14:paraId="623093AB" w14:textId="7AF1952D" w:rsidR="003034AA" w:rsidRDefault="003034AA" w:rsidP="00F22B5B">Checker Module
+w14:paraId="7C9DF8C9" w14:textId="77777777" w:rsidR="003034AA" w:rsidRPr="002415E1" w:rsidRDefault="003034AA" w:rsidP="00035795">Feature
+w14:paraId="535E25EA" w14:textId="77777777" w:rsidR="003034AA" w:rsidRPr="002415E1" w:rsidRDefault="003034AA" w:rsidP="00035795">Description
+w14:paraId="289070E3" w14:textId="77777777" w:rsidR="003034AA" w:rsidRPr="002415E1" w:rsidRDefault="003034AA" w:rsidP="00035795">Load-Based Assignment
+w14:paraId="484778E0" w14:textId="366C6F27" w:rsidR="003034AA" w:rsidRPr="002415E1" w:rsidRDefault="003034AA" w:rsidP="00035795">Auto on basis of no. of application pending with Checker
+w14:paraId="699A9162" w14:textId="26F87A36" w:rsidR="003034AA" w:rsidRPr="002415E1" w:rsidRDefault="003034AA" w:rsidP="00035795">Secondary Review
+w14:paraId="69C85935" w14:textId="77777777" w:rsidR="003034AA" w:rsidRPr="002415E1" w:rsidRDefault="003034AA" w:rsidP="00035795">Document &amp; data
+w14:paraId="6727A5DD" w14:textId="77777777" w:rsidR="003034AA" w:rsidRPr="002415E1" w:rsidRDefault="003034AA" w:rsidP="00035795">Remarks
+w14:paraId="7712F1E3" w14:textId="77777777" w:rsidR="003034AA" w:rsidRPr="002415E1" w:rsidRDefault="003034AA" w:rsidP="00035795">Field-wise 
+w14:paraId="3ED89C48" w14:textId="77777777" w:rsidR="003034AA" w:rsidRPr="002415E1" w:rsidRDefault="003034AA" w:rsidP="00035795">Forwarding
+w14:paraId="16F050D3" w14:textId="072D6720" w:rsidR="003034AA" w:rsidRPr="002415E1" w:rsidRDefault="003034AA" w:rsidP="00035795">To Maker/Team Leader
+w14:paraId="2ADA2BE3" w14:textId="77777777" w:rsidR="003034AA" w:rsidRPr="002415E1" w:rsidRDefault="003034AA" w:rsidP="00035795">Letter Upload
+w14:paraId="0ED275D0" w14:textId="77777777" w:rsidR="003034AA" w:rsidRPr="002415E1" w:rsidRDefault="003034AA" w:rsidP="00035795">Post-HOD
+w14:paraId="4F4C280D" w14:textId="77777777" w:rsidR="003034AA" w:rsidRDefault="003034AA" w:rsidP="003034AA"/>
+w14:paraId="64C0B288" w14:textId="10507718" w:rsidR="00430A97" w:rsidRPr="00954D7F" w:rsidRDefault="00430A97" w:rsidP="00B05B59">For every checklist point, upon verification the Checker selects: OK or OBSERVATION from the dropdown.
+w14:paraId="4F8DEE3C" w14:textId="75C53AF3" w:rsidR="00430A97" w:rsidRPr="00954D7F" w:rsidRDefault="00430A97" w:rsidP="00B05B59">If observation is selected the other fields should be enabled to write the observation/checker comment.
+w14:paraId="12F9640B" w14:textId="36EF39CB" w:rsidR="00430A97" w:rsidRPr="00954D7F" w:rsidRDefault="00430A97" w:rsidP="00B05B59">In case, there is OBSERVATION for any of the check points, then upon submission application should be sent to Maker for correction, else to HOD for Final approval
+w14:paraId="05260375" w14:textId="1C2260CF" w:rsidR="0014246D" w:rsidRPr="00954D7F" w:rsidRDefault="0014246D" w:rsidP="00B05B59">Audit trail should be maintained for all Observation remarks by HOD/Team Leader
+w14:paraId="61B202E5" w14:textId="77777777" w:rsidR="0014246D" w:rsidRDefault="0014246D" w:rsidP="0014246D">
+w14:paraId="61BE1ADD" w14:textId="602550B8" w:rsidR="003034AA" w:rsidRDefault="003034AA" w:rsidP="00F22B5B">HOD/Team Leader Module
+w14:paraId="76F1EF50" w14:textId="77777777" w:rsidR="00F22B5B" w:rsidRPr="00F22B5B" w:rsidRDefault="00F22B5B" w:rsidP="00F22B5B"/>
+w14:paraId="551976A3" w14:textId="77777777" w:rsidR="003034AA" w:rsidRPr="002415E1" w:rsidRDefault="003034AA" w:rsidP="00035795">Feature
+w14:paraId="4CE929B3" w14:textId="77777777" w:rsidR="003034AA" w:rsidRPr="002415E1" w:rsidRDefault="003034AA" w:rsidP="00035795">Description
+w14:paraId="0EB77EFC" w14:textId="041F2EF6" w:rsidR="003034AA" w:rsidRPr="002415E1" w:rsidRDefault="003034AA" w:rsidP="00E976CC">Review
+w14:paraId="308F43D8" w14:textId="77777777" w:rsidR="003034AA" w:rsidRPr="002415E1" w:rsidRDefault="003034AA" w:rsidP="00E976CC">Document &amp; data
+w14:paraId="0EDA88A3" w14:textId="77777777" w:rsidR="003034AA" w:rsidRPr="002415E1" w:rsidRDefault="003034AA" w:rsidP="00E976CC">Remarks
+w14:paraId="70B89F2B" w14:textId="4743F70A" w:rsidR="003034AA" w:rsidRPr="002415E1" w:rsidRDefault="003034AA" w:rsidP="00E976CC">Field-wise
+w14:paraId="42A81C6B" w14:textId="77777777" w:rsidR="003034AA" w:rsidRPr="002415E1" w:rsidRDefault="003034AA" w:rsidP="00E976CC">Forwarding
+w14:paraId="0611DB63" w14:textId="77777777" w:rsidR="003034AA" w:rsidRDefault="003034AA" w:rsidP="00E976CC">To Checker/Final Approval
+w14:paraId="46570844" w14:textId="3F7509A9" w:rsidR="00954D7F" w:rsidRPr="002415E1" w:rsidRDefault="00954D7F" w:rsidP="00E976CC">To Team Leader /Final Approval
+w14:paraId="522DE52D" w14:textId="77777777" w:rsidR="003034AA" w:rsidRPr="002415E1" w:rsidRDefault="003034AA" w:rsidP="00E976CC">Letter Upload
+w14:paraId="45BDC3B8" w14:textId="6DD64221" w:rsidR="003034AA" w:rsidRPr="002415E1" w:rsidRDefault="003034AA" w:rsidP="00E976CC">Post-HOD Approval
+w14:paraId="2E432A64" w14:textId="77777777" w:rsidR="003034AA" w:rsidRDefault="003034AA" w:rsidP="003034AA"/>
+w14:paraId="64052E07" w14:textId="2341E8C4" w:rsidR="00FB6DC7" w:rsidRDefault="00954D7F" w:rsidP="00B05B59">Team Leader should be able to reassign the application from one maker/checker to another maker/checker.
+w14:paraId="15B8B576" w14:textId="17B5C102" w:rsidR="00653E53" w:rsidRDefault="00653E53" w:rsidP="00B05B59">There should be a drop down to select APPROVED or OBSERVATION.
+w14:paraId="2F565F33" w14:textId="3CB6D18E" w:rsidR="00653E53" w:rsidRDefault="00653E53" w:rsidP="00B05B59">If selected APPROVED, it denotes that the application is finally approved and letter and approval note should be uploaded.
+w14:paraId="3BC4A7AF" w14:textId="36B19ED5" w:rsidR="00653E53" w:rsidRPr="00954D7F" w:rsidRDefault="00653E53" w:rsidP="00B05B59">If selected OBSERVATION, a field should get enabled to mention the remark and by default it will go back to Checker, then he may forward to Maker and Maker to Company if required. Similarly, it will be received back upon clarifying the observation for approval.
+w14:paraId="645E082A" w14:textId="5568453C" w:rsidR="0014246D" w:rsidRPr="00386E97" w:rsidRDefault="0014246D" w:rsidP="00B05B59">Audit trail should be maintained for all Observation remarks by HOD/Team Leader.
+w14:paraId="4C6A9D16" w14:textId="7C2C8A4D" w:rsidR="00954D7F" w:rsidRPr="00386E97" w:rsidRDefault="00954D7F" w:rsidP="00B05B59">The role of HOD and Team Leader will be same.
+w14:paraId="7E6C6A7B" w14:textId="3D482BB6" w:rsidR="006129BD" w:rsidRDefault="006129BD" w:rsidP="006129BD">User Role and Access
+w14:paraId="2EBC499B" w14:textId="77777777" w:rsidR="00224102" w:rsidRPr="00224102" w:rsidRDefault="00224102" w:rsidP="00224102"/>
+w14:paraId="2B42C6AE" w14:textId="5F8EF002" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="00FC4B94" w:rsidP="006129BD">Team Leader (HOD) – Has full system access and authority to assign or reassign the applications for processing or verification to Checker or Makers. Furthermore, entire access of admin tab wherein he/she can incorporate changes.
+w14:paraId="3BCCC8EB" w14:textId="3CD644CA" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="006129BD">Maker – Responsible for processing and reviewing documents submitted by the company and uploading approval letters as well as Approval Note post approval.
+w14:paraId="3A44B2B1" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="006129BD">Checker – Reviews and verifies the application after processing by the Maker.
+w14:paraId="7888098A" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="006129BD">(Database for adding officials name as Makers and Checkers for allocation of cases for processing and/or verification.) 
+w14:paraId="15E2D9CA" w14:textId="0E2C64CC" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="006129BD">(There should be condition that the makers shall not be checker and vice-versa. Facility to re-allocate the cases to various makers / checker in between the processing is on. Accordingly, mail should get triggered.)
+w14:paraId="3AC9C82A" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="006129BD">Role Based Access Matrix
+w14:paraId="6A10CC6C" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">Sr. No.
+w14:paraId="217F2AEC" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="00035795">Roles
+w14:paraId="269E517D" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="00035795">Company
+w14:paraId="22A8F344" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="00035795">Maker
+w14:paraId="46893CC9" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="00035795">Checker
+w14:paraId="19EDD6FE" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="00035795">HOD
+w14:paraId="48DB83B0" w14:textId="0BD77690" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="006129BD">1
+w14:paraId="2857E276" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="006129BD">Create/Save Draft Application
+w14:paraId="4E979571" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">✓
+w14:paraId="284D0251" w14:textId="5E58956C" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">
+w14:paraId="2D5EB757" w14:textId="07692668" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">
+w14:paraId="25AC5D3F" w14:textId="67F312E9" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">
+w14:paraId="37852095" w14:textId="63EC2A0F" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="006129BD">2
+w14:paraId="093FD1DE" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="006129BD">Submit Application
+w14:paraId="7062EE0A" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">✓
+w14:paraId="1E52DEE9" w14:textId="73295826" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">
+w14:paraId="6C3E4C0F" w14:textId="14278C0A" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">
+w14:paraId="2CF8DD3A" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">✓
+w14:paraId="468B921F" w14:textId="761660AE" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="006129BD">3
+w14:paraId="73717DC9" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="006129BD">Assign to Maker/Checker
+w14:paraId="63F36FA5" w14:textId="4C341434" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">
+w14:paraId="0D0EEEE0" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">✓
+w14:paraId="10EECA5D" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">✓
+w14:paraId="33D61419" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">✓
+w14:paraId="14B6B60F" w14:textId="5387EE3E" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="006129BD">4
+w14:paraId="40732275" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="006129BD">Verify Checklist (OK/Observation)
+w14:paraId="1BFDC783" w14:textId="04F7EE0E" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">
+w14:paraId="71DB9A5E" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">✓
+w14:paraId="10BE07AE" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">✓
+w14:paraId="653957AE" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">✓
+w14:paraId="34066443" w14:textId="20CBA441" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="006129BD">5
+w14:paraId="74411CE7" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="006129BD">Raise Observation
+w14:paraId="00FEBD76" w14:textId="3674366D" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">
+w14:paraId="47B70EF0" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">✓
+w14:paraId="54C4FA6F" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">✓
+w14:paraId="23C8532F" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">✓
+w14:paraId="47BE9001" w14:textId="3F692263" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="006129BD">6
+w14:paraId="74A762B5" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="006129BD">Respond to Observation
+w14:paraId="5482AC9E" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">✓
+w14:paraId="342514C6" w14:textId="2358B4F0" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">
+w14:paraId="0D9AAE93" w14:textId="1D221DA7" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">
+w14:paraId="0227EB30" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">✓
+w14:paraId="2FEFFF97" w14:textId="3F590276" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="006129BD">7
+w14:paraId="252D05A5" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="006129BD">Forward to Next Stage
+w14:paraId="4B3E50D9" w14:textId="40D84791" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">
+w14:paraId="30B080BB" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">✓
+w14:paraId="7E474EFC" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">✓
+w14:paraId="10AE1D93" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">✓
+w14:paraId="6BB28A79" w14:textId="54C0422E" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="006129BD">8
+w14:paraId="3B7733AD" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="006129BD">Approve
+w14:paraId="67064717" w14:textId="443E4C7C" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">
+w14:paraId="76E235FD" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">✓
+w14:paraId="5F3E15AE" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">✓
+w14:paraId="6BD2AE44" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">✓
+w14:paraId="2B29E10C" w14:textId="6EB7CC54" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="006129BD">9
+w14:paraId="00AB42FC" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="006129BD">Upload Signed Approval Letter
+w14:paraId="453564CF" w14:textId="2508FD7A" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">
+w14:paraId="2C6939EF" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">✓
+w14:paraId="5BE057DF" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">✓
+w14:paraId="4897DBE1" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">✓
+w14:paraId="71E8501C" w14:textId="1C26A8C1" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="006129BD">10
+w14:paraId="78562F1D" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="006129BD">Maintain Checklist/SLA Master
+w14:paraId="1D5A6FF0" w14:textId="64F0EF49" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">
+w14:paraId="3184FC2A" w14:textId="0A18A5AE" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">
+w14:paraId="55CAB704" w14:textId="6E98B5BC" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">
+w14:paraId="5CDBF389" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">✓
+w14:paraId="4B526955" w14:textId="1224BFDE" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="006129BD">11
+w14:paraId="339FCAA1" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="006129BD">View MIS/Dashboard
+w14:paraId="142D59C8" w14:textId="7380EFF8" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">
+w14:paraId="2ADA1896" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">✓
+w14:paraId="0BEDFE8C" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">✓
+w14:paraId="444B0259" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="003E7AD4">✓
+w14:paraId="200795E0" w14:textId="77777777" w:rsidR="006129BD" w:rsidRPr="00D142A8" w:rsidRDefault="006129BD" w:rsidP="006129BD">
+w14:paraId="0C04AD9D" w14:textId="1D028126" w:rsidR="003E30FE" w:rsidRDefault="003E30FE" w:rsidP="00F22B5B">Status Matrix
+w14:paraId="5A91F459" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="00056C1E" w:rsidRDefault="003E30FE" w:rsidP="00035795">Sr. No.
+w14:paraId="2C57E601" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="00056C1E" w:rsidRDefault="003E30FE" w:rsidP="00035795">Status
+w14:paraId="431F8EE0" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="00056C1E" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">Company
+w14:paraId="2CB91166" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="00056C1E" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">Maker
+w14:paraId="52DD50B8" w14:textId="58F34D3F" w:rsidR="003E30FE" w:rsidRPr="00056C1E" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">Checker
+w14:paraId="0F6E7472" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="00056C1E" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">HOD
+w14:paraId="1B75E579" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="00056C1E" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">Admin
+w14:paraId="0230ECB8" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="00035795">1
+w14:paraId="29F5F7FB" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="00035795">In Draft
+w14:paraId="5C37274F" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">✓
+w14:paraId="4AEBEB59" w14:textId="08E7484D" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">
+w14:paraId="57B09384" w14:textId="2BCD605B" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">
+w14:paraId="2C181528" w14:textId="00F6473F" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">
+w14:paraId="32F07015" w14:textId="0317FA9B" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">
+w14:paraId="5D04B105" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="00035795">2
+w14:paraId="1807F951" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="00035795">Application Submitted
+w14:paraId="04F44C81" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">✓
+w14:paraId="2B27AD8F" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">✓
+w14:paraId="2C39FF5F" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">✓
+w14:paraId="4806B0BC" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">✓
+w14:paraId="43B6F23D" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">✓
+w14:paraId="0103230B" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="00035795">3
+w14:paraId="706417BD" w14:textId="224D2C59" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="00A35C91" w:rsidP="00035795">Assigned to Maker 
+w14:paraId="4AEF9716" w14:textId="434ACEA2" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">
+w14:paraId="6483FBE2" w14:textId="1316D541" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="00A35C91" w:rsidP="003E7AD4">✓
+w14:paraId="36630596" w14:textId="73FC3CFD" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">
+w14:paraId="0FDA2855" w14:textId="1CB833CD" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="00A35C91" w:rsidP="003E7AD4">✓
+w14:paraId="3F49FA61" w14:textId="2E9626D8" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="00A35C91" w:rsidP="003E7AD4">✓
+w14:paraId="3D76F439" w14:textId="1781FDB8" w:rsidR="00A35C91" w:rsidRPr="005871DA" w:rsidRDefault="005871DA" w:rsidP="00035795">4
+w14:paraId="1783F884" w14:textId="57971A31" w:rsidR="00A35C91" w:rsidRPr="005871DA" w:rsidRDefault="00A35C91" w:rsidP="00035795">In Progress
+w14:paraId="3CE19035" w14:textId="26F83838" w:rsidR="00A35C91" w:rsidRPr="005871DA" w:rsidRDefault="00A35C91" w:rsidP="003E7AD4">✓
+w14:paraId="34661A32" w14:textId="77777777" w:rsidR="00A35C91" w:rsidRPr="005871DA" w:rsidRDefault="00A35C91" w:rsidP="003E7AD4">
+w14:paraId="4C07BAF1" w14:textId="77777777" w:rsidR="00A35C91" w:rsidRPr="005871DA" w:rsidRDefault="00A35C91" w:rsidP="003E7AD4">
+w14:paraId="5F9B9407" w14:textId="77777777" w:rsidR="00A35C91" w:rsidRPr="005871DA" w:rsidRDefault="00A35C91" w:rsidP="003E7AD4">
+w14:paraId="6E8AC0A2" w14:textId="77777777" w:rsidR="00A35C91" w:rsidRPr="005871DA" w:rsidRDefault="00A35C91" w:rsidP="003E7AD4">
+w14:paraId="5795E65F" w14:textId="2416A188" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="005871DA" w:rsidP="00035795">5
+w14:paraId="2CB3A2DB" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="00035795">Observation raised
+w14:paraId="027B64F5" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">✓
+w14:paraId="52DCC3B9" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">✓
+w14:paraId="7A4D7D4D" w14:textId="5652493A" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">
+w14:paraId="09CCF5CD" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">✓
+w14:paraId="16FE72A5" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">✓
+w14:paraId="1714F692" w14:textId="133F9B7A" w:rsidR="00A35C91" w:rsidRPr="005871DA" w:rsidRDefault="005871DA" w:rsidP="00035795">6
+w14:paraId="1A44076C" w14:textId="5F58DB25" w:rsidR="00A35C91" w:rsidRPr="005871DA" w:rsidRDefault="00A35C91" w:rsidP="00035795">Observation Replied
+w14:paraId="3EDD7F8B" w14:textId="785A58E6" w:rsidR="00A35C91" w:rsidRPr="005871DA" w:rsidRDefault="00A35C91" w:rsidP="003E7AD4">✓
+w14:paraId="5272D202" w14:textId="50E7199D" w:rsidR="00A35C91" w:rsidRPr="005871DA" w:rsidRDefault="00A35C91" w:rsidP="003E7AD4">✓
+w14:paraId="19EF80C1" w14:textId="77777777" w:rsidR="00A35C91" w:rsidRPr="005871DA" w:rsidRDefault="00A35C91" w:rsidP="003E7AD4">
+w14:paraId="142B206B" w14:textId="0A490A81" w:rsidR="00A35C91" w:rsidRPr="005871DA" w:rsidRDefault="00A35C91" w:rsidP="003E7AD4">✓
+w14:paraId="5587541B" w14:textId="4955932F" w:rsidR="00A35C91" w:rsidRPr="005871DA" w:rsidRDefault="00A35C91" w:rsidP="003E7AD4">✓
+w14:paraId="18635835" w14:textId="0A3C4C39" w:rsidR="004B12A8" w:rsidRPr="005871DA" w:rsidRDefault="005871DA" w:rsidP="005871DA">7
+w14:paraId="363BB695" w14:textId="62B32E2E" w:rsidR="004B12A8" w:rsidRPr="005871DA" w:rsidRDefault="004B12A8" w:rsidP="00035795">Reminders, if any
+w14:paraId="2BD836FD" w14:textId="4E5F43AA" w:rsidR="004B12A8" w:rsidRPr="005871DA" w:rsidRDefault="004B12A8" w:rsidP="003E7AD4">✓
+w14:paraId="20C25EFB" w14:textId="320DED43" w:rsidR="004B12A8" w:rsidRPr="005871DA" w:rsidRDefault="004B12A8" w:rsidP="003E7AD4">✓
+w14:paraId="5BC27935" w14:textId="77777777" w:rsidR="004B12A8" w:rsidRPr="005871DA" w:rsidRDefault="004B12A8" w:rsidP="003E7AD4">
+w14:paraId="4EB0BEAB" w14:textId="1CAF7BE7" w:rsidR="004B12A8" w:rsidRPr="005871DA" w:rsidRDefault="004B12A8" w:rsidP="003E7AD4">✓
+w14:paraId="6D8F8CD8" w14:textId="0133944D" w:rsidR="004B12A8" w:rsidRPr="005871DA" w:rsidRDefault="004B12A8" w:rsidP="003E7AD4">✓
+w14:paraId="7F3BEE5B" w14:textId="5BD1BEF8" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="005871DA" w:rsidP="00035795">8
+w14:paraId="393403C2" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="00035795">Maker In Progress
+w14:paraId="1B80F621" w14:textId="3B653D93" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">
+w14:paraId="3D6F22DC" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">✓
+w14:paraId="6B9927B6" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">✓
+w14:paraId="6D95707E" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">✓
+w14:paraId="190989E3" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">✓
+w14:paraId="54F1EFD7" w14:textId="1B156F42" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="005871DA" w:rsidP="00035795">9
+w14:paraId="608AF979" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="00035795">Maker Complete
+w14:paraId="4E918626" w14:textId="35F81661" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">
+w14:paraId="3FD44EEC" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">✓
+w14:paraId="4EE49BE2" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">✓
+w14:paraId="333D1960" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">✓
+w14:paraId="4A033D68" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">✓
+w14:paraId="33C2B830" w14:textId="702119AD" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="005871DA" w:rsidP="00035795">10
+w14:paraId="5020E560" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="00035795">Checker In Progress
+w14:paraId="190C68D9" w14:textId="097F6940" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">
+w14:paraId="0C1EFF90" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">✓
+w14:paraId="1C3EE9AB" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">✓
+w14:paraId="3496FAFF" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">✓
+w14:paraId="1F27D31E" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">✓
+w14:paraId="4AFCA514" w14:textId="7052F75D" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="005871DA" w:rsidP="00035795">11
+w14:paraId="5955BE6A" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="00035795">Checker Complete
+w14:paraId="4976D3A8" w14:textId="77F55FD6" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">
+w14:paraId="6EA2A421" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">✓
+w14:paraId="707F667E" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">✓
+w14:paraId="628BEE2D" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">✓
+w14:paraId="2D3D1EAC" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">✓
+w14:paraId="38912082" w14:textId="6090ED1A" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="005871DA" w:rsidP="00035795">12
+w14:paraId="3298EF26" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="00035795">Pending for HOD Approval
+w14:paraId="301B4911" w14:textId="1B6A9FA9" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">
+w14:paraId="21CED6DC" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">✓
+w14:paraId="17158CEB" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">✓
+w14:paraId="30CBC26D" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">✓
+w14:paraId="13EEAC23" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">✓
+w14:paraId="04EF94AD" w14:textId="13ED904B" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="00035795">13
+w14:paraId="76276FA2" w14:textId="3F0B7ECA" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="00035795">Approved &amp; Letter issued
+w14:paraId="61F2A24B" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">✓
+w14:paraId="34490E9C" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">✓
+w14:paraId="71C237B5" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">✓
+w14:paraId="42E00E12" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="005871DA" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">✓
+w14:paraId="288890FF" w14:textId="77777777" w:rsidR="003E30FE" w:rsidRPr="00A35C91" w:rsidRDefault="003E30FE" w:rsidP="003E7AD4">✓
+w14:paraId="286A6ED6" w14:textId="2DE517A3" w:rsidR="002F36BE" w:rsidRDefault="002F36BE" w:rsidP="00F22B5B">E-Mail Notification Matrix
+w14:paraId="36E11F7E" w14:textId="77777777" w:rsidR="002F36BE" w:rsidRPr="002F36BE" w:rsidRDefault="002F36BE" w:rsidP="002F36BE"/>
+w14:paraId="1835556D" w14:textId="65B8A400" w:rsidR="002410CC" w:rsidRPr="00795E1F" w:rsidRDefault="002410CC" w:rsidP="00F74BD5">Sr. No.
+w14:paraId="511AF16A" w14:textId="77777777" w:rsidR="002410CC" w:rsidRPr="00795E1F" w:rsidRDefault="002410CC" w:rsidP="00F74BD5">Event
+w14:paraId="11AC5FE7" w14:textId="77777777" w:rsidR="002410CC" w:rsidRPr="00795E1F" w:rsidRDefault="002410CC" w:rsidP="00F74BD5">Recipient
+w14:paraId="1CE7E614" w14:textId="626D142F" w:rsidR="002410CC" w:rsidRPr="00795E1F" w:rsidRDefault="002410CC" w:rsidP="00F74BD5">Status in Dashboard of Company
+w14:paraId="11746807" w14:textId="681F7155" w:rsidR="002410CC" w:rsidRPr="00795E1F" w:rsidRDefault="002410CC" w:rsidP="00F74BD5">Status in Dashboard of Exchange
+w14:paraId="53E84BD5" w14:textId="08431B21" w:rsidR="002410CC" w:rsidRPr="00795E1F" w:rsidRDefault="002410CC" w:rsidP="00F74BD5">Email No.
+w14:paraId="48ED7F5F" w14:textId="77777777" w:rsidR="002410CC" w:rsidRPr="00524AEE" w:rsidRDefault="002410CC" w:rsidP="00F74BD5">1
+w14:paraId="5A3C396D" w14:textId="77777777" w:rsidR="002410CC" w:rsidRPr="00524AEE" w:rsidRDefault="002410CC" w:rsidP="00F74BD5">Submission
+w14:paraId="5373E33D" w14:textId="64D85BEC" w:rsidR="002410CC" w:rsidRPr="00524AEE" w:rsidRDefault="002410CC" w:rsidP="00F74BD5">Company / Team Leader
+w14:paraId="1FE1706E" w14:textId="5692DC2D" w:rsidR="002410CC" w:rsidRPr="00524AEE" w:rsidRDefault="002410CC" w:rsidP="00F74BD5">Submitted to Exchange
+w14:paraId="3A602F75" w14:textId="683B9F9C" w:rsidR="002410CC" w:rsidRPr="00524AEE" w:rsidRDefault="002410CC" w:rsidP="00F74BD5">Application Submitted.
+w14:paraId="783888E8" w14:textId="39C7A05F" w:rsidR="002410CC" w:rsidRPr="00524AEE" w:rsidRDefault="002410CC" w:rsidP="00F74BD5">1
+w14:paraId="55732E8B" w14:textId="77777777" w:rsidR="002410CC" w:rsidRPr="00524AEE" w:rsidRDefault="002410CC" w:rsidP="00F74BD5">2
+w14:paraId="3ECD683B" w14:textId="541C6CB5" w:rsidR="002410CC" w:rsidRPr="00524AEE" w:rsidRDefault="002410CC" w:rsidP="00F74BD5">Assigned for Processing
+w14:paraId="69248230" w14:textId="5D711C0C" w:rsidR="002410CC" w:rsidRPr="00524AEE" w:rsidRDefault="002410CC" w:rsidP="00F74BD5">Maker / Team Leader
+w14:paraId="38A354B6" w14:textId="35A5FCF4" w:rsidR="002410CC" w:rsidRPr="00524AEE" w:rsidRDefault="002410CC" w:rsidP="00F74BD5">In process
+w14:paraId="61579D98" w14:textId="1EF1840F" w:rsidR="002410CC" w:rsidRPr="00524AEE" w:rsidRDefault="002410CC" w:rsidP="00F74BD5">Assigned to as Maker
+w14:paraId="286B44AE" w14:textId="17097845" w:rsidR="002410CC" w:rsidRPr="00524AEE" w:rsidRDefault="002410CC" w:rsidP="00F74BD5">2
+w14:paraId="27CD9219" w14:textId="77777777" w:rsidR="002410CC" w:rsidRPr="00524AEE" w:rsidRDefault="002410CC" w:rsidP="00F74BD5">3
+w14:paraId="146A97D6" w14:textId="3106B4C0" w:rsidR="002410CC" w:rsidRPr="00524AEE" w:rsidRDefault="00613672" w:rsidP="00F74BD5">Observation raised
+w14:paraId="584F9C8C" w14:textId="50BC0266" w:rsidR="002410CC" w:rsidRPr="00524AEE" w:rsidRDefault="002410CC" w:rsidP="00F74BD5">Company / Maker / Team Leader
+w14:paraId="01357C5B" w14:textId="026C0F54" w:rsidR="002410CC" w:rsidRPr="00524AEE" w:rsidRDefault="002410CC" w:rsidP="00F74BD5">Observation sent to Company
+w14:paraId="05317E3B" w14:textId="42AFF8FF" w:rsidR="002410CC" w:rsidRPr="00524AEE" w:rsidRDefault="002410CC" w:rsidP="00F74BD5">Observation raised
+w14:paraId="64DC4EC9" w14:textId="7945C8B3" w:rsidR="002410CC" w:rsidRPr="00524AEE" w:rsidRDefault="002410CC" w:rsidP="00F74BD5">3
+w14:paraId="5173C2C2" w14:textId="77777777" w:rsidR="002410CC" w:rsidRPr="00524AEE" w:rsidRDefault="002410CC" w:rsidP="00F74BD5">4
+w14:paraId="610376F3" w14:textId="2F333669" w:rsidR="002410CC" w:rsidRPr="00524AEE" w:rsidRDefault="00613672" w:rsidP="00F74BD5">Observation Replied
+w14:paraId="5CF72663" w14:textId="1EEEE2EB" w:rsidR="002410CC" w:rsidRPr="00524AEE" w:rsidRDefault="002410CC" w:rsidP="00F74BD5">Company / Maker / Team Leader
+w14:paraId="10888334" w14:textId="0857C93A" w:rsidR="002410CC" w:rsidRPr="00524AEE" w:rsidRDefault="002410CC" w:rsidP="00F74BD5">Observation replied to Exchange.
+w14:paraId="44B148B2" w14:textId="0D44C213" w:rsidR="002410CC" w:rsidRPr="00524AEE" w:rsidRDefault="002410CC" w:rsidP="00F74BD5">Observation reply received
+w14:paraId="672591AE" w14:textId="56C45302" w:rsidR="002410CC" w:rsidRPr="00524AEE" w:rsidRDefault="002410CC" w:rsidP="00F74BD5">4
+w14:paraId="60F8D6DA" w14:textId="60571877" w:rsidR="002410CC" w:rsidRPr="00524AEE" w:rsidRDefault="002410CC" w:rsidP="00F74BD5">5
+w14:paraId="455762BB" w14:textId="440C025B" w:rsidR="002410CC" w:rsidRPr="00524AEE" w:rsidRDefault="002410CC" w:rsidP="00F74BD5">Reminder - 1
+w14:paraId="44736B3D" w14:textId="4F57D926" w:rsidR="002410CC" w:rsidRPr="00524AEE" w:rsidRDefault="002410CC" w:rsidP="00F74BD5">Company / Maker / Team Leader
+w14:paraId="1AE5CBB1" w14:textId="217D4ACD" w:rsidR="002410CC" w:rsidRPr="00524AEE" w:rsidRDefault="002410CC" w:rsidP="00F74BD5">Reminder to reply to Observation.
+w14:paraId="5F9C9DD4" w14:textId="7793BD07" w:rsidR="002410CC" w:rsidRPr="00524AEE" w:rsidRDefault="002410CC" w:rsidP="00F74BD5">Reminder send
+w14:paraId="2BD7BDC0" w14:textId="603EADC1" w:rsidR="002410CC" w:rsidRPr="00524AEE" w:rsidRDefault="002410CC" w:rsidP="00F74BD5">5
+w14:paraId="3B49EB0A" w14:textId="08528292" w:rsidR="002410CC" w:rsidRPr="00524AEE" w:rsidRDefault="002410CC" w:rsidP="00F74BD5">6
+w14:paraId="1DCAA1B2" w14:textId="790CE084" w:rsidR="002410CC" w:rsidRPr="00524AEE" w:rsidRDefault="002410CC" w:rsidP="00F74BD5">Reminder – 2 to 5
+w14:paraId="01A9F2F3" w14:textId="5358A97D" w:rsidR="002410CC" w:rsidRPr="00524AEE" w:rsidRDefault="002410CC" w:rsidP="00F74BD5">Company / Maker / Team Leader
+w14:paraId="6FD9FA1D" w14:textId="0B6B0365" w:rsidR="002410CC" w:rsidRPr="00524AEE" w:rsidRDefault="002410CC" w:rsidP="00F74BD5">Reminder to reply to Observation.
+w14:paraId="6F134A17" w14:textId="0CD298B4" w:rsidR="002410CC" w:rsidRPr="00524AEE" w:rsidRDefault="002410CC" w:rsidP="00F74BD5">Reminder – 2 to 5 send
+w14:paraId="5C6C9EAA" w14:textId="165FAA41" w:rsidR="002410CC" w:rsidRPr="00524AEE" w:rsidRDefault="002410CC" w:rsidP="00F74BD5">6
+w14:paraId="4EFBBE48" w14:textId="28CC1166" w:rsidR="002410CC" w:rsidRPr="00524AEE" w:rsidRDefault="002410CC" w:rsidP="00F74BD5">7
+w14:paraId="2ABFB563" w14:textId="3A19E3A7" w:rsidR="002410CC" w:rsidRPr="00524AEE" w:rsidRDefault="00A35C91" w:rsidP="00F74BD5">Maker verifying the application
+w14:paraId="179E59A7" w14:textId="3F8C4BA4" w:rsidR="002410CC" w:rsidRPr="00524AEE" w:rsidRDefault="004B12A8" w:rsidP="00F74BD5">Maker /Checker / Team Leader
+w14:paraId="30E22879" w14:textId="0015082F" w:rsidR="002410CC" w:rsidRPr="00524AEE" w:rsidRDefault="002410CC" w:rsidP="00F74BD5">In process
+w14:paraId="0839A172" w14:textId="7187A62E" w:rsidR="002410CC" w:rsidRPr="00524AEE" w:rsidRDefault="00613672" w:rsidP="00F74BD5">Verification in process
+w14:paraId="4EC2980F" w14:textId="2C00A0BB" w:rsidR="002410CC" w:rsidRPr="00524AEE" w:rsidRDefault="00F24856" w:rsidP="00F74BD5">-
+w14:paraId="400CC8E7" w14:textId="2F22F6EF" w:rsidR="00613672" w:rsidRPr="00524AEE" w:rsidRDefault="00F24856" w:rsidP="00F74BD5">8
+w14:paraId="4584265A" w14:textId="7BFF286C" w:rsidR="00613672" w:rsidRPr="00524AEE" w:rsidRDefault="00613672" w:rsidP="00F74BD5">Maker Completed
+w14:paraId="79C01BC4" w14:textId="6023B623" w:rsidR="00613672" w:rsidRPr="00524AEE" w:rsidRDefault="00613672" w:rsidP="00F74BD5">Maker /Checker / Team Leader
+w14:paraId="59F61C92" w14:textId="550F3787" w:rsidR="00613672" w:rsidRPr="00524AEE" w:rsidRDefault="00613672" w:rsidP="00F74BD5">In process
+w14:paraId="51B2FC4F" w14:textId="5FE42316" w:rsidR="00613672" w:rsidRPr="00524AEE" w:rsidRDefault="00613672" w:rsidP="00F74BD5">Maker approved forwarded to Checker for verification/approval
+w14:paraId="5A86326C" w14:textId="24C4B89A" w:rsidR="00613672" w:rsidRPr="00524AEE" w:rsidRDefault="00F24856" w:rsidP="00F74BD5">7
+w14:paraId="4CBD56DC" w14:textId="7FCE1677" w:rsidR="004B12A8" w:rsidRPr="00524AEE" w:rsidRDefault="00F24856" w:rsidP="00F74BD5">9
+w14:paraId="16BA1EE6" w14:textId="2630897B" w:rsidR="004B12A8" w:rsidRPr="00524AEE" w:rsidRDefault="004B12A8" w:rsidP="00F74BD5">Checker verifying the application
+w14:paraId="7D402362" w14:textId="7D7C8731" w:rsidR="004B12A8" w:rsidRPr="00524AEE" w:rsidRDefault="004B12A8" w:rsidP="00F74BD5">Maker / Checker / Team Leader
+w14:paraId="209A71E5" w14:textId="21ED607D" w:rsidR="004B12A8" w:rsidRPr="00524AEE" w:rsidRDefault="004B12A8" w:rsidP="00F74BD5">In process
+w14:paraId="60102B71" w14:textId="0CB8B57A" w:rsidR="004B12A8" w:rsidRPr="00524AEE" w:rsidRDefault="00613672" w:rsidP="00F74BD5">Verification in process
+w14:paraId="675F724E" w14:textId="45AC29BE" w:rsidR="004B12A8" w:rsidRPr="00524AEE" w:rsidRDefault="00F24856" w:rsidP="00F74BD5">-
+w14:paraId="71581048" w14:textId="4950A204" w:rsidR="004B12A8" w:rsidRPr="00524AEE" w:rsidRDefault="00F74BD5" w:rsidP="00F74BD5">10
+w14:paraId="5A758DD8" w14:textId="40061512" w:rsidR="004B12A8" w:rsidRPr="00524AEE" w:rsidRDefault="004B12A8" w:rsidP="00F74BD5">Checker Completed
+w14:paraId="6ACF82B0" w14:textId="63479A10" w:rsidR="004B12A8" w:rsidRPr="00524AEE" w:rsidRDefault="004B12A8" w:rsidP="00F74BD5">Maker /Checker / Team Leader
+w14:paraId="35D5975E" w14:textId="4CEE4C53" w:rsidR="004B12A8" w:rsidRPr="00524AEE" w:rsidRDefault="004B12A8" w:rsidP="00F74BD5">In process
+w14:paraId="5E1CCDAF" w14:textId="1150E110" w:rsidR="004B12A8" w:rsidRPr="00524AEE" w:rsidRDefault="004B12A8" w:rsidP="00F74BD5">Checker approved forwarded to Team Leader for approval
+w14:paraId="120B98EE" w14:textId="62E1B500" w:rsidR="004B12A8" w:rsidRPr="00524AEE" w:rsidRDefault="00F24856" w:rsidP="00F74BD5">8
+w14:paraId="331C38D3" w14:textId="656E96F9" w:rsidR="004B12A8" w:rsidRPr="00524AEE" w:rsidRDefault="002C1FE4" w:rsidP="00F74BD5">11
+w14:paraId="5CBCC33A" w14:textId="7A4F9944" w:rsidR="004B12A8" w:rsidRPr="00524AEE" w:rsidRDefault="004B12A8" w:rsidP="00F74BD5">Pending with Team Leader / HOD Approval
+w14:paraId="509A7A56" w14:textId="3024F53A" w:rsidR="004B12A8" w:rsidRPr="00524AEE" w:rsidRDefault="004B12A8" w:rsidP="00F74BD5">Maker / Checker / Team Leader
+w14:paraId="51540F28" w14:textId="2DD52342" w:rsidR="004B12A8" w:rsidRPr="00524AEE" w:rsidRDefault="004B12A8" w:rsidP="00F74BD5">In process
+w14:paraId="1DABFC48" w14:textId="619E2F22" w:rsidR="004B12A8" w:rsidRPr="00524AEE" w:rsidRDefault="00F24856" w:rsidP="00F74BD5">Pending for Approval along with hard copy of letter for signature
+w14:paraId="20D64A2C" w14:textId="27FA1AE0" w:rsidR="004B12A8" w:rsidRPr="00524AEE" w:rsidRDefault="00F24856" w:rsidP="00F74BD5">-
+w14:paraId="7C6031BE" w14:textId="266360A1" w:rsidR="004B12A8" w:rsidRPr="00524AEE" w:rsidRDefault="002C1FE4" w:rsidP="00F74BD5">12
+w14:paraId="11612F3A" w14:textId="7F111CB0" w:rsidR="004B12A8" w:rsidRPr="00524AEE" w:rsidRDefault="004B12A8" w:rsidP="00F74BD5">IPA Approved
+w14:paraId="585D7872" w14:textId="61C3E607" w:rsidR="004B12A8" w:rsidRPr="00524AEE" w:rsidRDefault="004B12A8" w:rsidP="00F74BD5">Company/ Maker/Checker / Team Leader
+w14:paraId="14E285FB" w14:textId="12BE96FF" w:rsidR="004B12A8" w:rsidRPr="00524AEE" w:rsidRDefault="004B12A8" w:rsidP="00F74BD5">Approved
+w14:paraId="3CBFCA71" w14:textId="323EEA24" w:rsidR="004B12A8" w:rsidRPr="00524AEE" w:rsidRDefault="004B12A8" w:rsidP="00F74BD5">Team Leader / HOD Approved &amp; Letter to be uploaded
+w14:paraId="544A1D41" w14:textId="11FBE239" w:rsidR="004B12A8" w:rsidRPr="00524AEE" w:rsidRDefault="00F24856" w:rsidP="00F74BD5">9
+w14:paraId="2BE565D8" w14:textId="1448D42F" w:rsidR="002C1FE4" w:rsidRPr="00524AEE" w:rsidRDefault="002C1FE4" w:rsidP="00F74BD5">13
+w14:paraId="1A80CC9D" w14:textId="697840E7" w:rsidR="002C1FE4" w:rsidRPr="00524AEE" w:rsidRDefault="002C1FE4" w:rsidP="00F74BD5">Listing Approved
+w14:paraId="5A365EE7" w14:textId="77777777" w:rsidR="002C1FE4" w:rsidRPr="00524AEE" w:rsidRDefault="002C1FE4" w:rsidP="00F74BD5">Company/ Maker/Checker / Team Leader
+w14:paraId="72E3A2C6" w14:textId="2114EDB4" w:rsidR="002C1FE4" w:rsidRPr="00524AEE" w:rsidRDefault="002C1FE4" w:rsidP="00F74BD5">Approved
+w14:paraId="5EDBBBDB" w14:textId="19E573B6" w:rsidR="002C1FE4" w:rsidRPr="00524AEE" w:rsidRDefault="002C1FE4" w:rsidP="00F74BD5">Team Leader / HOD Approved &amp; Letter to be uploaded
+w14:paraId="21E8847C" w14:textId="439398A9" w:rsidR="002C1FE4" w:rsidRPr="00524AEE" w:rsidRDefault="00F24856" w:rsidP="00F74BD5">10
+w14:paraId="55775FAC" w14:textId="408A267C" w:rsidR="002C1FE4" w:rsidRPr="00524AEE" w:rsidRDefault="002C1FE4" w:rsidP="00F74BD5">14
+w14:paraId="5F9E2412" w14:textId="2655BB8F" w:rsidR="002C1FE4" w:rsidRPr="00524AEE" w:rsidRDefault="002C1FE4" w:rsidP="00F74BD5">Trading Approved
+w14:paraId="50DAB788" w14:textId="77777777" w:rsidR="002C1FE4" w:rsidRPr="00524AEE" w:rsidRDefault="002C1FE4" w:rsidP="00F74BD5">Company/ Maker/Checker / Team Leader
+w14:paraId="71BFB2F2" w14:textId="1CA33A85" w:rsidR="002C1FE4" w:rsidRPr="00524AEE" w:rsidRDefault="002C1FE4" w:rsidP="00F74BD5">Approved
+w14:paraId="7CCF1406" w14:textId="6F3A5E10" w:rsidR="002C1FE4" w:rsidRPr="00524AEE" w:rsidRDefault="002C1FE4" w:rsidP="00F74BD5">Team Leader / HOD Approved &amp; Letter to be uploaded
+w14:paraId="6240E63F" w14:textId="195C334E" w:rsidR="002C1FE4" w:rsidRPr="00524AEE" w:rsidRDefault="00F24856" w:rsidP="00F74BD5">11
+w14:paraId="344C3380" w14:textId="24EF3C94" w:rsidR="004B12A8" w:rsidRPr="00524AEE" w:rsidRDefault="002C1FE4" w:rsidP="00F74BD5">15
+w14:paraId="6A6088E5" w14:textId="48D47F56" w:rsidR="004B12A8" w:rsidRPr="00524AEE" w:rsidRDefault="004B12A8" w:rsidP="00F74BD5">Uploading of Approval Note
+w14:paraId="14709967" w14:textId="5EEF4EA9" w:rsidR="004B12A8" w:rsidRPr="00524AEE" w:rsidRDefault="004B12A8" w:rsidP="00F74BD5">Maker/Checker / Team Leader
+w14:paraId="3EB9C096" w14:textId="1B25F37D" w:rsidR="004B12A8" w:rsidRPr="00524AEE" w:rsidRDefault="004B12A8" w:rsidP="00F74BD5">-
+w14:paraId="771E0EDC" w14:textId="64697EAF" w:rsidR="004B12A8" w:rsidRPr="00524AEE" w:rsidRDefault="004B12A8" w:rsidP="00F74BD5">Approval Note Uploaded
+w14:paraId="572CFBFE" w14:textId="43975543" w:rsidR="004B12A8" w:rsidRPr="00524AEE" w:rsidRDefault="00E15973" w:rsidP="00F74BD5">-
+w14:paraId="5722F2BF" w14:textId="09693CC2" w:rsidR="004B12A8" w:rsidRPr="00524AEE" w:rsidRDefault="002C1FE4" w:rsidP="00F74BD5">16
+w14:paraId="72C77FEC" w14:textId="5B710B89" w:rsidR="004B12A8" w:rsidRPr="00524AEE" w:rsidRDefault="004B12A8" w:rsidP="00F74BD5">Reassigning for processing
+w14:paraId="6A836835" w14:textId="270E0D70" w:rsidR="004B12A8" w:rsidRPr="00524AEE" w:rsidRDefault="004B12A8" w:rsidP="00F74BD5">Maker / Checker / Team Leader
+w14:paraId="4E41B39C" w14:textId="1F999F01" w:rsidR="004B12A8" w:rsidRPr="00524AEE" w:rsidRDefault="004B12A8" w:rsidP="00F74BD5">In process
+w14:paraId="489BC652" w14:textId="526724FF" w:rsidR="004B12A8" w:rsidRPr="00524AEE" w:rsidRDefault="004B12A8" w:rsidP="00F74BD5">Reassign within the Team members manually
+w14:paraId="49945943" w14:textId="0BFFC89A" w:rsidR="004B12A8" w:rsidRPr="00524AEE" w:rsidRDefault="00E15973" w:rsidP="00F74BD5">12
+w14:paraId="07B8FC5C" w14:textId="03B94423" w:rsidR="002C1FE4" w:rsidRPr="00524AEE" w:rsidRDefault="002C1FE4" w:rsidP="00F74BD5">17
+w14:paraId="5EB615A2" w14:textId="77777777" w:rsidR="002C1FE4" w:rsidRPr="00524AEE" w:rsidRDefault="002C1FE4" w:rsidP="00F74BD5">Observation if any to Maker from Checker from Team Leader
+w14:paraId="0A68DB3F" w14:textId="77777777" w:rsidR="002C1FE4" w:rsidRPr="00524AEE" w:rsidRDefault="002C1FE4" w:rsidP="00F74BD5">Maker/Checker / Team Leader
+w14:paraId="73AFA8DF" w14:textId="77777777" w:rsidR="002C1FE4" w:rsidRPr="00524AEE" w:rsidRDefault="002C1FE4" w:rsidP="00F74BD5">In process
+w14:paraId="34EE5A90" w14:textId="77777777" w:rsidR="002C1FE4" w:rsidRPr="00524AEE" w:rsidRDefault="002C1FE4" w:rsidP="00F74BD5">Query from Checker / Team Leader
+w14:paraId="3715215A" w14:textId="54906430" w:rsidR="002C1FE4" w:rsidRPr="00524AEE" w:rsidRDefault="00E15973" w:rsidP="00F74BD5">13 &amp; 14
+w14:paraId="29D43A17" w14:textId="77777777" w:rsidR="00D65E0E" w:rsidRDefault="00D65E0E" w:rsidP="00D65E0E">
+w14:paraId="71E7BAC0" w14:textId="7D7FC5CD" w:rsidR="0088072A" w:rsidRPr="00F74BD5" w:rsidRDefault="0088072A" w:rsidP="00B05B59">Reminders mails should get auto triggered at a gap of 7 calendar days form the date of observation sent to Company.
+w14:paraId="21B385E2" w14:textId="0610D710" w:rsidR="00795E1F" w:rsidRPr="00F74BD5" w:rsidRDefault="00795E1F" w:rsidP="00B05B59">There should be Admin tab / parameter in system to define 7 calendar days.
+w14:paraId="0653A464" w14:textId="12890321" w:rsidR="0088072A" w:rsidRPr="00F74BD5" w:rsidRDefault="00665B38" w:rsidP="00B05B59">In case, of non-submission of reply to observation, 5 reminder mails should get triggered at a gap of 7 calendar days. Accordingly, every reminder nos should be auto mentioned in the mails/subject.
+w14:paraId="329C0187" w14:textId="2D49CF6C" w:rsidR="00EB5C7A" w:rsidRPr="00F74BD5" w:rsidRDefault="00EB5C7A" w:rsidP="00B05B59">Separate draft of mail to be sent to the company from 2nd to 5th Reminder, in case, of no response to observation sent to the company.
+w14:paraId="090819A2" w14:textId="72717433" w:rsidR="003C2446" w:rsidRPr="00F74BD5" w:rsidRDefault="003C2446" w:rsidP="00B05B59">Upon Company submitting the response to the observation raised, the status should be displayed as “In process” in Dashboard.
+w14:paraId="4DE784F5" w14:textId="03A73230" w:rsidR="003C2446" w:rsidRPr="00F74BD5" w:rsidRDefault="003C2446" w:rsidP="00B05B59">In-case, checker observes certain deficiencies and submits the application back to the Maker. The status should be displayed as “In Process” in Dashboard.
+w14:paraId="259137E4" w14:textId="403D07A5" w:rsidR="000076C1" w:rsidRPr="00F74BD5" w:rsidRDefault="000076C1" w:rsidP="00B05B59">In case, of query or deficiencies observed by Checker / Team Leader it will flow to Maker / Checker. Similarly on resolving the query or deficiencies it will flow back to Checker / Team Leader. During this internal movement. The status should be displayed as “In Process”
+w14:paraId="4741EC4A" w14:textId="551F6C44" w:rsidR="00E90E33" w:rsidRDefault="007E10C9" w:rsidP="00F22B5B">Timelines &amp; Escalations
+w14:paraId="31287955" w14:textId="0CE94862" w:rsidR="007E10C9" w:rsidRDefault="007E10C9" w:rsidP="00B05B59">Maker, Checker and Team Leader should initiate processing of applications or observations/corrections upon submission from Company within n number of days.
+w14:paraId="44EE3458" w14:textId="718D4865" w:rsidR="007E10C9" w:rsidRDefault="007E10C9" w:rsidP="00B05B59">There should be Admin tab / parameter in system to define n number.
+w14:paraId="015AEEB6" w14:textId="2505F70C" w:rsidR="007E10C9" w:rsidRDefault="007E10C9" w:rsidP="00B05B59">The n number shall be 5 working days by default.
+w14:paraId="18846E52" w14:textId="4122800D" w:rsidR="007E10C9" w:rsidRDefault="00F572E1" w:rsidP="00B05B59">These parameter modification rights should be given to Team Leader only.
+w14:paraId="74243EB3" w14:textId="34819FC6" w:rsidR="00F22B5B" w:rsidRDefault="00F572E1" w:rsidP="00B05B59">In case of no action within the given timeline by Maker or checker, email should get triggered to the processor with copy to Team Leader.
+w14:paraId="50953B15" w14:textId="338C8B43" w:rsidR="007E10C9" w:rsidRDefault="007E10C9" w:rsidP="00F22B5B">Reports 
+w14:paraId="645C24E9" w14:textId="77777777" w:rsidR="00173899" w:rsidRDefault="00173899" w:rsidP="00173899"/>
+w14:paraId="43BFBBBA" w14:textId="54456CE1" w:rsidR="00173899" w:rsidRPr="00173899" w:rsidRDefault="00173899" w:rsidP="00173899">Following points should be facilitated while generating following reports:
+w14:paraId="0CCF5394" w14:textId="0A876CB4" w:rsidR="007E10C9" w:rsidRDefault="00CD3B99" w:rsidP="00B05B59">The Reports should be customized with a condition by selecting certain fields from the master and generating the report.
+w14:paraId="1FFD4653" w14:textId="47041C67" w:rsidR="005271D5" w:rsidRDefault="005271D5" w:rsidP="00B05B59">On top there should be drop-down to select individual company or All, Date range i.e. start date to end date, IPA or All, Listing or All and Trading Trading or All.
+w14:paraId="15AEAE14" w14:textId="09CCA559" w:rsidR="008063D6" w:rsidRDefault="008063D6" w:rsidP="00B05B59">The report should have filter and search facility.
+w14:paraId="5C46DA29" w14:textId="77777777" w:rsidR="008063D6" w:rsidRDefault="008063D6" w:rsidP="00B05B59">Download/Export Facility should be provided to download the generated Report.
+w14:paraId="09CB7DDD" w14:textId="52C5B797" w:rsidR="00DA15A1" w:rsidRDefault="008063D6" w:rsidP="00B05B59">This Report facility is only provided to the Exchange. All the members of the listing department have facility to view/generate/download reports. This facility should not be given to Companies.
+w14:paraId="301DF396" w14:textId="38BA9CA8" w:rsidR="00CD3B99" w:rsidRDefault="00CD3B99" w:rsidP="00B05B59">The details of the fields are given below:
+w14:paraId="0C45397B" w14:textId="77777777" w:rsidR="00CD3B99" w:rsidRDefault="00CD3B99" w:rsidP="00CD3B99">
+w14:paraId="337443BA" w14:textId="77777777" w:rsidR="00CD3B99" w:rsidRPr="00CD3B99" w:rsidRDefault="00CD3B99" w:rsidP="00CD3B99">Company name
+w14:paraId="3C6E05B5" w14:textId="77777777" w:rsidR="00CD3B99" w:rsidRPr="00CD3B99" w:rsidRDefault="00CD3B99" w:rsidP="00CD3B99">Symbol
+w14:paraId="1431881B" w14:textId="7BA84F5D" w:rsidR="00665B38" w:rsidRPr="00CD3B99" w:rsidRDefault="00665B38" w:rsidP="00CD3B99">ISIN
+w14:paraId="1A3D48AD" w14:textId="2DC4F8EA" w:rsidR="00665B38" w:rsidRPr="00CD3B99" w:rsidRDefault="00665B38" w:rsidP="00CD3B99">Series
+w14:paraId="4C0E7948" w14:textId="77777777" w:rsidR="00CD3B99" w:rsidRPr="00CD3B99" w:rsidRDefault="00CD3B99" w:rsidP="00CD3B99">exclusive listed yes or no
+w14:paraId="240350EC" w14:textId="77777777" w:rsidR="00CD3B99" w:rsidRPr="00CD3B99" w:rsidRDefault="00CD3B99" w:rsidP="00CD3B99">Type of issue
+w14:paraId="07E8B8B7" w14:textId="77777777" w:rsidR="00CD3B99" w:rsidRPr="00CD3B99" w:rsidRDefault="00CD3B99" w:rsidP="00CD3B99">Application Stage
+w14:paraId="58861AB6" w14:textId="136421E5" w:rsidR="005271D5" w:rsidRPr="00CD3B99" w:rsidRDefault="005271D5" w:rsidP="00CD3B99">Case Nos (of IPA Application)
+w14:paraId="3942F6F2" w14:textId="1073A39E" w:rsidR="00CD3B99" w:rsidRPr="00CD3B99" w:rsidRDefault="00CD3B99" w:rsidP="00CD3B99">Date of receipt of IPA application 
+w14:paraId="3577CD2D" w14:textId="77777777" w:rsidR="00CD3B99" w:rsidRPr="00CD3B99" w:rsidRDefault="00CD3B99" w:rsidP="00CD3B99">Number of shares
+w14:paraId="36347DC3" w14:textId="77777777" w:rsidR="00CD3B99" w:rsidRPr="00CD3B99" w:rsidRDefault="00CD3B99" w:rsidP="00CD3B99">Issue price
+w14:paraId="79DF5E36" w14:textId="7AA93F76" w:rsidR="00665B38" w:rsidRPr="00CD3B99" w:rsidRDefault="00665B38" w:rsidP="00CD3B99">Money raised (Issue price *no of securities allotted)
+w14:paraId="4A1379F6" w14:textId="0E20AF79" w:rsidR="00CD3B99" w:rsidRPr="00CD3B99" w:rsidRDefault="00CD3B99" w:rsidP="00CD3B99">BOD meeting date for approval of preferential issue
+w14:paraId="2E23DC78" w14:textId="77777777" w:rsidR="00CD3B99" w:rsidRPr="00CD3B99" w:rsidRDefault="00CD3B99" w:rsidP="00CD3B99">Shareholder meeting date
+w14:paraId="6034F47C" w14:textId="77777777" w:rsidR="00CD3B99" w:rsidRPr="00CD3B99" w:rsidRDefault="00CD3B99" w:rsidP="00CD3B99">Completion date of IPA
+w14:paraId="52C1454B" w14:textId="77777777" w:rsidR="00CD3B99" w:rsidRPr="00CD3B99" w:rsidRDefault="00CD3B99" w:rsidP="00CD3B99">Maker/Checker name
+w14:paraId="10BCB9F3" w14:textId="033AF828" w:rsidR="005305D3" w:rsidRPr="00CD3B99" w:rsidRDefault="005305D3" w:rsidP="00CD3B99">Case Nos (of Listing Application)
+w14:paraId="2B8E7E4B" w14:textId="54DF0412" w:rsidR="00CD3B99" w:rsidRPr="00CD3B99" w:rsidRDefault="00CD3B99" w:rsidP="00CD3B99">Date of receipt of Listing application 
+w14:paraId="0440F349" w14:textId="234D2AF5" w:rsidR="00665B38" w:rsidRPr="00CD3B99" w:rsidRDefault="00665B38" w:rsidP="00CD3B99">BOD meeting date for issue &amp; allotment of securities
+w14:paraId="6D5B0F96" w14:textId="77777777" w:rsidR="00CD3B99" w:rsidRPr="00CD3B99" w:rsidRDefault="00CD3B99" w:rsidP="00CD3B99">Number of Allottees
+w14:paraId="7F461F09" w14:textId="396E330B" w:rsidR="00CD3B99" w:rsidRPr="00CD3B99" w:rsidRDefault="00CD3B99" w:rsidP="00CD3B99">Allotted shares
+w14:paraId="644BC1FA" w14:textId="1697AFFF" w:rsidR="00CD3B99" w:rsidRPr="00CD3B99" w:rsidRDefault="00CD3B99" w:rsidP="00CD3B99">Allotment price
+w14:paraId="3D17EA5A" w14:textId="77777777" w:rsidR="00CD3B99" w:rsidRPr="00CD3B99" w:rsidRDefault="00CD3B99" w:rsidP="00CD3B99">DN range
+w14:paraId="139A5EF3" w14:textId="77777777" w:rsidR="00CD3B99" w:rsidRPr="00CD3B99" w:rsidRDefault="00CD3B99" w:rsidP="00CD3B99">Completion date of Listing
+w14:paraId="4783CB45" w14:textId="77777777" w:rsidR="00CD3B99" w:rsidRPr="00CD3B99" w:rsidRDefault="00CD3B99" w:rsidP="00CD3B99">Maker/Checker name
+w14:paraId="396F1E92" w14:textId="5005E311" w:rsidR="005305D3" w:rsidRPr="00CD3B99" w:rsidRDefault="005305D3" w:rsidP="00CD3B99">Case Nos (of Trading Application)
+w14:paraId="4EFDE775" w14:textId="0581B37D" w:rsidR="00CD3B99" w:rsidRPr="00CD3B99" w:rsidRDefault="00CD3B99" w:rsidP="00CD3B99">Date of receipt of Trading application 
+w14:paraId="4A894FA6" w14:textId="77777777" w:rsidR="00CD3B99" w:rsidRPr="00CD3B99" w:rsidRDefault="00CD3B99" w:rsidP="00CD3B99">Number of shares credited
+w14:paraId="66B5FF6C" w14:textId="77777777" w:rsidR="00CD3B99" w:rsidRPr="00CD3B99" w:rsidRDefault="00CD3B99" w:rsidP="00CD3B99">Date of credit
+w14:paraId="0B41B6BA" w14:textId="77777777" w:rsidR="00CD3B99" w:rsidRPr="00CD3B99" w:rsidRDefault="00CD3B99" w:rsidP="00CD3B99">Depository
+w14:paraId="23F85AFF" w14:textId="0DBC3E79" w:rsidR="00CD3B99" w:rsidRPr="00CD3B99" w:rsidRDefault="00CD3B99" w:rsidP="00CD3B99">Lock in start date - Lock in end date
+w14:paraId="4D99A9B8" w14:textId="77777777" w:rsidR="00CD3B99" w:rsidRPr="00CD3B99" w:rsidRDefault="00CD3B99" w:rsidP="00CD3B99">Lock in period
+w14:paraId="6F7CB5EA" w14:textId="77777777" w:rsidR="00CD3B99" w:rsidRPr="00CD3B99" w:rsidRDefault="00CD3B99" w:rsidP="00CD3B99">Completion date of Trading
+w14:paraId="43ECAFBE" w14:textId="77777777" w:rsidR="00CD3B99" w:rsidRPr="00CD3B99" w:rsidRDefault="00CD3B99" w:rsidP="00CD3B99">Maker/Checker name
+w14:paraId="5169B03F" w14:textId="77777777" w:rsidR="002951B0" w:rsidRDefault="002951B0" w:rsidP="002951B0">
+w14:paraId="469FDA26" w14:textId="0245F8E2" w:rsidR="00CD3B99" w:rsidRDefault="00CD3B99" w:rsidP="00B05B59">Report of following format is required:
+w14:paraId="612A6665" w14:textId="77777777" w:rsidR="00292653" w:rsidRDefault="00292653" w:rsidP="00292653">
+w14:paraId="1534A24C" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653">Sr. No.
+w14:paraId="1F42F489" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653"> 
+w14:paraId="6B721C1E" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653">Company Name
+w14:paraId="13AD8A5C" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653"> 
+w14:paraId="6CBB13CF" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653">Scrip Code
+w14:paraId="5FF3CE47" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653"> 
+w14:paraId="7B2ACC91" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653">IPA Processing Officials Name
+w14:paraId="33F6C9FE" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653"> 
+w14:paraId="7EDA1B35" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653">Date of receipt of IPA application 
+w14:paraId="1052BD03" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653"> 
+w14:paraId="4E8AE2A3" w14:textId="006D8E89" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653">Date of In-Principle approval granted
+w14:paraId="41256673" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653"> 
+w14:paraId="4814DEFE" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653">IPA Approval Note Nos &amp; Date
+w14:paraId="63BB9F79" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653"> 
+w14:paraId="0283E83C" w14:textId="4DB80CBF" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653">Promoter
+w14:paraId="1970EDBD" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653"> 
+w14:paraId="3A6F56AD" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653">Non-Promoter
+w14:paraId="5C5D0309" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653"> 
+w14:paraId="7C961177" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653">Per share price
+w14:paraId="2428EEA7" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653"> 
+w14:paraId="440A15C3" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653">IPA Nos of Shares
+w14:paraId="51F1B421" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653"> 
+w14:paraId="28BA91D6" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653">If exclusively listed on MSEI or commonly listed with BSE/NSE
+w14:paraId="18798F38" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653"> 
+w14:paraId="3ABCA688" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653">Type of Issue (Rights/Preferential/QIP)
+w14:paraId="724D7529" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653"> 
+w14:paraId="0252F7CB" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653">Listing Processing Officials Name
+w14:paraId="43F8EB3B" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653"> 
+w14:paraId="234AF4D0" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653">Listing Approval Note Nos &amp; Date
+w14:paraId="0D9E9D0B" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653"> 
+w14:paraId="7DEF59C8" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653">Date of listing and trading approval
+w14:paraId="62545127" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653">Listing
+w14:paraId="1EC22DAC" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653">
+w14:paraId="1A5ED3B6" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653">Trading
+w14:paraId="0E51F0EF" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653">Trading Processing Officials Name
+w14:paraId="7894AC6E" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653"> 
+w14:paraId="174487E4" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653">Trading Approval Note Nos &amp; Date
+w14:paraId="3B1DE3C3" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653"> 
+w14:paraId="0C66B536" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653">Date of Allotment
+w14:paraId="5B428B1E" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653"> 
+w14:paraId="02D6E325" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653">Number of Allottees
+w14:paraId="08D4A570" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653"> 
+w14:paraId="5BF7F86F" w14:textId="4A412E81" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653">Number of shares allotted 
+w14:paraId="530290DE" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653"> 
+w14:paraId="5379B0A9" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653">Issue Price
+w14:paraId="7E7B277F" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653"> 
+w14:paraId="08867815" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653">Market Price on Allotment Date
+w14:paraId="29B9796C" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653"> 
+w14:paraId="3B9C33F0" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653">Lock-in Period (Months)
+w14:paraId="72814FA2" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653"> 
+w14:paraId="4CCA81C4" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653">Lock in  Start Date
+w14:paraId="0FE114C6" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653"> 
+w14:paraId="515CF25E" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653">Lock-in End Date
+w14:paraId="75CAEE5D" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653"> 
+w14:paraId="549CFFED" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653">Price on lock in End  Date
+w14:paraId="26131C70" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653"> 
+w14:paraId="3C73472F" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653">Distinctive Nos.
+w14:paraId="2D7EBAB4" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653"> 
+w14:paraId="6F5DFDDA" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653">
+w14:paraId="03E09873" w14:textId="77777777" w:rsidR="00292653" w:rsidRPr="00292653" w:rsidRDefault="00292653" w:rsidP="00292653"> 
+w14:paraId="1DA95A0C" w14:textId="77777777" w:rsidR="004E39DA" w:rsidRDefault="004E39DA" w:rsidP="004E39DA">
+w14:paraId="4EB34BC2" w14:textId="74B85B77" w:rsidR="004E39DA" w:rsidRDefault="004E39DA" w:rsidP="00B05B59">Report of checklist/ document upload list with all details of observations raised and query replied with respective date and time.
+w14:paraId="289B3A95" w14:textId="1BB31B94" w:rsidR="00E90E33" w:rsidRDefault="00E90E33" w:rsidP="00F22B5B">MIS Dashboard
+w14:paraId="47FBF9B2" w14:textId="77777777" w:rsidR="00E90E33" w:rsidRDefault="00E90E33" w:rsidP="00E90E33"/>
+w14:paraId="73A4E804" w14:textId="28BBD959" w:rsidR="00A94311" w:rsidRPr="00296E5E" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">5.13.1 Following information should be displayed to the Company :
+w14:paraId="5C898A45" w14:textId="77777777" w:rsidR="00043ACF" w:rsidRPr="00E90E33" w:rsidRDefault="00043ACF" w:rsidP="00E90E33"/>
+w14:paraId="370422EF" w14:textId="0F3B941E" w:rsidR="0059316B" w:rsidRDefault="00043ACF" w:rsidP="00D971C8">Status of the application submitted to the Exchange are as follows :
+w14:paraId="7B4B4563" w14:textId="77777777" w:rsidR="00043ACF" w:rsidRDefault="00043ACF" w:rsidP="00D971C8">
+w14:paraId="16A9298E" w14:textId="77777777" w:rsidR="001170D1" w:rsidRPr="00A94311" w:rsidRDefault="001170D1" w:rsidP="001170D1">Sr. No
+w14:paraId="72ABDB6A" w14:textId="43AFE535" w:rsidR="001170D1" w:rsidRPr="00A94311" w:rsidRDefault="001170D1" w:rsidP="001170D1">Case Nos.
+w14:paraId="460D5F81" w14:textId="77777777" w:rsidR="001170D1" w:rsidRPr="00A94311" w:rsidRDefault="001170D1" w:rsidP="001170D1">Company Name
+w14:paraId="0A15A438" w14:textId="77777777" w:rsidR="001170D1" w:rsidRPr="00A94311" w:rsidRDefault="001170D1" w:rsidP="001170D1">Symbol
+w14:paraId="7B49AF56" w14:textId="583CADB0" w:rsidR="001170D1" w:rsidRPr="00A94311" w:rsidRDefault="001170D1" w:rsidP="001170D1">Type of Issue
+w14:paraId="54D882E2" w14:textId="6C823D17" w:rsidR="001170D1" w:rsidRPr="00A94311" w:rsidRDefault="001170D1" w:rsidP="001170D1">Approval Required
+w14:paraId="188A181D" w14:textId="46B372EB" w:rsidR="001170D1" w:rsidRPr="001170D1" w:rsidRDefault="001170D1" w:rsidP="001170D1">Tye of Securities
+w14:paraId="1121EFB2" w14:textId="0675E561" w:rsidR="001170D1" w:rsidRPr="00A94311" w:rsidRDefault="001170D1" w:rsidP="001170D1">Date of application submitted to Exchange
+w14:paraId="5DF5401A" w14:textId="77777777" w:rsidR="001170D1" w:rsidRPr="00A94311" w:rsidRDefault="001170D1" w:rsidP="001170D1">Applied for Nos of Shares
+w14:paraId="24A90761" w14:textId="77777777" w:rsidR="001170D1" w:rsidRPr="00A94311" w:rsidRDefault="001170D1" w:rsidP="001170D1">Issue price
+w14:paraId="038CD73A" w14:textId="77777777" w:rsidR="001170D1" w:rsidRPr="00A94311" w:rsidRDefault="001170D1" w:rsidP="001170D1">Status
+w14:paraId="4E4815ED" w14:textId="77777777" w:rsidR="001170D1" w:rsidRPr="00A94311" w:rsidRDefault="001170D1" w:rsidP="001170D1">1
+w14:paraId="3E7DF426" w14:textId="77777777" w:rsidR="001170D1" w:rsidRPr="00A94311" w:rsidRDefault="001170D1" w:rsidP="001170D1">20260101
+w14:paraId="010C217D" w14:textId="348F6689" w:rsidR="001170D1" w:rsidRPr="00A94311" w:rsidRDefault="001170D1" w:rsidP="001170D1">XYZ LTD
+w14:paraId="496D570E" w14:textId="77777777" w:rsidR="001170D1" w:rsidRPr="00A94311" w:rsidRDefault="001170D1" w:rsidP="001170D1">AAYUSH
+w14:paraId="02B19918" w14:textId="17916625" w:rsidR="001170D1" w:rsidRPr="00A94311" w:rsidRDefault="001170D1" w:rsidP="001170D1">Preferential
+w14:paraId="724AE6F6" w14:textId="77777777" w:rsidR="001170D1" w:rsidRPr="00A94311" w:rsidRDefault="001170D1" w:rsidP="001170D1">In-Principle
+w14:paraId="1939AC9C" w14:textId="64DEF748" w:rsidR="001170D1" w:rsidRPr="001170D1" w:rsidRDefault="001170D1" w:rsidP="001170D1">Equity
+w14:paraId="3E8B62E1" w14:textId="04CBCB0F" w:rsidR="001170D1" w:rsidRPr="00A94311" w:rsidRDefault="001170D1" w:rsidP="001170D1">31-Mar-26
+w14:paraId="045D37B8" w14:textId="77777777" w:rsidR="001170D1" w:rsidRPr="00A94311" w:rsidRDefault="001170D1" w:rsidP="001170D1">100000
+w14:paraId="072F497E" w14:textId="77777777" w:rsidR="001170D1" w:rsidRPr="00A94311" w:rsidRDefault="001170D1" w:rsidP="001170D1">10
+w14:paraId="3C230A5D" w14:textId="77777777" w:rsidR="001170D1" w:rsidRPr="00A94311" w:rsidRDefault="001170D1" w:rsidP="001170D1">Submitted to Exchange
+w14:paraId="7B35B84D" w14:textId="77777777" w:rsidR="001170D1" w:rsidRPr="00A94311" w:rsidRDefault="001170D1" w:rsidP="001170D1">1
+w14:paraId="56EC53DD" w14:textId="77777777" w:rsidR="001170D1" w:rsidRPr="00A94311" w:rsidRDefault="001170D1" w:rsidP="001170D1">20260101
+w14:paraId="435A22B9" w14:textId="2392263A" w:rsidR="001170D1" w:rsidRPr="00A94311" w:rsidRDefault="001170D1" w:rsidP="001170D1">ABCD LTD
+w14:paraId="73F2DA16" w14:textId="77777777" w:rsidR="001170D1" w:rsidRPr="00A94311" w:rsidRDefault="001170D1" w:rsidP="001170D1">AAYUSH
+w14:paraId="46A577C0" w14:textId="7177DEE5" w:rsidR="001170D1" w:rsidRPr="00A94311" w:rsidRDefault="001170D1" w:rsidP="001170D1">Preferential
+w14:paraId="54EFE108" w14:textId="03AD4983" w:rsidR="001170D1" w:rsidRPr="00A94311" w:rsidRDefault="001170D1" w:rsidP="001170D1">Listing
+w14:paraId="07C8DAB9" w14:textId="201C16DE" w:rsidR="001170D1" w:rsidRPr="001170D1" w:rsidRDefault="001170D1" w:rsidP="001170D1">Equity
+w14:paraId="1198D969" w14:textId="549F8BF3" w:rsidR="001170D1" w:rsidRPr="00A94311" w:rsidRDefault="001170D1" w:rsidP="001170D1">31-Mar-26
+w14:paraId="2FD93B08" w14:textId="77777777" w:rsidR="001170D1" w:rsidRPr="00A94311" w:rsidRDefault="001170D1" w:rsidP="001170D1">100000
+w14:paraId="3BBA69FD" w14:textId="77777777" w:rsidR="001170D1" w:rsidRPr="00A94311" w:rsidRDefault="001170D1" w:rsidP="001170D1">10
+w14:paraId="7980DEB5" w14:textId="3CE4754D" w:rsidR="001170D1" w:rsidRPr="00A94311" w:rsidRDefault="001170D1" w:rsidP="001170D1">In Process
+w14:paraId="16459E47" w14:textId="77777777" w:rsidR="001170D1" w:rsidRPr="00A94311" w:rsidRDefault="001170D1" w:rsidP="001170D1">1
+w14:paraId="07D5CC2F" w14:textId="77777777" w:rsidR="001170D1" w:rsidRPr="00A94311" w:rsidRDefault="001170D1" w:rsidP="001170D1">20260101
+w14:paraId="3006D801" w14:textId="4B24B323" w:rsidR="001170D1" w:rsidRPr="00A94311" w:rsidRDefault="001170D1" w:rsidP="001170D1">ABCD LTD
+w14:paraId="1199694B" w14:textId="77777777" w:rsidR="001170D1" w:rsidRPr="00A94311" w:rsidRDefault="001170D1" w:rsidP="001170D1">AAYUSH
+w14:paraId="45692E4C" w14:textId="35A6D9DC" w:rsidR="001170D1" w:rsidRPr="00A94311" w:rsidRDefault="001170D1" w:rsidP="001170D1">Preferential
+w14:paraId="6F220175" w14:textId="29E9D8A5" w:rsidR="001170D1" w:rsidRPr="00A94311" w:rsidRDefault="001170D1" w:rsidP="001170D1">Trading
+w14:paraId="048930FE" w14:textId="5454C889" w:rsidR="001170D1" w:rsidRPr="001170D1" w:rsidRDefault="001170D1" w:rsidP="001170D1">Convertible / Warrants
+w14:paraId="069EDC45" w14:textId="3F7B9ED5" w:rsidR="001170D1" w:rsidRPr="00A94311" w:rsidRDefault="001170D1" w:rsidP="001170D1">31-Mar-26
+w14:paraId="1774F2CC" w14:textId="77777777" w:rsidR="001170D1" w:rsidRPr="00A94311" w:rsidRDefault="001170D1" w:rsidP="001170D1">100000
+w14:paraId="7C934AA1" w14:textId="77777777" w:rsidR="001170D1" w:rsidRPr="00A94311" w:rsidRDefault="001170D1" w:rsidP="001170D1">10
+w14:paraId="39A3107A" w14:textId="77777777" w:rsidR="001170D1" w:rsidRPr="00A94311" w:rsidRDefault="001170D1" w:rsidP="001170D1">Observation raised
+w14:paraId="0D47D832" w14:textId="77777777" w:rsidR="00043ACF" w:rsidRDefault="00043ACF" w:rsidP="00D971C8">
+w14:paraId="13C0E64D" w14:textId="0F1DB42D" w:rsidR="00043ACF" w:rsidRPr="00E5765F" w:rsidRDefault="00A94311" w:rsidP="00B05B59">Case Nos generated on submission of application should be mapped here.
+w14:paraId="2FFD8970" w14:textId="6B6B250C" w:rsidR="001170D1" w:rsidRPr="00E5765F" w:rsidRDefault="001170D1" w:rsidP="00B05B59">Company Name and Symbol should be mapped from Company information i.e. from 5.2.
+w14:paraId="17AE8126" w14:textId="77777777" w:rsidR="00B95B35" w:rsidRPr="00E5765F" w:rsidRDefault="001170D1" w:rsidP="00B05B59">Type of Application, Approval required, applied for Nos of shares and Issue price should be mapped from 5.3.1.
+w14:paraId="4224DB84" w14:textId="1D9EB5F3" w:rsidR="00B95B35" w:rsidRPr="00E5765F" w:rsidRDefault="00B95B35" w:rsidP="00B05B59">Multiple requests in one single application made by the company should display multiple records. (means in case request of Equity, Convertible or both made in single application, in Dashboard, 2 separate line items should be displayed).
+w14:paraId="65DA3D01" w14:textId="72CF0635" w:rsidR="00B95B35" w:rsidRPr="00E5765F" w:rsidRDefault="00B95B35" w:rsidP="00B05B59">Status should get updated on real time basis and it should be mapped from 5.10(i.e. Status in Dashboard of Company).
+w14:paraId="6AAA1B96" w14:textId="77777777" w:rsidR="00AA2383" w:rsidRPr="00E5765F" w:rsidRDefault="00AA2383" w:rsidP="00B05B59">The above information should be displayed in the dashboard of companies who have made the application to the Exchange.
+w14:paraId="2DBB1900" w14:textId="77777777" w:rsidR="00296E5E" w:rsidRPr="00E5765F" w:rsidRDefault="00AA2383" w:rsidP="00B05B59">In case of no application made by any of the company, message “No application pending with Exchange” should be displayed.
+w14:paraId="2D25E8CA" w14:textId="6F1548E6" w:rsidR="0088777D" w:rsidRDefault="0088777D" w:rsidP="00B05B59">The above-mentioned updation should be on a real-time basis.
+w14:paraId="50A0AA67" w14:textId="77777777" w:rsidR="00DA15A1" w:rsidRDefault="00DA15A1" w:rsidP="00B05B59">Report generation access should be with all Exchange officials. This facility should not be given to Companies.
+w14:paraId="5A222526" w14:textId="123C3E72" w:rsidR="008847D1" w:rsidRPr="00E5765F" w:rsidRDefault="008847D1" w:rsidP="00B05B59">There should be drill down facility at the Case Nos. tab, where if clicked on case nos, the application should open.  
+w14:paraId="05A07458" w14:textId="77777777" w:rsidR="00296E5E" w:rsidRPr="00E5765F" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">
+w14:paraId="2710650A" w14:textId="02CCBB2B" w:rsidR="00296E5E" w:rsidRPr="00E5765F" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">5.13.2 Following information should be displayed to the Exchange Officials :
+w14:paraId="12F4C42D" w14:textId="77777777" w:rsidR="00043ACF" w:rsidRPr="00E5765F" w:rsidRDefault="00043ACF" w:rsidP="00D971C8">
+w14:paraId="59F435CE" w14:textId="77777777" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">Sr. No
+w14:paraId="08C11866" w14:textId="627C1554" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">Case Nos.
+w14:paraId="72D1BE7E" w14:textId="77777777" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">Company Name
+w14:paraId="7385E5E0" w14:textId="77777777" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">Symbol
+w14:paraId="72D0B72F" w14:textId="77777777" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">Type of Application
+w14:paraId="4C108D2B" w14:textId="77777777" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">Approval Required
+w14:paraId="320497A5" w14:textId="77777777" w:rsidR="00296E5E" w:rsidRPr="001170D1" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">Tye of Securities
+w14:paraId="753A536E" w14:textId="77777777" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">Date of application submitted to Exchange
+w14:paraId="599F8F88" w14:textId="77777777" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">Applied for Nos of Shares
+w14:paraId="595235E3" w14:textId="77777777" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">Issue price
+w14:paraId="37D98873" w14:textId="01C04273" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">Official processing this application
+w14:paraId="41EA2B5E" w14:textId="35AFE463" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">Status
+w14:paraId="2B3E4F84" w14:textId="77777777" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">1
+w14:paraId="107D38C6" w14:textId="77777777" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">20260101
+w14:paraId="2EF7B1CA" w14:textId="77777777" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">XYZ LTD
+w14:paraId="6F6C4C26" w14:textId="77777777" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">AAYUSH
+w14:paraId="28B24FBB" w14:textId="77777777" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">Preferential
+w14:paraId="5BA99193" w14:textId="77777777" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">In-Principle
+w14:paraId="134289AC" w14:textId="77777777" w:rsidR="00296E5E" w:rsidRPr="001170D1" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">Equity
+w14:paraId="7AA85A15" w14:textId="77777777" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">31-Mar-26
+w14:paraId="2794C63A" w14:textId="77777777" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">100000
+w14:paraId="11855672" w14:textId="77777777" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">10
+w14:paraId="57ABC4D6" w14:textId="030D0B69" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">Siddhesh
+w14:paraId="43520FCE" w14:textId="2F547F7E" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">Submitted to Exchange
+w14:paraId="1B2982E2" w14:textId="77777777" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">1
+w14:paraId="228EC62F" w14:textId="77777777" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">20260101
+w14:paraId="5A55C7BF" w14:textId="77777777" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">ABCD LTD
+w14:paraId="27DCDFF3" w14:textId="77777777" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">AAYUSH
+w14:paraId="5F8846E4" w14:textId="77777777" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">Preferential
+w14:paraId="0A147BF6" w14:textId="77777777" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">Listing
+w14:paraId="4EE44BC2" w14:textId="77777777" w:rsidR="00296E5E" w:rsidRPr="001170D1" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">Equity
+w14:paraId="273B1E94" w14:textId="77777777" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">31-Mar-26
+w14:paraId="2210EA16" w14:textId="77777777" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">100000
+w14:paraId="7DF10B0E" w14:textId="77777777" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">10
+w14:paraId="08A4F4C2" w14:textId="0EE140B8" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">Harish
+w14:paraId="234219B7" w14:textId="73AB2B31" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">In Process
+w14:paraId="111DDCA4" w14:textId="77777777" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">1
+w14:paraId="41A64CAE" w14:textId="77777777" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">20260101
+w14:paraId="23D88588" w14:textId="77777777" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">ABCD LTD
+w14:paraId="44876F79" w14:textId="77777777" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">AAYUSH
+w14:paraId="1ACC5039" w14:textId="77777777" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">Preferential
+w14:paraId="2B2E5753" w14:textId="77777777" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">Trading
+w14:paraId="2BD8E2F8" w14:textId="77777777" w:rsidR="00296E5E" w:rsidRPr="001170D1" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">Convertible / Warrants
+w14:paraId="3A881970" w14:textId="77777777" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">31-Mar-26
+w14:paraId="1244B342" w14:textId="77777777" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">100000
+w14:paraId="709DAF15" w14:textId="77777777" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">10
+w14:paraId="4C37B0CF" w14:textId="2EF84080" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">Nupoor
+w14:paraId="6C52BD1A" w14:textId="3B4E76FE" w:rsidR="00296E5E" w:rsidRPr="00A94311" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">Observation raised
+w14:paraId="12D580F5" w14:textId="350C5C10" w:rsidR="00296E5E" w:rsidRDefault="00296E5E" w:rsidP="00296E5E">
+w14:paraId="71D6AEBF" w14:textId="3FACC367" w:rsidR="00296E5E" w:rsidRPr="00E5765F" w:rsidRDefault="00296E5E" w:rsidP="00B05B59">Sub-points a to f mentioned in 5.13.1 should be considered for displaying the detailed information.
+w14:paraId="5ECF312F" w14:textId="3C7536EA" w:rsidR="00296E5E" w:rsidRPr="00E5765F" w:rsidRDefault="00296E5E" w:rsidP="00B05B59">Details of all Companies who have made application to Exchange should be displayed.
+w14:paraId="64D1CC02" w14:textId="7178F2B1" w:rsidR="00296E5E" w:rsidRPr="00E5765F" w:rsidRDefault="00C0741B" w:rsidP="00B05B59">Name of the processing Official should also be displayed.
+w14:paraId="218C8798" w14:textId="6CCE4999" w:rsidR="00B30E01" w:rsidRPr="00E5765F" w:rsidRDefault="00B30E01" w:rsidP="00B05B59">Status should get updated on real time basis and it should be mapped from 5.10(i.e. Status in Dashboard of Exchange).
+w14:paraId="49FAFACF" w14:textId="77777777" w:rsidR="00681D9A" w:rsidRPr="00E5765F" w:rsidRDefault="00681D9A" w:rsidP="00B05B59">There should be drill down facility at the Case Nos. tab, where if clicked on case nos, the application should open.  
+w14:paraId="40BE98BF" w14:textId="6178D293" w:rsidR="00E5765F" w:rsidRPr="00E5765F" w:rsidRDefault="008063D6" w:rsidP="00B05B59">The dashboard should have filter and search facility.
+w14:paraId="6AF6A2FD" w14:textId="05D1306E" w:rsidR="00E5765F" w:rsidRPr="00E5765F" w:rsidRDefault="00E5765F" w:rsidP="00B05B59">Download/Export Facility should be provided to download the dashboard Report.
+w14:paraId="55F34A23" w14:textId="12BF320F" w:rsidR="008063D6" w:rsidRPr="00E5765F" w:rsidRDefault="00E5765F" w:rsidP="00B05B59">This facility is only provided to the Exchange. All the members of the listing department have facility to view/generate/download reports.  
+w14:paraId="44877310" w14:textId="77777777" w:rsidR="00C0741B" w:rsidRDefault="00C0741B" w:rsidP="00C0741B">
+w14:paraId="4134A91F" w14:textId="1523CF98" w:rsidR="00C0741B" w:rsidRPr="00E5765F" w:rsidRDefault="00C0741B" w:rsidP="00C0741B">5.13.3 Applications whose processing timeline breached should be displayed to Team Leader only:
+w14:paraId="1656F461" w14:textId="77777777" w:rsidR="00C0741B" w:rsidRPr="00E5765F" w:rsidRDefault="00C0741B" w:rsidP="00C0741B">
+w14:paraId="5F3CADB5" w14:textId="7D5CBF83" w:rsidR="00C0741B" w:rsidRPr="00E5765F" w:rsidRDefault="00C0741B" w:rsidP="00C0741B">Following applications are pending for processing post last submission and have breached the timelines:
+w14:paraId="4DBFE2DC" w14:textId="77777777" w:rsidR="00C512B7" w:rsidRDefault="00C512B7" w:rsidP="00C0741B">
+w14:paraId="6959002B" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">Sr. No
+w14:paraId="166866D0" w14:textId="4DF8F281" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">Case Nos.
+w14:paraId="3E3CF056" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">Company Name
+w14:paraId="42DCE49D" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">Symbol
+w14:paraId="2F3B3EEA" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">Type of Application
+w14:paraId="0EE975B8" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">Approval Required
+w14:paraId="2D55DE19" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">Tye of Securities
+w14:paraId="52363F25" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">Date of application submitted to Exchange
+w14:paraId="06215506" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">Applied for Nos of Shares
+w14:paraId="47C76DD8" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">Issue price
+w14:paraId="48CDC6D1" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">Official processing this application
+w14:paraId="1951277B" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">Status
+w14:paraId="59644E35" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">Date of last submission to Exchange
+w14:paraId="78192DC1" w14:textId="4B49B535" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A347CE" w:rsidP="00A25DB2">Delay in processing application by nos of Days
+w14:paraId="24622851" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">1
+w14:paraId="64B17348" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">20260101
+w14:paraId="06A0726B" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">XYZ LTD
+w14:paraId="54521D81" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">AAYUSH
+w14:paraId="6D42C543" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">Preferential
+w14:paraId="35968EA8" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">In-Principle
+w14:paraId="6BEB8B7C" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">Equity
+w14:paraId="465306B0" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">31-Mar-26
+w14:paraId="7A34647A" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">100000
+w14:paraId="46FF94A8" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">10
+w14:paraId="55F6C014" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">Siddhesh
+w14:paraId="7633B14E" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">Submitted to Exchange
+w14:paraId="3825E8B6" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2"> 
+w14:paraId="215D4CD6" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2"> 
+w14:paraId="672450D1" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">1
+w14:paraId="773D41FB" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">20260101
+w14:paraId="04193525" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">ABCD LTD
+w14:paraId="561882C3" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">AAYUSH
+w14:paraId="055D6722" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">Preferential
+w14:paraId="6B4A333A" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">Listing
+w14:paraId="189C3AE6" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">Equity
+w14:paraId="3C8C42BA" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">31-Mar-26
+w14:paraId="6BE8A3BF" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">100000
+w14:paraId="56DECFD8" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">10
+w14:paraId="3CD87C3E" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">Harish
+w14:paraId="58232A24" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">In Process
+w14:paraId="58149C31" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2"> 
+w14:paraId="29B8D9F8" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2"> 
+w14:paraId="097E6200" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">1
+w14:paraId="508255DE" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">20260101
+w14:paraId="33250482" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">ABCD LTD
+w14:paraId="2E2AC76B" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">AAYUSH
+w14:paraId="3A3125B2" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">Preferential
+w14:paraId="0A7FDEA1" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">Trading
+w14:paraId="668C8C78" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">Convertible / Warrants
+w14:paraId="38F5CA76" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">31-Mar-26
+w14:paraId="4864D5CD" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">100000
+w14:paraId="5F6AF782" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">10
+w14:paraId="25A60E7E" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">Nupoor
+w14:paraId="6E86D090" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2">Observation raised
+w14:paraId="44FC0785" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2"> 
+w14:paraId="13B93FAD" w14:textId="77777777" w:rsidR="00A25DB2" w:rsidRPr="00A25DB2" w:rsidRDefault="00A25DB2" w:rsidP="00A25DB2"> 
+w14:paraId="6889AF60" w14:textId="77777777" w:rsidR="00C0741B" w:rsidRDefault="00C0741B" w:rsidP="00C0741B">
+w14:paraId="3C11CA5E" w14:textId="51016EDA" w:rsidR="00A25DB2" w:rsidRPr="00E5765F" w:rsidRDefault="00A25DB2" w:rsidP="00B05B59">Applications which are pending for processing from date of last submission and crosses the timeline mentioned in 5.11.c should be displayed on the table.
+w14:paraId="77CEAE3C" w14:textId="3346A36C" w:rsidR="00A347CE" w:rsidRPr="00E5765F" w:rsidRDefault="00A347CE" w:rsidP="00B05B59">Date of last submission shall be date of resubmission of application to Exchange post resolving observation/correction. 
+w14:paraId="45A899A6" w14:textId="4C53394A" w:rsidR="00A70681" w:rsidRPr="00E5765F" w:rsidRDefault="00A70681" w:rsidP="00B05B59">New applications submitted and crossed the timeline mentioned in 5.11.c should also be considered in this table.
+w14:paraId="2B7C8C01" w14:textId="5AF1C215" w:rsidR="00A347CE" w:rsidRPr="00E5765F" w:rsidRDefault="00A347CE" w:rsidP="00B05B59">Delay in processing application by nos of Days should be calculated from the date of last submission to Exchange to till date. This number should dynamically change.
+w14:paraId="05FC9DA0" w14:textId="77777777" w:rsidR="008063D6" w:rsidRPr="00E5765F" w:rsidRDefault="008063D6" w:rsidP="00B05B59">There should be drill down facility at the Case Nos. tab, where if clicked the application gets opened.  
+w14:paraId="2CFB15A7" w14:textId="366B2D3D" w:rsidR="00E5765F" w:rsidRPr="00E5765F" w:rsidRDefault="008063D6" w:rsidP="00B05B59">The dashboard should have filter and search facility. Download/Export Facility should be provided to download the generated Report.
+w14:paraId="496F2ACD" w14:textId="377A68EE" w:rsidR="008063D6" w:rsidRPr="00E5765F" w:rsidRDefault="00E5765F" w:rsidP="00B05B59">This facility is only provided to the Exchange. All the members of the listing department have facility to view/generate/download reports.
+w14:paraId="2BDB038C" w14:textId="77777777" w:rsidR="008063D6" w:rsidRPr="00E5765F" w:rsidRDefault="008063D6" w:rsidP="00E5765F">
+w14:paraId="4A84DDA6" w14:textId="77777777" w:rsidR="00296E5E" w:rsidRPr="00E5765F" w:rsidRDefault="00296E5E" w:rsidP="00D971C8">
+w14:paraId="20A1A187" w14:textId="77777777" w:rsidR="00C32A8C" w:rsidRPr="007930E9" w:rsidRDefault="00C32A8C" w:rsidP="005E0D5D">
+w14:paraId="73BE6D17" w14:textId="77777777" w:rsidR="00C32A8C" w:rsidRPr="007930E9" w:rsidRDefault="00C32A8C" w:rsidP="005E0D5D">Name
+w14:paraId="6B6BFC45" w14:textId="77777777" w:rsidR="00C32A8C" w:rsidRPr="007930E9" w:rsidRDefault="00C32A8C" w:rsidP="005E0D5D">Date
+w14:paraId="28B9D915" w14:textId="77777777" w:rsidR="00C32A8C" w:rsidRPr="007930E9" w:rsidRDefault="00C32A8C" w:rsidP="005E0D5D">Signature
+w14:paraId="60A78DCA" w14:textId="77777777" w:rsidR="00C32A8C" w:rsidRPr="007930E9" w:rsidRDefault="00C32A8C" w:rsidP="005E0D5D">Prepared By
+w14:paraId="16F7626A" w14:textId="77777777" w:rsidR="00C32A8C" w:rsidRPr="007930E9" w:rsidRDefault="00C32A8C" w:rsidP="005E0D5D">Siddhesh Kudtarkar
+w14:paraId="2B8742CB" w14:textId="77777777" w:rsidR="00C32A8C" w:rsidRPr="007930E9" w:rsidRDefault="00C32A8C" w:rsidP="005E0D5D">01-Jan-2026
+w14:paraId="7F1A27C1" w14:textId="77777777" w:rsidR="00C32A8C" w:rsidRDefault="00C32A8C" w:rsidP="005E0D5D">
+w14:paraId="2974184B" w14:textId="77777777" w:rsidR="00C32A8C" w:rsidRDefault="00C32A8C" w:rsidP="005E0D5D">
+w14:paraId="65D4AE6A" w14:textId="77777777" w:rsidR="00C32A8C" w:rsidRDefault="00C32A8C" w:rsidP="005E0D5D">
+w14:paraId="2B34090D" w14:textId="77777777" w:rsidR="00C32A8C" w:rsidRPr="007930E9" w:rsidRDefault="00C32A8C" w:rsidP="005E0D5D">
+w14:paraId="2E47DEA0" w14:textId="77777777" w:rsidR="00C32A8C" w:rsidRPr="007930E9" w:rsidRDefault="00C32A8C" w:rsidP="005E0D5D">Verified By
+w14:paraId="16346CC8" w14:textId="77777777" w:rsidR="00C32A8C" w:rsidRPr="007930E9" w:rsidRDefault="00C32A8C" w:rsidP="005E0D5D">Mahendra Choudhari
+w14:paraId="743DE129" w14:textId="77777777" w:rsidR="00C32A8C" w:rsidRPr="007930E9" w:rsidRDefault="00C32A8C" w:rsidP="005E0D5D">01-Jan-2026
+w14:paraId="04F3DE0E" w14:textId="77777777" w:rsidR="00C32A8C" w:rsidRDefault="00C32A8C" w:rsidP="005E0D5D">
+w14:paraId="1A9A71D1" w14:textId="77777777" w:rsidR="00C32A8C" w:rsidRDefault="00C32A8C" w:rsidP="005E0D5D">
+w14:paraId="320D1147" w14:textId="77777777" w:rsidR="00C32A8C" w:rsidRDefault="00C32A8C" w:rsidP="005E0D5D">
+w14:paraId="3A5CAD08" w14:textId="77777777" w:rsidR="00C32A8C" w:rsidRPr="007930E9" w:rsidRDefault="00C32A8C" w:rsidP="005E0D5D">
+w14:paraId="543B5C92" w14:textId="77777777" w:rsidR="00C32A8C" w:rsidRPr="007930E9" w:rsidRDefault="00C32A8C" w:rsidP="005E0D5D">Approved By
+w14:paraId="045B2742" w14:textId="77777777" w:rsidR="00C32A8C" w:rsidRPr="007930E9" w:rsidRDefault="00C32A8C" w:rsidP="005E0D5D">Ramesh PK
+w14:paraId="37FDB6C4" w14:textId="77777777" w:rsidR="00C32A8C" w:rsidRPr="007930E9" w:rsidRDefault="00C32A8C" w:rsidP="005E0D5D">01-Jan-2026
+w14:paraId="1B5941FD" w14:textId="77777777" w:rsidR="00C32A8C" w:rsidRDefault="00C32A8C" w:rsidP="005E0D5D">
+w14:paraId="4A455702" w14:textId="77777777" w:rsidR="00C32A8C" w:rsidRDefault="00C32A8C" w:rsidP="005E0D5D">
+w14:paraId="6127C83C" w14:textId="77777777" w:rsidR="00C32A8C" w:rsidRDefault="00C32A8C" w:rsidP="005E0D5D">
+w14:paraId="4E397DD6" w14:textId="77777777" w:rsidR="00C32A8C" w:rsidRPr="007930E9" w:rsidRDefault="00C32A8C" w:rsidP="005E0D5D">
+w14:paraId="47382D7A" w14:textId="77777777" w:rsidR="00C32A8C" w:rsidRDefault="00C32A8C" w:rsidP="00C32A8C">
+w14:paraId="51450BBF" w14:textId="77777777" w:rsidR="00C32A8C" w:rsidRPr="007930E9" w:rsidRDefault="00C32A8C" w:rsidP="00377DCB">

@@ -15,6 +15,9 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IDbConnectionFactory, DbConnectionFactory>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.AddSingleton<IOtpService, OtpService>();
+builder.Services.AddMemoryCache();
 //builder.Services.AddTransient<DatabaseInitializer>();
 
 // Configure Cookie Authentication

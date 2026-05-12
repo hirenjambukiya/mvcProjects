@@ -1,0 +1,132 @@
+@model DynamicExcel.Core.Entities.DatabaseConnection
+
+@{
+    ViewData["Title"] = Model.Id == 0 ? "Add Connection" : "Edit Connection";
+}
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">@ViewData["Title"]</h1>
+    <div class="btn-toolbar mb-2 mb-md-0">
+        <a href="~/Connections" class="btn btn-sm btn-outline-secondary">
+            <i data-feather="arrow-left"></i> Back to List
+        </a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <div class="card">
+            <div class="card-body">
+                <form asp-action="AddOrEdit" method="post">
+                    <input type="hidden" asp-for="Id" />
+                    
+                    <div class="mb-3">
+                        <label asp-for="ConnectionName" class="form-label">Connection Name</label>
+                        <input asp-for="ConnectionName" class="form-control" required placeholder="e.g. Production DB" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="ServerName" class="form-label">SQL Server Name / IP</label>
+                        <input asp-for="ServerName" class="form-control" required placeholder="e.g. localhost or 192.168.1.100" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="DatabaseName" class="form-label">Database Name</label>
+                        <input asp-for="DatabaseName" class="form-control" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="AuthenticationType" class="form-label">Authentication Type</label>
+                        <select asp-for="AuthenticationType" class="form-select" id="authType">
+                            <option value="SQL">SQL Server Authentication</option>
+                            <option value="Windows">Windows Authentication</option>
+                        </select>
+                    </div>
+
+                    <div id="sqlAuthFields">
+                        <div class="mb-3">
+                            <label asp-for="Username" class="form-label">Username</label>
+                            <input asp-for="Username" class="form-control" id="dbUser" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Password" class="form-label">Password</label>
+                            <input asp-for="Password" type="password" class="form-control" id="dbPass" />
+                        </div>
+                    </div>
+
+                    <div class="mb-3 form-check">
+                        <input asp-for="IsDefault" class="form-check-input" />
+                        <label asp-for="IsDefault" class="form-check-label">Set as Default Connection</label>
+                    </div>
+
+                    <hr />
+                    <div class="d-flex justify-content-between">
+                        <button type="button" id="btnTest" class="btn btn-info text-white">
+                            <i data-feather="zap"></i> Test Connection
+                        </button>
+                        <button type="submit" class="btn btn-primary">
+                            <i data-feather="save"></i> Save Connection
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            function toggleAuthFields() {
+                if ($('#authType').val() === 'Windows') {
+                    $('#sqlAuthFields').hide();
+                } else {
+                    $('#sqlAuthFields').show();
+                }
+            }
+
+            $('#authType').change(toggleAuthFields);
+            toggleAuthFields(); // Initial call
+
+            $('#btnTest').click(function () {
+                var btn = $(this);
+                var originalHtml = btn.html();
+                btn.html('<span class="spinner-border spinner-border-sm"></span> Testing...').prop('disabled', true);
+
+                var data = {
+                    ServerName: $('#ServerName').val(),
+                    DatabaseName: $('#DatabaseName').val(),
+                    AuthenticationType: $('#authType').val(),
+                    Username: $('#dbUser').val(),
+                    Password: $('#dbPass').val()
+                };
+
+                if(!data.ServerName || !data.DatabaseName) {
+                    Swal.fire('Warning', 'Server Name and Database Name are required to test connection.', 'warning');
+                    btn.html(originalHtml).prop('disabled', false);
+                    return;
+                }
+
+                $.ajax({
+                    url: '@Url.Action("TestConnection", "Connections")',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(data),
+                    success: function (res) {
+                        btn.html(originalHtml).prop('disabled', false);
+                        if (res.success) {
+                            Swal.fire('Success!', res.message, 'success');
+                        } else {
+                            Swal.fire('Failed', res.message, 'error');
+                        }
+                    },
+                    error: function () {
+                        btn.html(originalHtml).prop('disabled', false);
+                        Swal.fire('Error', 'An error occurred during testing.', 'error');
+                    }
+                });
+            });
+        });
+    </script>
+}

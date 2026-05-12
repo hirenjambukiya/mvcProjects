@@ -99,4 +99,37 @@ public class AuthService : IAuthService
             return (false, $"An error occurred during registration: {ex.Message}");
         }
     }
+
+    public async Task<User?> GetUserByUsernameOrEmailAsync(string identifier)
+    {
+        return await _userRepository.GetUserByUsernameOrEmailAsync(identifier);
+    }
+
+    public async Task<(bool Success, string ErrorMessage)> ResetPasswordAsync(string identifier, string newClientEncryptedPassword)
+    {
+        var user = await _userRepository.GetUserByUsernameOrEmailAsync(identifier);
+        
+        if (user == null)
+        {
+            return (false, "User not found.");
+        }
+
+        try
+        {
+            var serverHashedPassword = BCrypt.Net.BCrypt.HashPassword(newClientEncryptedPassword);
+            await _userRepository.UpdatePasswordAsync(user.Id, serverHashedPassword);
+            
+            // Optionally, reset failed attempts and unlock out
+            if (user.IsLockedOut || user.FailedAttemptCount > 0)
+            {
+                await _userRepository.ResetFailedAttemptAsync(user.Id);
+            }
+
+            return (true, string.Empty);
+        }
+        catch (Exception ex)
+        {
+            return (false, $"An error occurred during password reset: {ex.Message}");
+        }
+    }
 }

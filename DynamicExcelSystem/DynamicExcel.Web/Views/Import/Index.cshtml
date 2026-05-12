@@ -1,0 +1,212 @@
+@{
+    ViewData["Title"] = "Import Excel Data";
+    var connections = ViewBag.Connections as List<DynamicExcel.Core.Entities.DatabaseConnection>;
+    var defaultConnection = connections?.FirstOrDefault(x => x.IsDefault) ?? connections?.FirstOrDefault();
+}
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">@ViewData["Title"]</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                
+                <div class="mb-4">
+                    <label class="form-label fw-bold">Target Database Connection</label>
+                    <select id="connectionId" class="form-select form-select-lg">
+                        @if (connections != null)
+                        {
+                            foreach (var conn in connections)
+                            {
+                                if (defaultConnection != null && conn.Id == defaultConnection.Id)
+                                {
+                                    <option value="@conn.Id" selected>@conn.ConnectionName (@conn.ServerName \ @conn.DatabaseName)</option>
+                                }
+                                else
+                                {
+                                    <option value="@conn.Id">@conn.ConnectionName (@conn.ServerName \ @conn.DatabaseName)</option>
+                                }
+                            }
+                        }
+                    </select>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label fw-bold">Select Excel File</label>
+                    <div class="drop-zone" id="dropZone">
+                        <span class="drop-zone__prompt">
+                            <i data-feather="upload-cloud" style="width: 48px; height: 48px; display: block; margin: 0 auto 10px;"></i>
+                            Drag & Drop your Excel file here or click to browse
+                        </span>
+                        <input type="file" name="file" id="fileInput" class="d-none" accept=".xlsx, .xls">
+                    </div>
+                    <div id="fileInfo" class="mt-2 text-primary fw-bold" style="display:none;"></div>
+                </div>
+
+                <div class="d-grid">
+                    <button id="btnUpload" class="btn btn-primary btn-lg" disabled>
+                        <i data-feather="play"></i> Start Import Process
+                    </button>
+                </div>
+
+                <!-- Progress Section -->
+                <div id="progressSection" class="mt-4" style="display:none;">
+                    <h6 class="text-muted">Importing... Please wait</h6>
+                    <div class="progress" style="height: 25px;">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated w-100" role="progressbar"></div>
+                    </div>
+                </div>
+
+                <!-- Result Section -->
+                <div id="resultSection" class="mt-4" style="display:none;">
+                    <div class="alert alert-success" id="successAlert" style="display:none;">
+                        <h4 class="alert-heading"><i data-feather="check-circle"></i> Import Successful!</h4>
+                        <hr>
+                        <p class="mb-0">Sheets Processed: <strong id="resSheets">0</strong></p>
+                        <p class="mb-0">Records Imported: <strong id="resRecords">0</strong></p>
+                        <p class="mb-0">Time Taken: <strong id="resTime">0</strong> seconds</p>
+                    </div>
+                    
+                    <div class="alert alert-danger" id="errorAlert" style="display:none;">
+                        <h4 class="alert-heading"><i data-feather="alert-triangle"></i> Import Failed</h4>
+                        <p id="errorMsg"></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            var dropZone = $('#dropZone');
+            var fileInput = $('#fileInput');
+            var fileInfo = $('#fileInfo');
+            var btnUpload = $('#btnUpload');
+            var selectedFile = null;
+
+            // Click to browse
+            dropZone.click(function () {
+                fileInput.click();
+            });
+
+            // File selection
+            fileInput.change(function (e) {
+                if (e.target.files.length) {
+                    selectedFile = e.target.files[0];
+                    updateFileInfo();
+                }
+            });
+
+            // Drag and drop events
+            dropZone.on('dragover', function (e) {
+                e.preventDefault();
+                dropZone.addClass('drop-zone--over');
+            });
+
+            dropZone.on('dragleave', function (e) {
+                e.preventDefault();
+                dropZone.removeClass('drop-zone--over');
+            });
+
+            dropZone.on('drop', function (e) {
+                e.preventDefault();
+                dropZone.removeClass('drop-zone--over');
+                
+                if (e.originalEvent.dataTransfer.files.length) {
+                    selectedFile = e.originalEvent.dataTransfer.files[0];
+                    updateFileInfo();
+                }
+            });
+
+            function updateFileInfo() {
+                if (selectedFile) {
+                    var ext = selectedFile.name.split('.').pop().toLowerCase();
+                    if (ext !== 'xlsx' && ext !== 'xls') {
+                        Swal.fire('Invalid File', 'Please select a valid Excel file (.xlsx or .xls)', 'warning');
+                        selectedFile = null;
+                        fileInfo.hide();
+                        btnUpload.prop('disabled', true);
+                        return;
+                    }
+                    
+                    $('.drop-zone__prompt').hide();
+                    fileInfo.html('<i data-feather="file-text"></i> ' + selectedFile.name + ' (' + formatBytes(selectedFile.size) + ')').show();
+                    feather.replace();
+                    btnUpload.prop('disabled', false);
+                }
+            }
+
+            function formatBytes(bytes, decimals = 2) {
+                if (bytes === 0) return '0 Bytes';
+                const k = 1024;
+                const dm = decimals < 0 ? 0 : decimals;
+                const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+                const i = Math.floor(Math.log(bytes) / Math.log(k));
+                return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+            }
+
+            // Upload Process
+            btnUpload.click(function () {
+                if (!selectedFile) return;
+
+                var connectionId = $('#connectionId').val();
+                if (!connectionId) {
+                    Swal.fire('Warning', 'Please select a database connection.', 'warning');
+                    return;
+                }
+
+                var formData = new FormData();
+                formData.append('file', selectedFile);
+                formData.append('connectionId', connectionId);
+
+                // UI Updates
+                btnUpload.prop('disabled', true);
+                dropZone.css('pointer-events', 'none').css('opacity', '0.5');
+                $('#progressSection').slideDown();
+                $('#resultSection').hide();
+
+                $.ajax({
+                    url: '@Url.Action("Upload", "Import")',
+                    type: 'POST',
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function (res) {
+                        $('#progressSection').hide();
+                        $('#resultSection').show();
+                        
+                        if (res.success) {
+                            $('#successAlert').show();
+                            $('#errorAlert').hide();
+                            $('#resSheets').text(res.totalSheetsProcessed);
+                            $('#resRecords').text(res.totalRecordsImported.toLocaleString());
+                            $('#resTime').text(res.executionTimeSeconds.toFixed(2));
+                            
+                            // Reset form
+                            selectedFile = null;
+                            fileInfo.hide();
+                            $('.drop-zone__prompt').show();
+                        } else {
+                            $('#successAlert').hide();
+                            $('#errorAlert').show();
+                            $('#errorMsg').text(res.message);
+                            btnUpload.prop('disabled', false);
+                        }
+                        dropZone.css('pointer-events', 'auto').css('opacity', '1');
+                    },
+                    error: function () {
+                        $('#progressSection').hide();
+                        dropZone.css('pointer-events', 'auto').css('opacity', '1');
+                        btnUpload.prop('disabled', false);
+                        Swal.fire('Error', 'A server error occurred during the import process.', 'error');
+                    }
+                });
+            });
+        });
+    </script>
+}

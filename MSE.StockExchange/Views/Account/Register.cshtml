@@ -19,19 +19,42 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
-<body class="login-bg">
-
-    <div class="container h-100 d-flex justify-content-center align-items-center my-5">
-        <div class="col-md-6 col-lg-5">
-            <div class="login-card p-5">
-                <div class="text-center mb-4 text-white">
-                    <div class="mse-logo d-inline-flex mb-3">
-                        <span class="m">M</span><span class="s">S</span><span class="e">E</span><div class="arrow"></div>
-                    </div>
-                    <h5 class="fw-bold tracking-wide mt-2">METROPOLITAN</h5>
-                    <div class="text-accent small tracking-widest">STOCK EXCHANGE</div>
-                    <div class="mt-2 text-white-50">Create a Secure Account</div>
+<body>
+    <div class="split-layout">
+        <!-- Left Pane: Branding -->
+        <div class="split-left">
+            <div class="split-left-content">
+                <div class="mse-logo-box">
+                    <img src="~/images/mse-logo.png" alt="MSE Logo" />
                 </div>
+                <div>
+                    <span class="mse-badge"><i class="fa-solid fa-circle text-success me-2" style="font-size: 8px;"></i>SEBI REGULATED EXCHANGE</span>
+                    <h1>India's National<br />Stock Exchange<br />Platform</h1>
+                    <p class="lead mt-4">Secure access to live markets, listed securities, derivatives and real-time trading infrastructure.</p>
+                </div>
+            </div>
+            
+            <div class="stats-container mt-auto">
+                <div class="stat-item">
+                    <h3>2,400+</h3>
+                    <p>LISTED SECURITIES</p>
+                </div>
+                <div class="stat-item">
+                    <h3>46,074</h3>
+                    <p>SX40 INDEX</p>
+                </div>
+                <div class="stat-item">
+                    <h3>99.99%</h3>
+                    <p>UPTIME</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Pane: Form -->
+        <div class="split-right">
+            <div class="form-container">
+                <h2>Create an account</h2>
+                <p class="subtitle">Enter your details to register for the trading portal.</p>
 
                 <form id="registerForm" asp-controller="Account" asp-action="Register" method="post">
                     @Html.AntiForgeryToken()
@@ -40,49 +63,58 @@
                     <div asp-validation-summary="ModelOnly" class="text-danger mb-3 small fw-bold text-center"></div>
 
                     <div class="form-floating mb-3">
-                        <input asp-for="Username" class="form-control glass-input" placeholder="User ID" />
-                        <label asp-for="Username" class="text-white-50"><i class="fa-solid fa-user me-2"></i>User ID</label>
+                        <input asp-for="Username" class="form-control" placeholder="User ID" />
+                        <label asp-for="Username"><i class="fa-regular fa-user me-2"></i>User ID</label>
                         <span asp-validation-for="Username" class="text-danger small mt-1 d-block"></span>
                     </div>
                     
                     <div class="form-floating mb-3">
-                        <input asp-for="Email" class="form-control glass-input" placeholder="Email Address" type="email" />
-                        <label asp-for="Email" class="text-white-50"><i class="fa-solid fa-envelope me-2"></i>Email Address</label>
+                        <input asp-for="Email" class="form-control" placeholder="Email Address" type="email" />
+                        <label asp-for="Email"><i class="fa-regular fa-envelope me-2"></i>Email Address</label>
                         <span asp-validation-for="Email" class="text-danger small mt-1 d-block"></span>
                     </div>
 
                     <div class="form-floating mb-3">
-                        <select asp-for="Role" class="form-select glass-input">
+                        <select asp-for="Role" class="form-select">
                             <option value="">-- Select Role --</option>
                             <option value="Company">Company</option>
                             <option value="Maker">Maker</option>
                             <option value="Checker">Checker</option>
                             <option value="HOD">HOD</option>
                         </select>
-                        <label asp-for="Role" class="text-white-50"><i class="fa-solid fa-users-gear me-2"></i>System Role</label>
+                        <label asp-for="Role"><i class="fa-solid fa-users-gear me-2"></i>System Role</label>
                         <span asp-validation-for="Role" class="text-danger small mt-1 d-block"></span>
                     </div>
 
                     <div class="form-floating mb-3">
-                        <input asp-for="Password" type="password" id="rawPassword" class="form-control glass-input" placeholder="Password" />
-                        <label asp-for="Password" class="text-white-50"><i class="fa-solid fa-lock me-2"></i>Password</label>
+                        <input asp-for="Password" type="password" id="rawPassword" class="form-control" placeholder="Password" />
+                        <label asp-for="Password"><i class="fa-solid fa-lock me-2"></i>Password</label>
                         <span asp-validation-for="Password" class="text-danger small mt-1 d-block"></span>
                     </div>
                     
                     <div class="form-floating mb-4">
-                        <input asp-for="ConfirmPassword" type="password" id="rawConfirmPassword" class="form-control glass-input" placeholder="Confirm Password" />
-                        <label asp-for="ConfirmPassword" class="text-white-50"><i class="fa-solid fa-check-double me-2"></i>Confirm Password</label>
+                        <input asp-for="ConfirmPassword" type="password" id="rawConfirmPassword" class="form-control" placeholder="Confirm Password" />
+                        <label asp-for="ConfirmPassword"><i class="fa-solid fa-check-double me-2"></i>Confirm Password</label>
                         <span asp-validation-for="ConfirmPassword" class="text-danger small mt-1 d-block"></span>
                     </div>
 
                     <button type="submit" class="btn btn-primary w-100 btn-login fw-bold py-2 mb-3">
-                        REGISTER <i class="fa-solid fa-user-plus ms-2"></i>
+                        Create Account
                     </button>
                     
-                    <div class="text-center mt-3 text-white-50 small">
-                        <a asp-controller="Account" asp-action="Login" class="text-accent text-decoration-none hover-underline">Already have an account? Login here.</a>
+                    <div class="security-alert">
+                        <i class="fa-solid fa-shield-halved text-success me-2"></i> Protected by 256-bit TLS encryption and 2FA verification.
+                    </div>
+                    
+                    <div class="text-center mt-4 text-muted small">
+                        Already have an account? <a asp-controller="Account" asp-action="Login" class="text-primary text-decoration-none hover-underline fw-semibold" style="color: #004d80 !important;">Sign In</a>
                     </div>
                 </form>
+
+                <div class="text-center mt-5 text-muted" style="font-size: 0.7rem;">
+                    &copy; @DateTime.Now.Year Metropolitan Stock Exchange of India Ltd.<br/>
+                    Regulated by SEBI - Member of WFE
+                </div>
             </div>
         </div>
     </div>
@@ -95,17 +127,13 @@
             var encryptedPassInput = document.getElementById('ClientEncryptedPassword');
             
             if (rawPassInput.value) {
-                // Client side SHA-256 Hashing before sending to server
                 var hash = CryptoJS.SHA256(rawPassInput.value).toString();
                 encryptedPassInput.value = hash;
                 
-                // Clear the raw password fields so they aren't sent in POST body explicitly
                 if(rawPassInput.value === rawConfirmPassInput.value) {
                     rawPassInput.value = hash.substring(0,8); 
                     rawConfirmPassInput.value = hash.substring(0,8);
                 } else {
-                    // Let the server-side validation catch mismatch or we can stop submit
-                    // For demonstration, we simply apply the same string.
                     rawConfirmPassInput.value = "mismatch";
                     rawPassInput.value = hash.substring(0,8);
                 }

@@ -1,0 +1,141 @@
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Dashboard</h1>
+    <div class="btn-toolbar mb-2 mb-md-0">
+        <div class="btn-group me-2">
+            <a href="~/Import" class="btn btn-sm btn-outline-primary">
+                <i data-feather="upload" class="me-1"></i> New Import
+            </a>
+            <a href="~/Query" class="btn btn-sm btn-outline-secondary">
+                <i data-feather="terminal" class="me-1"></i> Query Data
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3 mb-4">
+        <div class="card h-100 border-start border-primary border-4">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="text-muted text-uppercase mb-1">Total Imports</h6>
+                        <h3 class="mb-0">@ViewBag.TotalImports</h3>
+                    </div>
+                    <div class="p-3 bg-primary bg-opacity-10 rounded-circle">
+                        <i data-feather="database" class="text-primary"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-4">
+        <div class="card h-100 border-start border-success border-4">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="text-muted text-uppercase mb-1">Total Records</h6>
+                        <h3 class="mb-0">@ViewBag.TotalRecords</h3>
+                    </div>
+                    <div class="p-3 bg-success bg-opacity-10 rounded-circle">
+                        <i data-feather="layers" class="text-success"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-4">
+        <div class="card h-100 border-start border-info border-4">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="text-muted text-uppercase mb-1">Active Connections</h6>
+                        <h3 class="mb-0">@ViewBag.ActiveConnections</h3>
+                    </div>
+                    <div class="p-3 bg-info bg-opacity-10 rounded-circle">
+                        <i data-feather="server" class="text-info"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-4">
+        <div class="card h-100 border-start border-danger border-4">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="text-muted text-uppercase mb-1">Failed Imports</h6>
+                        <h3 class="mb-0">@ViewBag.FailedImports</h3>
+                    </div>
+                    <div class="p-3 bg-danger bg-opacity-10 rounded-circle">
+                        <i data-feather="alert-triangle" class="text-danger"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Recent Activity</h5>
+                <a href="~/History" class="btn btn-sm btn-outline-secondary">View All</a>
+            </div>
+            <div class="card-body p-0">
+                @if (ViewBag.RecentActivity != null && ((IEnumerable<DynamicExcel.Core.Entities.ImportHistory>)ViewBag.RecentActivity).Any())
+                {
+                    <div class="table-responsive">
+                        <table class="table table-hover mb-0">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Date</th>
+                                    <th>File Name</th>
+                                    <th>Target DB</th>
+                                    <th>Records</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in (IEnumerable<DynamicExcel.Core.Entities.ImportHistory>)ViewBag.RecentActivity)
+                                {
+                                    <tr>
+                                        <td>@item.ImportDate.ToString("MMM dd, yyyy HH:mm")</td>
+                                        <td><strong>@item.FileName</strong></td>
+                                        <td>@item.ConnectionName</td>
+                                        <td>@item.TotalRecords.ToString("N0")</td>
+                                        <td>
+                                            @if (item.Success)
+                                            {
+                                                <span class="badge bg-success">Success</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="badge bg-danger">Failed</span>
+                                            }
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+                else
+                {
+                    <div class="text-center text-muted py-5">
+                        <i data-feather="activity" class="mb-3" style="width: 48px; height: 48px; opacity: 0.5;"></i>
+                        <p>No recent activity found. Configure a database connection and start importing data.</p>
+                        <a href="~/Connections" class="btn btn-primary mt-2">Setup Database Connection</a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

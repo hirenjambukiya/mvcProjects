@@ -130,3 +130,165 @@ body.login-bg::before {
 .hover-underline:hover {
     text-decoration: underline !important;
 }
+
+/* Split Screen Layout for Authentication */
+.split-layout {
+    display: flex;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+}
+
+.split-left {
+    flex: 1;
+    background: radial-gradient(circle at top right, var(--mse-deep-blue-dark), var(--mse-dark-bg));
+    position: relative;
+    overflow: hidden;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 4rem;
+    color: white;
+}
+
+@media (min-width: 992px) {
+    .split-left {
+        display: flex;
+    }
+}
+
+.split-left::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 50px 50px;
+    transform: rotate(15deg);
+    z-index: 0;
+    animation: drift 60s linear infinite;
+}
+
+.split-left-content {
+    position: relative;
+    z-index: 1;
+}
+
+.mse-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 5px 15px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+}
+
+.split-left h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.split-left p.lead {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 80%;
+}
+
+.stats-container {
+    display: flex;
+    gap: 2.5rem;
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+}
+
+.stat-item h3 {
+    color: white;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+    font-size: 1.5rem;
+}
+
+.stat-item p {
+    color: var(--mse-orange);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.split-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 450px;
+}
+
+.form-container h2 {
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+}
+
+.form-container p.subtitle {
+    color: #6c757d;
+    margin-bottom: 2rem;
+}
+
+.form-container .form-floating > label {
+    color: #6c757d;
+}
+
+.form-container .form-control {
+    border-color: #dee2e6;
+    color: #212529;
+    background-color: #fff;
+}
+
+.form-container .form-control:focus {
+    border-color: var(--mse-deep-blue);
+    box-shadow: 0 0 0 0.25rem rgba(0, 77, 128, 0.25);
+}
+
+.security-alert {
+    background-color: #f8fff9;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+    border-radius: 4px;
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.mse-logo-box {
+    background: white;
+    padding: 10px 15px;
+    border-radius: 6px;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.mse-logo-box img {
+    max-width: 180px;
+    height: auto;
+}

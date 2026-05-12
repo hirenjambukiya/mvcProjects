@@ -1,0 +1,243 @@
+@{
+    ViewData["Title"] = "Query Execution Module";
+    var connections = ViewBag.Connections as List<DynamicExcel.Core.Entities.DatabaseConnection>;
+    var defaultConnection = connections?.FirstOrDefault(x => x.IsDefault) ?? connections?.FirstOrDefault();
+}
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">@ViewData["Title"]</h1>
+</div>
+
+<div class="row">
+    <!-- Editor Side (Top) -->
+    <div class="col-md-12 mb-4">
+        <div class="card shadow-sm">
+            <div class="card-header bg-white">
+                <h5 class="mb-0"><i data-feather="terminal"></i> SQL Editor</h5>
+            </div>
+            <div class="card-body">
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label class="form-label fw-bold">Target Database Connection</label>
+                        <select id="connectionId" class="form-select">
+                            @if (connections != null)
+                            {
+                                foreach (var conn in connections)
+                                {
+                                    if (defaultConnection != null && conn.Id == defaultConnection.Id)
+                                    {
+                                        <option value="@conn.Id" selected>@conn.ConnectionName (@conn.ServerName)</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@conn.Id">@conn.ConnectionName (@conn.ServerName)</option>
+                                    }
+                                }
+                            }
+                        </select>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Query (SELECT only)</label>
+                    <textarea id="sqlQuery" class="form-control font-monospace" style="min-height: 200px; resize: vertical;" placeholder="SELECT * FROM [YourTable]"></textarea>
+                </div>
+
+                <div>
+                    <button id="btnExecute" class="btn btn-primary">
+                        <i data-feather="play"></i> Execute Query
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Side (Bottom) -->
+    <div class="col-md-12">
+        <div class="card shadow-sm">
+            <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                <h5 class="mb-0"><i data-feather="table"></i> Results</h5>
+                <span id="executionStats" class="badge bg-light text-dark border d-none">
+                    <i data-feather="clock" class="ms-1" style="width:12px"></i> <span id="timeTaken"></span>s | 
+                    <i data-feather="layers" style="width:12px"></i> <span id="totalRows"></span> rows
+                </span>
+            </div>
+            <div class="card-body">
+                <div id="loadingIndicator" class="text-center py-5 d-none">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <p class="mt-2 text-muted">Executing Query...</p>
+                </div>
+
+                <div id="errorAlert" class="alert alert-danger d-none"></div>
+
+                <div class="table-responsive">
+                    <table id="resultsTable" class="table table-striped table-hover w-100">
+                        <thead>
+                            <tr id="tableHeaders"></tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            var dataTable = null;
+
+            function loadTables() {
+                var connectionId = $('#connectionId').val();
+                if (!connectionId) return;
+
+                var explorerList = $('#tableExplorerList');
+                explorerList.html('<li class="nav-item px-3 text-muted text-center mt-4"><div class="spinner-border spinner-border-sm text-primary"></div><small class="ms-2">Loading...</small></li>');
+
+                $.get('@Url.Action("GetTables", "Query")?connectionId=' + connectionId, function(res) {
+                    explorerList.empty();
+                    if (res.success && res.tables && res.tables.length > 0) {
+                        res.tables.forEach(function(table) {
+                            var li = $('<li class="nav-item"></li>');
+                            var a = $('<a href="#" class="nav-link table-link" style="padding: 0.4rem 1rem; font-size: 0.85rem;"><i data-feather="database" style="width:14px; margin-right:4px;"></i>' + table + '</a>');
+                            a.click(function(e) {
+                                e.preventDefault();
+                                $('#sqlQuery').val('SELECT * FROM [' + table + ']');
+                            });
+                            li.append(a);
+                            explorerList.append(li);
+                        });
+                        feather.replace();
+                    } else {
+                        explorerList.html('<li class="nav-item px-3 text-muted text-center mt-4"><small>No tables found.</small></li>');
+                    }
+                });
+            }
+
+            // Load tables on init
+            loadTables();
+
+            // Load tables on connection change
+            $('#connectionId').change(function() {
+                loadTables();
+            });
+
+            $('#btnExecute').click(function () {
+                var query = $('#sqlQuery').val();
+                var connectionId = $('#connectionId').val();
+
+                if (!query.trim()) {
+                    Swal.fire('Warning', 'Please enter a SQL query to execute.', 'warning');
+                    return;
+                }
+
+                // Initial fetch to get columns and first page
+                var reqData = {
+                    connectionId: connectionId,
+                    query: query,
+                    start: 0,
+                    length: 10,
+                    draw: "1"
+                };
+
+                $('#btnExecute').prop('disabled', true);
+                $('#loadingIndicator').removeClass('d-none');
+                $('#errorAlert').addClass('d-none');
+                $('#executionStats').addClass('d-none');
+
+                if (dataTable !== null) {
+                    dataTable.destroy();
+                    $('#resultsTable').empty();
+                    dataTable = null;
+                }
+
+                $.ajax({
+                    url: '@Url.Action("ExecuteQuery", "Query")',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(reqData),
+                    success: function (res) {
+                        $('#loadingIndicator').addClass('d-none');
+                        $('#btnExecute').prop('disabled', false);
+
+                        if (res.success) {
+                            $('#executionStats').removeClass('d-none');
+                            $('#timeTaken').text(res.executionTime.toFixed(3));
+                            $('#totalRows').text(res.recordsTotal.toLocaleString());
+
+                            if (res.columns && res.columns.length > 0) {
+                                // Rebuild table HTML structure
+                                var thead = '<thead><tr>';
+                                var dtColumns = [];
+                                
+                                res.columns.forEach(function (col) {
+                                    thead += '<th>' + col + '</th>';
+                                    dtColumns.push({ data: col, defaultContent: "" });
+                                });
+                                thead += '</tr></thead><tbody></tbody>';
+                                $('#resultsTable').html(thead);
+
+                                // Initialize Server-Side DataTable
+                                dataTable = $('#resultsTable').DataTable({
+                                    serverSide: true,
+                                    processing: true,
+                                    ajax: function (data, callback, settings) {
+                                        // The data parameter contains draw, start, length sent by DataTables
+                                        var dtReq = {
+                                            connectionId: connectionId,
+                                            query: query,
+                                            start: data.start,
+                                            length: data.length,
+                                            draw: data.draw.toString()
+                                        };
+
+                                        $.ajax({
+                                            url: '@Url.Action("ExecuteQuery", "Query")',
+                                            type: 'POST',
+                                            contentType: 'application/json',
+                                            data: JSON.stringify(dtReq),
+                                            success: function (dtRes) {
+                                                if (dtRes.success) {
+                                                    callback({
+                                                        draw: data.draw,
+                                                        recordsTotal: dtRes.recordsTotal,
+                                                        recordsFiltered: dtRes.recordsFiltered,
+                                                        data: dtRes.data
+                                                    });
+                                                } else {
+                                                    callback({
+                                                        draw: data.draw,
+                                                        recordsTotal: 0,
+                                                        recordsFiltered: 0,
+                                                        data: [],
+                                                        error: dtRes.message
+                                                    });
+                                                }
+                                            }
+                                        });
+                                    },
+                                    columns: dtColumns,
+                                    scrollX: true,
+                                    pageLength: 10,
+                                    lengthMenu: [10, 25, 50, 100]
+                                });
+                            } else {
+                                Swal.fire('Info', 'Query executed successfully but returned no data.', 'info');
+                            }
+                        } else {
+                            $('#errorAlert').removeClass('d-none').text(res.message);
+                        }
+                    },
+                    error: function () {
+                        $('#loadingIndicator').addClass('d-none');
+                        $('#btnExecute').prop('disabled', false);
+                        $('#errorAlert').removeClass('d-none').text('A server error occurred while executing the query.');
+                    }
+                });
+            });
+        });
+    </script>
+}
