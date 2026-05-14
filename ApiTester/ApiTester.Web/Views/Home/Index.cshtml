@@ -1,0 +1,133 @@
+@model IEnumerable<ApiTester.Domain.Entities.ApiRequestHistory>
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom border-secondary">
+    <h1 class="h2 text-white">Dashboard Overview</h1>
+</div>
+
+<!-- Metrics Cards -->
+<div class="row mb-4">
+    <div class="col-md-3">
+        <div class="card bg-dark border-secondary">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="text-muted text-uppercase fw-bold mb-2">Total Requests</h6>
+                        <h3 class="mb-0 text-white">@ViewBag.TotalCalls</h3>
+                    </div>
+                    <div class="bg-primary bg-opacity-25 p-3 rounded">
+                        <i data-feather="activity" class="text-primary"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card bg-dark border-secondary">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="text-muted text-uppercase fw-bold mb-2">Success Rate</h6>
+                        <h3 class="mb-0 text-success">@ViewBag.SuccessCalls</h3>
+                    </div>
+                    <div class="bg-success bg-opacity-25 p-3 rounded">
+                        <i data-feather="check-circle" class="text-success"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card bg-dark border-secondary">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="text-muted text-uppercase fw-bold mb-2">Failed Requests</h6>
+                        <h3 class="mb-0 text-danger">@ViewBag.FailedCalls</h3>
+                    </div>
+                    <div class="bg-danger bg-opacity-25 p-3 rounded">
+                        <i data-feather="alert-circle" class="text-danger"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card bg-dark border-secondary">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="text-muted text-uppercase fw-bold mb-2">Avg. Time</h6>
+                        <h3 class="mb-0 text-info">@ViewBag.AvgResponseTime.ToString("0") ms</h3>
+                    </div>
+                    <div class="bg-info bg-opacity-25 p-3 rounded">
+                        <i data-feather="clock" class="text-info"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Recent Activity -->
+<div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <h5 class="mb-0"><i data-feather="list" class="me-2"></i>Recent API Calls</h5>
+        <a href="~/History" class="btn btn-sm btn-outline-primary">View All</a>
+    </div>
+    <div class="card-body p-0">
+        <div class="table-responsive">
+            <table class="table table-dark table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>Method</th>
+                        <th>URL</th>
+                        <th>Status</th>
+                        <th>Time</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if(Model != null && Model.Any())
+                    {
+                        foreach(var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @if(item.HttpMethod == "GET") { <span class="badge bg-primary">GET</span> }
+                                    else if(item.HttpMethod == "POST") { <span class="badge bg-success">POST</span> }
+                                    else if(item.HttpMethod == "PUT") { <span class="badge bg-warning text-dark">PUT</span> }
+                                    else if(item.HttpMethod == "DELETE") { <span class="badge bg-danger">DELETE</span> }
+                                    else { <span class="badge bg-secondary">@item.HttpMethod</span> }
+                                </td>
+                                <td class="text-truncate" style="max-width: 300px;">
+                                    <a href="~/Api/Index/@item.Id" class="text-info text-decoration-none" title="@item.ApiUrl">@item.ApiUrl</a>
+                                </td>
+                                <td>
+                                    @if(item.IsSuccess)
+                                    {
+                                        <span class="text-success"><i data-feather="check" class="me-1" style="width:14px"></i>@item.StatusCode</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="text-danger"><i data-feather="x" class="me-1" style="width:14px"></i>@item.StatusCode</span>
+                                    }
+                                </td>
+                                <td>@(item.ResponseTime) ms</td>
+                                <td>@item.CreatedDate.ToString("MMM dd, yyyy HH:mm")</td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="5" class="text-center py-4 text-muted">No recent API calls found.</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,224 @@
+@{
+    ViewData["Title"] = "Request History";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="text-white"><i data-feather="clock" class="me-2"></i>Request History</h2>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table id="historyTable" class="table table-dark table-striped table-hover w-100">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Method</th>
+                        <th>URL</th>
+                        <th>Status</th>
+                        <th>Time (ms)</th>
+                        <th>Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Details Modal -->
+<div class="modal fade" id="detailsModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable">
+        <div class="modal-content bg-dark text-light border-secondary">
+            <div class="modal-header border-secondary">
+                <h5 class="modal-title"><i data-feather="file-text" class="me-2"></i>Request Details</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <strong>URL:</strong> <span id="modalUrl" class="text-info"></span>
+                    </div>
+                    <div class="col-md-3">
+                        <strong>Method:</strong> <span id="modalMethod"></span>
+                    </div>
+                    <div class="col-md-3">
+                        <strong>Status:</strong> <span id="modalStatus"></span>
+                    </div>
+                </div>
+
+                <ul class="nav nav-tabs mb-3" id="detailsTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active bg-dark text-light border-secondary border-bottom-0" id="req-tab" data-bs-toggle="tab" data-bs-target="#req-tab-pane" type="button" role="tab">Request</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link text-muted border-secondary" id="res-tab" data-bs-toggle="tab" data-bs-target="#res-tab-pane" type="button" role="tab">Response</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link text-muted border-secondary" id="err-tab" data-bs-toggle="tab" data-bs-target="#err-tab-pane" type="button" role="tab" style="display:none;">Error</button>
+                    </li>
+                </ul>
+                
+                <div class="tab-content" id="detailsTabContent">
+                    <div class="tab-pane fade show active" id="req-tab-pane" role="tabpanel" tabindex="0">
+                        <h6 class="mt-2 text-muted">Headers</h6>
+                        <pre id="modalReqHeaders" class="json-viewer" style="max-height: 200px;"></pre>
+                        <h6 class="mt-3 text-muted">Body</h6>
+                        <pre id="modalReqBody" class="json-viewer" style="max-height: 300px;"></pre>
+                    </div>
+                    <div class="tab-pane fade" id="res-tab-pane" role="tabpanel" tabindex="0">
+                        <div class="d-flex justify-content-between mb-2 mt-2">
+                            <h6 class="text-muted">Response Body</h6>
+                            <button class="btn btn-sm btn-outline-info" onclick="copyResponse()"><i data-feather="copy" style="width: 14px"></i> Copy JSON</button>
+                        </div>
+                        <pre id="modalResBody" class="json-viewer" style="max-height: 500px;"></pre>
+                    </div>
+                    <div class="tab-pane fade" id="err-tab-pane" role="tabpanel" tabindex="0">
+                        <h6 class="mt-2 text-danger">Error Message</h6>
+                        <pre id="modalError" class="json-viewer text-danger"></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer border-secondary">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        var historyTable;
+
+        $(document).ready(function() {
+            historyTable = $('#historyTable').DataTable({
+                ajax: {
+                    url: '/History/GetHistoryData',
+                    type: 'GET',
+                    dataSrc: 'data'
+                },
+                columns: [
+                    { data: 'id' },
+                    { 
+                        data: 'httpMethod',
+                        render: function(data) {
+                            if(data === 'GET') return `<span class="badge bg-primary">GET</span>`;
+                            if(data === 'POST') return `<span class="badge bg-success">POST</span>`;
+                            if(data === 'PUT') return `<span class="badge bg-warning text-dark">PUT</span>`;
+                            if(data === 'DELETE') return `<span class="badge bg-danger">DELETE</span>`;
+                            return `<span class="badge bg-secondary">${data}</span>`;
+                        }
+                    },
+                    { 
+                        data: 'apiUrl',
+                        render: function(data, type, row) {
+                            return `<a href="/Api/Index/${row.id}" class="text-info text-decoration-none text-truncate d-block" style="max-width: 300px;" title="${data}">${data}</a>`;
+                        }
+                    },
+                    { 
+                        data: 'statusCode',
+                        render: function(data, type, row) {
+                            if(row.isSuccess) return `<span class="text-success"><i data-feather="check" style="width:14px"></i> ${data}</span>`;
+                            return `<span class="text-danger"><i data-feather="x" style="width:14px"></i> ${data}</span>`;
+                        }
+                    },
+                    { data: 'responseTime' },
+                    { 
+                        data: 'createdDate',
+                        render: function(data) {
+                            var date = new Date(data);
+                            return date.toLocaleString();
+                        }
+                    },
+                    {
+                        data: 'id',
+                        orderable: false,
+                        render: function(data) {
+                            return `
+                                <button class="btn btn-sm btn-info" onclick="viewDetails(${data})" title="View Details"><i data-feather="eye" style="width:14px"></i></button>
+                                <button class="btn btn-sm btn-danger ms-1" onclick="deleteRecord(${data})" title="Delete"><i data-feather="trash-2" style="width:14px"></i></button>
+                            `;
+                        }
+                    }
+                ],
+                order: [[5, 'desc']],
+                drawCallback: function() {
+                    feather.replace();
+                }
+            });
+        });
+
+        function viewDetails(id) {
+            $.get('/History/GetDetails/' + id, function(res) {
+                $('#modalUrl').text(res.apiUrl);
+                $('#modalMethod').text(res.httpMethod);
+                
+                var statusHtml = res.isSuccess ? `<span class="text-success">${res.statusCode}</span>` : `<span class="text-danger">${res.statusCode}</span>`;
+                $('#modalStatus').html(statusHtml);
+
+                $('#modalReqHeaders').text(res.requestHeaders || 'No headers');
+                
+                var reqBodyStr = res.requestJson;
+                try {
+                    reqBodyStr = JSON.stringify(JSON.parse(res.requestJson), null, 4);
+                } catch(e) {}
+                $('#modalReqBody').text(reqBodyStr || 'No body');
+
+                var resBodyStr = res.responseJson;
+                try {
+                    resBodyStr = JSON.stringify(JSON.parse(res.responseJson), null, 4);
+                } catch(e) {}
+                $('#modalResBody').text(resBodyStr || 'No response body');
+
+                if (res.errorMessage) {
+                    $('#err-tab').show();
+                    $('#modalError').text(res.errorMessage);
+                } else {
+                    $('#err-tab').hide();
+                }
+
+                $('#req-tab').tab('show');
+                var modal = new bootstrap.Modal(document.getElementById('detailsModal'));
+                modal.show();
+            }).fail(function() {
+                showToast('error', 'Failed to load details');
+            });
+        }
+
+        function deleteRecord(id) {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Yes, delete it!',
+                background: '#2d2d2d',
+                color: '#fff'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.post('/History/Delete/' + id, function(res) {
+                        if (res.success) {
+                            showToast('success', 'Record deleted successfully');
+                            historyTable.ajax.reload(null, false);
+                        } else {
+                            showToast('error', 'Failed to delete record');
+                        }
+                    });
+                }
+            });
+        }
+
+        function copyResponse() {
+            var text = $('#modalResBody').text();
+            navigator.clipboard.writeText(text).then(function() {
+                showToast('success', 'JSON copied to clipboard');
+            }, function() {
+                showToast('error', 'Failed to copy JSON');
+            });
+        }
+    </script>
+}

@@ -1,0 +1,329 @@
+@{
+    ViewData["Title"] = "Request Builder";
+}
+
+<div class="row">
+    <!-- Request Section -->
+    <div class="col-md-6">
+        <div class="card h-100">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0"><i data-feather="send" class="me-2"></i>API Request</h5>
+                <button class="btn btn-sm btn-outline-danger" id="btnClear"><i data-feather="trash-2" style="width: 14px"></i> Clear</button>
+            </div>
+            <div class="card-body">
+                <div class="row g-2 mb-3">
+                    <div class="col-md-3">
+                        <select id="httpMethod" class="form-select fw-bold">
+                            <option value="GET">GET</option>
+                            <option value="POST">POST</option>
+                            <option value="PUT">PUT</option>
+                            <option value="PATCH">PATCH</option>
+                            <option value="DELETE">DELETE</option>
+                        </select>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="text" id="apiUrl" class="form-control" placeholder="https://api.example.com/v1/users" />
+                    </div>
+                </div>
+
+                <!-- Headers Section -->
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <label class="form-label fw-bold mb-0">Headers</label>
+                        <button type="button" class="btn btn-sm btn-outline-info" id="btnAddHeader">
+                            <i data-feather="plus" style="width: 14px"></i> Add Header
+                        </button>
+                    </div>
+                    <div id="headersContainer">
+                        <div class="row g-2 mb-2 header-row">
+                            <div class="col-5">
+                                <input type="text" class="form-control header-key" placeholder="Key (e.g. Authorization)" />
+                            </div>
+                            <div class="col-6">
+                                <input type="text" class="form-control header-value" placeholder="Value" />
+                            </div>
+                            <div class="col-1 text-end">
+                                <button type="button" class="btn btn-outline-danger btn-remove-header" disabled>
+                                    <i data-feather="x" style="width: 16px"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Body Section -->
+                <div class="mb-3" id="bodySection" style="display: none;">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <label class="form-label fw-bold mb-0">JSON Body</label>
+                        <button type="button" class="btn btn-sm btn-outline-secondary" id="btnFormatJson">
+                            <i data-feather="align-left" style="width: 14px"></i> Format JSON
+                        </button>
+                    </div>
+                    <textarea id="requestBody" class="form-control font-monospace text-warning" rows="8" placeholder='{"key": "value"}'></textarea>
+                </div>
+
+                <div class="d-grid mt-4">
+                    <button class="btn btn-primary btn-lg" id="btnSend">
+                        <i data-feather="play" class="me-2"></i> Send Request
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Response Section -->
+    <div class="col-md-6">
+        <div class="card h-100">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0"><i data-feather="download" class="me-2"></i>Response</h5>
+                <div>
+                    <span id="resStatus" class="badge bg-secondary me-2">Status: --</span>
+                    <span id="resTime" class="badge bg-secondary">Time: -- ms</span>
+                </div>
+            </div>
+            <div class="card-body d-flex flex-column">
+                <ul class="nav nav-tabs mb-3" id="responseTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active bg-dark text-light border-secondary border-bottom-0" id="body-tab" data-bs-toggle="tab" data-bs-target="#body-tab-pane" type="button" role="tab">Body</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link text-muted border-secondary" id="headers-tab" data-bs-toggle="tab" data-bs-target="#headers-tab-pane" type="button" role="tab">Headers</button>
+                    </li>
+                </ul>
+                <div class="tab-content flex-grow-1 d-flex flex-column" id="myTabContent">
+                    <div class="tab-pane fade show active flex-grow-1" id="body-tab-pane" role="tabpanel" tabindex="0" style="min-height: 300px;">
+                        <pre id="responseBody" class="json-viewer h-100 mb-0 w-100">Hit "Send Request" to get a response...</pre>
+                    </div>
+                    <div class="tab-pane fade flex-grow-1" id="headers-tab-pane" role="tabpanel" tabindex="0" style="min-height: 300px;">
+                        <pre id="responseHeadersView" class="json-viewer h-100 mb-0 w-100 text-info"></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            @if (ViewBag.LoadHistoryId != null)
+            {
+                <text>
+                var historyId = @ViewBag.LoadHistoryId;
+                $.get('/History/GetDetails/' + historyId, function(res) {
+                    if (res) {
+                        $('#apiUrl').val(res.apiUrl);
+                        $('#httpMethod').val(res.httpMethod).trigger('change');
+                        
+                        if (res.requestHeaders && res.requestHeaders !== 'null') {
+                            try {
+                                var headers = JSON.parse(res.requestHeaders);
+                                if (headers && headers.length > 0) {
+                                    $('#headersContainer').empty();
+                                    headers.forEach(function(h) {
+                                        var row = `
+                                            <div class="row g-2 mb-2 header-row">
+                                                <div class="col-5">
+                                                    <input type="text" class="form-control header-key" placeholder="Key" value="${h.Key}" />
+                                                </div>
+                                                <div class="col-6">
+                                                    <input type="text" class="form-control header-value" placeholder="Value" value="${h.Value}" />
+                                                </div>
+                                                <div class="col-1 text-end">
+                                                    <button type="button" class="btn btn-outline-danger btn-remove-header">
+                                                        <i data-feather="x" style="width: 16px"></i>
+                                                    </button>
+                                                </div>
+                                            </div>`;
+                                        $('#headersContainer').append(row);
+                                    });
+                                    feather.replace();
+                                    updateRemoveButtons();
+                                }
+                            } catch(e) {}
+                        }
+                        
+                        if (res.requestJson) {
+                            $('#requestBody').val(res.requestJson);
+                            $('#btnFormatJson').trigger('click');
+                        }
+                    }
+                });
+                </text>
+            }
+
+            // Toggle body section based on HTTP Method
+            $('#httpMethod').change(function() {
+                var method = $(this).val();
+                if (method === 'POST' || method === 'PUT' || method === 'PATCH') {
+                    $('#bodySection').slideDown();
+                } else {
+                    $('#bodySection').slideUp();
+                    $('#requestBody').val('');
+                }
+                
+                // Color coding for dropdown
+                $(this).removeClass('text-primary text-success text-warning text-danger');
+                if(method === 'GET') $(this).addClass('text-primary');
+                if(method === 'POST') $(this).addClass('text-success');
+                if(method === 'PUT') $(this).addClass('text-warning');
+                if(method === 'DELETE') $(this).addClass('text-danger');
+            }).trigger('change');
+
+            // Add Header Row
+            $('#btnAddHeader').click(function() {
+                var row = `
+                    <div class="row g-2 mb-2 header-row">
+                        <div class="col-5">
+                            <input type="text" class="form-control header-key" placeholder="Key" />
+                        </div>
+                        <div class="col-6">
+                            <input type="text" class="form-control header-value" placeholder="Value" />
+                        </div>
+                        <div class="col-1 text-end">
+                            <button type="button" class="btn btn-outline-danger btn-remove-header">
+                                <i data-feather="x" style="width: 16px"></i>
+                            </button>
+                        </div>
+                    </div>`;
+                $('#headersContainer').append(row);
+                feather.replace();
+                updateRemoveButtons();
+            });
+
+            // Remove Header Row
+            $(document).on('click', '.btn-remove-header', function() {
+                $(this).closest('.header-row').remove();
+                updateRemoveButtons();
+            });
+
+            function updateRemoveButtons() {
+                var rows = $('.header-row').length;
+                if (rows > 1) {
+                    $('.btn-remove-header').prop('disabled', false);
+                } else {
+                    $('.btn-remove-header').prop('disabled', true);
+                }
+            }
+
+            // Format JSON
+            $('#btnFormatJson').click(function() {
+                var val = $('#requestBody').val();
+                if (!val) return;
+                try {
+                    var parsed = JSON.parse(val);
+                    $('#requestBody').val(JSON.stringify(parsed, null, 4));
+                } catch (e) {
+                    showToast('error', 'Invalid JSON syntax');
+                }
+            });
+
+            // Clear Form
+            $('#btnClear').click(function() {
+                $('#apiUrl').val('');
+                $('#httpMethod').val('GET').trigger('change');
+                $('#headersContainer').html(`
+                    <div class="row g-2 mb-2 header-row">
+                        <div class="col-5">
+                            <input type="text" class="form-control header-key" placeholder="Key (e.g. Authorization)" />
+                        </div>
+                        <div class="col-6">
+                            <input type="text" class="form-control header-value" placeholder="Value" />
+                        </div>
+                        <div class="col-1 text-end">
+                            <button type="button" class="btn btn-outline-danger btn-remove-header" disabled>
+                                <i data-feather="x" style="width: 16px"></i>
+                            </button>
+                        </div>
+                    </div>`);
+                feather.replace();
+                $('#requestBody').val('');
+                $('#responseBody').text('Hit "Send Request" to get a response...');
+                $('#responseHeadersView').text('');
+                $('#resStatus').text('Status: --').removeClass('bg-success bg-danger').addClass('bg-secondary');
+                $('#resTime').text('Time: -- ms');
+            });
+
+            // Send Request
+            $('#btnSend').click(function() {
+                var url = $('#apiUrl').val().trim();
+                var method = $('#httpMethod').val();
+                var body = $('#requestBody').val();
+
+                if (!url) {
+                    showToast('warning', 'Please enter an API URL');
+                    return;
+                }
+
+                if (body) {
+                    try {
+                        JSON.parse(body);
+                    } catch (e) {
+                        showToast('warning', 'Request body contains invalid JSON');
+                        return;
+                    }
+                }
+
+                var headers = [];
+                $('.header-row').each(function() {
+                    var key = $(this).find('.header-key').val().trim();
+                    var val = $(this).find('.header-value').val().trim();
+                    if (key) {
+                        headers.push({ key: key, value: val });
+                    }
+                });
+
+                var requestData = {
+                    url: url,
+                    method: method,
+                    headers: headers,
+                    body: body
+                };
+
+                $.ajax({
+                    url: '/Api/Execute',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(requestData),
+                    success: function(res) {
+                        // Set Status
+                        var statusEl = $('#resStatus');
+                        statusEl.text('Status: ' + res.statusCode);
+                        statusEl.removeClass('bg-secondary bg-success bg-danger');
+                        if (res.isSuccess) {
+                            statusEl.addClass('bg-success');
+                        } else {
+                            statusEl.addClass('bg-danger');
+                        }
+
+                        // Set Time
+                        $('#resTime').text('Time: ' + res.responseTime + ' ms');
+
+                        // Set Body
+                        if (res.responseBody) {
+                            $('#responseBody').text(res.responseBody);
+                        } else {
+                            $('#responseBody').text(res.errorMessage || 'No content returned.');
+                        }
+
+                        // Set Headers
+                        if (res.responseHeaders && res.responseHeaders.length > 0) {
+                            var hdrText = '';
+                            res.responseHeaders.forEach(function(h) {
+                                hdrText += h.key + ': ' + h.value + '\n';
+                            });
+                            $('#responseHeadersView').text(hdrText);
+                        } else {
+                            $('#responseHeadersView').text('No headers returned.');
+                        }
+
+                        showToast(res.isSuccess ? 'success' : 'error', 'Request completed');
+                    },
+                    error: function(xhr) {
+                        showToast('error', 'Internal server error occurred');
+                    }
+                });
+            });
+        });
+    </script>
+}
