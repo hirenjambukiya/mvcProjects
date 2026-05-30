@@ -5,6 +5,7 @@ using Microsoft.Extensions.Hosting;
 using MSE.StockExchange.Data;
 using MSE.StockExchange.Repositories;
 using MSE.StockExchange.Services;
+using System.Threading.RateLimiting;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,6 +34,39 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.ExpireTimeSpan = System.TimeSpan.FromMinutes(30);
     });
 
+builder.Services.AddRateLimiter(options =>
+{
+    options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
+
+    options.OnRejected = async (context, token) =>
+    {
+        context.HttpContext.Response.ContentType = "application/json";
+
+        await context.HttpContext.Response.WriteAsync(
+            """
+            {
+                "status": 429,
+                "message": "Too many requests. Please try again after 1 minute."
+            }
+            """,
+            token);
+    };
+
+    options.AddPolicy("IpPolicy", httpContext =>
+    {
+        var ipAddress = httpContext.Connection.RemoteIpAddress?.ToString();
+
+        return RateLimitPartition.GetFixedWindowLimiter(
+            partitionKey: ipAddress!,
+            factory: _ => new FixedWindowRateLimiterOptions
+            {
+                PermitLimit = 5,
+                Window = TimeSpan.FromMinutes(1),
+                QueueProcessingOrder = QueueProcessingOrder.OldestFirst,
+                QueueLimit = 0
+            });
+    });
+});
 var app = builder.Build();
 
 //// Initialize Database on Startup
@@ -61,6 +95,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseRouting();
+app.UseRateLimiter();
 app.UseAuthentication();
 app.UseAuthorization();
 
@@ -69,6 +104,7 @@ app.MapStaticAssets();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}")
+    .RequireRateLimiting("IpPolicy")
     .WithStaticAssets();
 
 app.Run();

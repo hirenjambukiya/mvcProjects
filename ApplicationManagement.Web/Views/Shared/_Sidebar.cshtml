@@ -1,0 +1,85 @@
+﻿<div class="bg-dark text-white vh-100"
+     style="width:250px; position:sticky; top:0;">
+
+    <div class="p-3 border-bottom">
+
+        <h4>AMS</h4>
+
+    </div>
+
+    <ul class="nav flex-column p-3">
+
+        @if (User.IsInRole("Member"))
+        {
+            <li class="nav-item mb-2">
+
+                <a class="nav-link text-white"
+                   asp-controller="Dashboard"
+                   asp-action="Index">
+
+                    <i class="bi bi-speedometer2"></i>
+                    Dashboard
+
+                </a>
+
+            </li>
+
+            <li class="nav-item mb-2">
+
+                <a class="nav-link text-white"
+                   asp-controller="Application"
+                   asp-action="Create">
+
+                    <i class="bi bi-file-earmark-plus"></i>
+                    New Application
+
+                </a>
+
+            </li>
+
+            <li class="nav-item mb-2">
+
+                <a class="nav-link text-white"
+                   asp-controller="Application"
+                   asp-action="MyApplications">
+
+                    <i class="bi bi-folder2-open"></i>
+                    My Applications
+
+                </a>
+
+            </li>
+        }
+
+        @if (User.IsInRole("Admin"))
+        {
+            <li class="nav-item mb-2">
+
+                <a class="nav-link text-white"
+                   asp-controller="Dashboard"
+                   asp-action="Index">
+
+                    <i class="bi bi-speedometer2"></i>
+                    Admin Dashboard
+
+                </a>
+
+            </li>
+
+            <li class="nav-item mb-2">
+
+                <a class="nav-link text-white"
+                   asp-controller="Inbox"
+                   asp-action="Index">
+
+                    <i class="bi bi-inbox"></i>
+                    Inbox
+
+                </a>
+
+            </li>
+        }
+
+    </ul>
+
+</div>

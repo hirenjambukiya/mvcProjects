@@ -1,0 +1,119 @@
+﻿@using AMS.Domain.Entities
+@model List<Applications>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="card shadow-sm">
+
+    <div class="card-header">
+        <h4>My Applications</h4>
+    </div>
+
+    <div class="card-body">
+
+        <table id="tblApplications" class="table table-bordered table-striped">
+
+            <thead>
+
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Status</th>
+                    <th>File</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+                @if (Model.Count == 0)
+                {
+                    <tr><td colspan="4" class="text-md-center" >No record found.</td></tr>
+                }
+                else
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr>
+
+                            <td>@item.Id</td>
+
+                            <td>@item.Name</td>
+
+                            <td>
+                            <td>
+
+                                @if (item.Status == "Pending")
+                                {
+                                    <span class="badge bg-warning">
+                                        Pending
+                                    </span>
+                                }
+                                else if (item.Status == "Approved")
+                                {
+                                    <span class="badge bg-success">
+                                        Approved
+                                    </span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-danger">
+                                        Rejected
+                                    </span>
+                                }
+
+                            </td>
+                            </td>
+
+                            <td>
+
+                                @if (item.Documents.Any())
+                                {
+                                    <a href="@item.Documents.First().FilePath"
+                                       target="_blank">
+
+                                        View File
+
+                                    </a>
+                                }
+
+                            </td>
+
+                        </tr>
+                    }
+
+                }
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+@section Scripts {
+
+    <script>
+
+        $(document).ready(function () {
+
+            $('#tblApplications').DataTable({
+
+                pageLength: 10,
+
+                responsive: true,
+
+                dom: 'Bfrtip',
+
+                buttons: [
+                    'excel',
+                    'pdf',
+                    'print'
+                ]
+
+            });
+
+        });
+
+    </script>
+
+}

@@ -1,0 +1,53 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+.nav-link {
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+    .nav-link:hover {
+        background-color: #495057;
+    }
+
+body {
+    overflow-x: hidden;
+}
+.card {
+    border-radius: 12px;
+}
+
+.card-body h2 {
+    font-weight: bold;
+}
+.dataTables_wrapper {
+    margin-top: 15px;
+}
+
+.dt-buttons {
+    margin-bottom: 10px;
+}
+
+.dataTables_filter {
+    margin-bottom: 10px;
+}
+
+.dataTables_length {
+    margin-bottom: 10px;
+}

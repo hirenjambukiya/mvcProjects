@@ -1,0 +1,99 @@
+﻿@model AMS.Domain.Entities.Applications
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="card shadow-sm">
+
+    <div class="card-header">
+        <h4>Review Application</h4>
+    </div>
+
+    <div class="card-body">
+
+        <div class="row">
+
+            <div class="col-md-6 mb-3">
+                <strong>Name:</strong>
+                @Model.Name
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <strong>Age:</strong>
+                @Model.Age
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <strong>Gender:</strong>
+                @Model.Gender
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <strong>Status:</strong>
+                @Model.Status
+            </div>
+
+            <div class="col-md-12 mb-3">
+                <strong>Address:</strong>
+                @Model.Address
+            </div>
+
+            <div class="col-md-12 mb-3">
+
+                @if (Model.Documents.Any())
+                {
+                    <a href="@Model.Documents.First().FilePath"
+                       target="_blank"
+                       class="btn btn-info">
+
+                        View Uploaded File
+
+                    </a>
+                }
+
+            </div>
+
+        </div>
+
+        <hr />
+
+        <form asp-action="Review" method="post">
+
+            <input type="hidden"
+                   name="ApplicationId"
+                   value="@Model.Id" />
+
+            <div class="mb-3">
+
+                <label>Status</label>
+
+                <select name="Status"
+                        class="form-select">
+
+                    <option value="Approved">
+                        Approve
+                    </option>
+
+                    <option value="Rejected">
+                        Reject
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="mb-3">
+
+                <label>Remarks</label>
+
+                <textarea name="Remarks" class="form-control"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-success">
+                Submit Review
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
