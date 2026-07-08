@@ -7,10 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ex_RemoteValidation", "ex_R
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ex_TableDataDashboard", "ex_TableDataDashboard\ex_TableDataDashboard.csproj", "{3E22ADF7-D75C-4ED2-9410-88D5A6994045}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ex_APIarchitecture", "ex_APIarchitecture\ex_APIarchitecture.csproj", "{4930F7AC-40BE-48CA-8651-C8F99881E5A4}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ex_ConceptOfMVC", "ex_ConceptOfMVC\ex_ConceptOfMVC.csproj", "{635CF556-BF5C-479D-90D2-CF9688FDB9A7}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSE.StockExchange", "MSE.StockExchange\MSE.StockExchange.csproj", "{9B8AA18B-9C60-43F4-B112-B743CD1BCE64}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DynamicExcelSystem", "DynamicExcelSystem", "{3D7BAFFB-3D09-3D19-997E-EB5C0C18DDE0}"
@@ -35,15 +31,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "chatApp", "chatApp\chatApp.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApplicationManagementSystem", "ApplicationManagementSystem", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMS.Web", "ApplicationManagement.Web\AMS.Web.csproj", "{C1756F90-B5F0-4DBC-B1BC-ECE8A8E2D0B7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMS.Web", "AM\ApplicationManagement.Web\AMS.Web.csproj", "{C1756F90-B5F0-4DBC-B1BC-ECE8A8E2D0B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMS.Core", "ApplicationManagement.Core\AMS.Core.csproj", "{7EA9E67B-CC12-4B6B-888B-70E37023DA5A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMS.Core", "AM\ApplicationManagement.Core\AMS.Core.csproj", "{7EA9E67B-CC12-4B6B-888B-70E37023DA5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMS.Infrastructure", "ApplicationManagement.Infrastructure\AMS.Infrastructure.csproj", "{23474816-A8A4-4B38-B584-26EA53FFE3F6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMS.Infrastructure", "AM\ApplicationManagement.Infrastructure\AMS.Infrastructure.csproj", "{23474816-A8A4-4B38-B584-26EA53FFE3F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMS.Application", "ApplicationManagement.Application\AMS.Application.csproj", "{44597E86-0300-4F4E-9E72-771D4C9E4009}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMS.Application", "AM\ApplicationManagement.Application\AMS.Application.csproj", "{44597E86-0300-4F4E-9E72-771D4C9E4009}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMS.Domain", "ApplicationManagement.Domain\AMS.Domain.csproj", "{07EE1022-EB9E-4B61-BE5A-A0D5CBF8EC03}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMS.Domain", "AM\ApplicationManagement.Domain\AMS.Domain.csproj", "{07EE1022-EB9E-4B61-BE5A-A0D5CBF8EC03}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -79,30 +75,6 @@ Global
 		{3E22ADF7-D75C-4ED2-9410-88D5A6994045}.Release|x64.Build.0 = Release|Any CPU
 		{3E22ADF7-D75C-4ED2-9410-88D5A6994045}.Release|x86.ActiveCfg = Release|Any CPU
 		{3E22ADF7-D75C-4ED2-9410-88D5A6994045}.Release|x86.Build.0 = Release|Any CPU
-		{4930F7AC-40BE-48CA-8651-C8F99881E5A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4930F7AC-40BE-48CA-8651-C8F99881E5A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4930F7AC-40BE-48CA-8651-C8F99881E5A4}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{4930F7AC-40BE-48CA-8651-C8F99881E5A4}.Debug|x64.Build.0 = Debug|Any CPU
-		{4930F7AC-40BE-48CA-8651-C8F99881E5A4}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{4930F7AC-40BE-48CA-8651-C8F99881E5A4}.Debug|x86.Build.0 = Debug|Any CPU
-		{4930F7AC-40BE-48CA-8651-C8F99881E5A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4930F7AC-40BE-48CA-8651-C8F99881E5A4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4930F7AC-40BE-48CA-8651-C8F99881E5A4}.Release|x64.ActiveCfg = Release|Any CPU
-		{4930F7AC-40BE-48CA-8651-C8F99881E5A4}.Release|x64.Build.0 = Release|Any CPU
-		{4930F7AC-40BE-48CA-8651-C8F99881E5A4}.Release|x86.ActiveCfg = Release|Any CPU
-		{4930F7AC-40BE-48CA-8651-C8F99881E5A4}.Release|x86.Build.0 = Release|Any CPU
-		{635CF556-BF5C-479D-90D2-CF9688FDB9A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{635CF556-BF5C-479D-90D2-CF9688FDB9A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{635CF556-BF5C-479D-90D2-CF9688FDB9A7}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{635CF556-BF5C-479D-90D2-CF9688FDB9A7}.Debug|x64.Build.0 = Debug|Any CPU
-		{635CF556-BF5C-479D-90D2-CF9688FDB9A7}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{635CF556-BF5C-479D-90D2-CF9688FDB9A7}.Debug|x86.Build.0 = Debug|Any CPU
-		{635CF556-BF5C-479D-90D2-CF9688FDB9A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{635CF556-BF5C-479D-90D2-CF9688FDB9A7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{635CF556-BF5C-479D-90D2-CF9688FDB9A7}.Release|x64.ActiveCfg = Release|Any CPU
-		{635CF556-BF5C-479D-90D2-CF9688FDB9A7}.Release|x64.Build.0 = Release|Any CPU
-		{635CF556-BF5C-479D-90D2-CF9688FDB9A7}.Release|x86.ActiveCfg = Release|Any CPU
-		{635CF556-BF5C-479D-90D2-CF9688FDB9A7}.Release|x86.Build.0 = Release|Any CPU
 		{9B8AA18B-9C60-43F4-B112-B743CD1BCE64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9B8AA18B-9C60-43F4-B112-B743CD1BCE64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B8AA18B-9C60-43F4-B112-B743CD1BCE64}.Debug|x64.ActiveCfg = Debug|Any CPU
