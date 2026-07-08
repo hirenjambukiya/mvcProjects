@@ -29,7 +29,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiTester.Web", "ApiTester\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "chatApp", "chatApp\chatApp.csproj", "{4AAD9CAE-B095-3F5F-CF1E-26EE5776EB75}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApplicationManagementSystem", "ApplicationManagementSystem", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AM", "AM", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMS.Web", "AM\ApplicationManagement.Web\AMS.Web.csproj", "{C1756F90-B5F0-4DBC-B1BC-ECE8A8E2D0B7}"
 EndProject
