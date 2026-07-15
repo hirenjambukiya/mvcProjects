@@ -1,0 +1,47 @@
+﻿@model UpdateProfileDto;
+<div class="container">
+	<div class="card shadow-sm">
+		<div class="card-body">
+			<form asp-action="UpdateProfile" asp-controller="Login">
+				<!-- 2 column grid layout with text inputs for the first and last names -->
+				<div class="row">
+					<div class="col-md-6 mb-4">
+						<div data-mdb-input-init class="form-outline">
+							<label class="form-label" for="form3Example1">First name</label>
+							<input asp-for="FirstName" type="text" id="form3Example1" class="form-control" />
+							<span asp-validation-for="FirstName" class="text-danger"></span>
+						</div>
+					</div>
+					<div class="col-md-6 mb-4">
+						<div data-mdb-input-init class="form-outline">
+							<label class="form-label" for="form3Example2">Last name</label>
+							<input asp-for="LastName" type="text" id="form3Example2" class="form-control" />
+							<span asp-validation-for="LastName" class="text-danger"></span>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<!-- Email input -->
+					<div data-mdb-input-init class="form-outline mb-4">
+						<label class="form-label" for="form3Example3">Email address</label>
+						<input type="email" asp-for="EmailAddress" id="form3Example3" class="form-control" />
+						<span asp-validation-for="EmailAddress" class="text-danger"></span>
+					</div>
+				</div>
+				<!-- Password input -->
+				<div data-mdb-input-init class="form-outline mb-4">
+					<label class="form-label" for="form3Example4">Password</label>
+					<input asp-for="Password" type="text" id="form3Example4" class="form-control" />
+					<span asp-validation-for="Password" class="text-danger"></span>
+				</div>
+
+
+				<!-- Submit button -->
+				<button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">
+					Update
+				</button>
+			</form>
+		</div>
+	</div>
+</div>

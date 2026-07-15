@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ELMS.Commons\ELMS.Commons.csproj" />
+    <ProjectReference Include="..\ELMS.Models\ELMS.Models.csproj" />
+    <ProjectReference Include="..\ELMS.Services\ELMS.Services.csproj" />
+  </ItemGroup>
+
+</Project>

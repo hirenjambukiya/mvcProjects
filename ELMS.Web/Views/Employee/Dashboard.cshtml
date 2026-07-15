@@ -1,0 +1,32 @@
+﻿@model LeaveSummaryDto;
+<div class="d-flex gap-3">
+	<a asp-action="LeaveHistory" class="text-black text-decoration-none" asp-controller="Leave">
+	<div class="card bg-primary" style="width: 18rem;">
+		<div class="card-body text-center">
+			<h5 class="card-title">Total Leaves</h5>
+			<label>@Model.TotalLeave</label>
+		</div>
+	</div>
+	</a>
+
+	<div id="Pending" class="card bg-warning" style="width: 18rem;">
+		<div class="card-body text-center">
+			<h5 class="card-title">Pending Leaves</h5>
+			<label>@Model.PendingLeave</label>
+		</div>
+	</div>
+
+	<div id="Approved" class="card bg-success" style="width: 18rem;">
+		<div class="card-body text-center">
+			<h5 class="card-title">Approved Leaves</h5>
+			<label>@Model.ApprovedLeave</label>
+		</div>
+	</div>
+
+	<div id="Rejected" class="card bg-danger" style="width: 18rem;">
+		<div class="card-body text-center">
+			<h5 class="card-title">Rejected Leaves</h5>
+			<label>@Model.RejectedLeave</label>
+		</div>
+	</div>
+</div>

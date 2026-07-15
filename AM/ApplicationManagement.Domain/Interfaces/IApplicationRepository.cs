@@ -15,5 +15,5 @@ namespace AMS.Domain.Interfaces
         Task<List<Applications>> GetAllAsync();
         Task<Applications?> GetByIdAsync(int id);
         Task SaveChangesAsync();
-  
+    }
 }

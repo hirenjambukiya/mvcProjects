@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -17,16 +17,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ApplicationManagement.Application\AMS.Application.csproj" />
-    <ProjectReference Include="..\ApplicationManagement.Core\AMS.Core.csproj" />
-    <ProjectReference Include="..\ApplicationManagement.Infrastructure\AMS.Infrastructure.csproj" />
+    
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Helpers\" />
-    <Folder Include="Extensions\" />
-    <Folder Include="Logs\" />
-    <Folder Include="wwwroot\uploads\" />
+    <ProjectReference Include="..\ApplicationManagement.Application\AMS.Application.csproj" />
+    <ProjectReference Include="..\ApplicationManagement.Core\AMS.Core.csproj" />
+    <ProjectReference Include="..\ApplicationManagement.Infrastructure\AMS.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

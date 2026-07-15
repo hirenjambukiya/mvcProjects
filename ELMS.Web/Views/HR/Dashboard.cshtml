@@ -1,0 +1,88 @@
+﻿@model LeaveSummaryDto;
+<div class="d-flex gap-3">
+	<div id="ttlleave" class="cursor-pointer">
+		<div class="card bg-primary" style="width: 18rem;">
+			<div class="card-body text-center">
+				<h5 class="card-title">Total Leaves</h5>
+				<label>@Model.TotalLeave</label>
+			</div>
+		</div>
+	</div>
+
+	<div id="ttlPending" class="card bg-warning" style="width: 18rem;">
+		<div class="card-body text-center">
+			<h5 class="card-title">Pending Leaves</h5>
+			<label>@Model.PendingLeave</label>
+		</div>
+	</div>
+
+	<div id="ttlApproved" class="card bg-success" style="width: 18rem;">
+		<div class="card-body text-center">
+			<h5 class="card-title">Approved Leaves</h5>
+			<label>@Model.ApprovedLeave</label>
+		</div>
+	</div>
+
+	<div id="ttlRejected" class="card bg-danger" style="width: 18rem;">
+		<div class="card-body text-center">
+			<h5 class="card-title">Rejected Leaves</h5>
+			<label>@Model.RejectedLeave</label>
+		</div>
+	</div>
+</div>
+
+<div class="container d-none mt-3" id="cnr-tblEmployeesLeave">
+	<!-- Page Header -->
+	<div class="mb-4">
+		<h2 class="mb-1">Leave History</h2>
+		<p class="text-muted mb-0">
+			View Employee leave history.
+		</p>
+	</div>
+
+	<div class="card shadow-sm">
+		<div class="card-body">
+			<div class="table-responsive">
+				<table class="table table table-bordered table-hover align-middle" id="tblEmployeesLeave">
+					<thead class="table-light">
+						<tr>
+							<th>Sr No</th>
+							<th>Employee Name</th>
+							<th>Start Date </th>
+							<th>End Date</th>
+							<th>Total Day</th>
+							<th>Leave Type</th>
+							<th>Leave Status</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade" id="leaveReason" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h1 class="modal-title fs-5" id="exampleModalLabel">Reject Leave</h1>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-12">
+						<label class="form-label">Leave reason <span class="text-danger">*</span></label>
+						<input type="text" class="form-control" id="txtleavereason" />
+						<span class="text-danger" id="errortxtleavereason"></span>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary" id="btnfinalreject">Submit</button>
+			</div>
+		</div>
+	</div>
+</div>
