@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Employee Management";
+}
+
+<link rel="stylesheet" href="https://cdn.datatables.net/2.3.3/css/dataTables.dataTables.min.css" />
+
+<div class="container mt-4">
+
+    <h2>Employee Management</h2>
+
+    <hr />
+
+    <div class="row">
+        <div class="col-md-4">
+
+            <label for="actionDropdown" class="form-label">
+                Select Action
+            </label>
+
+            <select id="actionDropdown" class="form-select">
+                <option value="">-- Select Action --</option>
+                <option value="list">Employee List</option>
+                <option value="add">Add Employee</option>
+            </select>
+
+        </div>
+    </div>
+
+    <div id="employeeContent" class="mt-4">
+    </div>
+
+</div>
+
+@section Scripts
+{
+    <script src="https://cdn.datatables.net/2.3.3/js/dataTables.min.js"></script>
+    <script src="~/js/employee.js"></script>
+
+}
